@@ -1,2 +1,3 @@
-# Tobeto_LMS_Project
-Bu repository Furkan Özkan, Ömer Penbegül ve Umut Atakul ortaklığında gerçekleştirilmiştir.
+## Tobeto_LMS_Project
+
+### Bu repository [Furkan Özkan](https://github.com/furkanozkandev), [Ömer Penbegül](https://github.com/omerpenbegul) ve [Umut Atakul](https://github.com/umutatakul) ortaklığında gerçekleştirilmiştir.
