@@ -42,7 +42,7 @@ class _LoginState extends State<Login> {
                   child: SvgPicture.asset("assets/svgs/tobeto_named_logo.svg"),
                 ),
                 Container(
-                  margin: EdgeInsets.only(left: 20, right: 20),
+                  margin: const EdgeInsets.only(left: 20, right: 20),
                   child: Column(
                     children: [
                       Padding(
@@ -51,7 +51,7 @@ class _LoginState extends State<Login> {
                           controller: kullaniciKodu,
                           autofocus: true,
                           decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.person),
+                            prefixIcon: Icon(Icons.person_2_outlined),
                             labelText: "Kullanıcı Kodu",
                             border: OutlineInputBorder(),
                           ),
@@ -64,8 +64,8 @@ class _LoginState extends State<Login> {
                           autofocus: false,
                           controller: parola,
                           decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.lock_person_sharp),
-                            suffixIcon: Icon(Icons.remove_red_eye),
+                            prefixIcon: Icon(Icons.lock_outlined),
+                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
                             labelText: "Parola",
                             border: OutlineInputBorder(),
                           ),
