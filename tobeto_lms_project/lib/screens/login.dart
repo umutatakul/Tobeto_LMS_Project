@@ -65,6 +65,7 @@ class _LoginState extends State<Login> {
                           controller: parola,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.lock_person_sharp),
+                            suffixIcon: Icon(Icons.remove_red_eye),
                             labelText: "Parola",
                             border: OutlineInputBorder(),
                           ),
