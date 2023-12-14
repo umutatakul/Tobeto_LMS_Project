@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -11,6 +11,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   TextEditingController kullaniciKodu = TextEditingController();
   TextEditingController parola = TextEditingController();
+  bool isPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,9 @@ class _LoginState extends State<Login> {
         alignment: Alignment.center,
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/loginBackground.png"),
-              fit: BoxFit.fill),
+            image: AssetImage("assets/images/loginBackground.png"),
+            fit: BoxFit.fill,
+          ),
         ),
         child: AspectRatio(
           aspectRatio: 11 / 13,
@@ -38,7 +40,7 @@ class _LoginState extends State<Login> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+                  const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
                   child: SvgPicture.asset("assets/svgs/tobeto_named_logo.svg"),
                 ),
                 Container(
@@ -63,13 +65,25 @@ class _LoginState extends State<Login> {
                         child: TextField(
                           autofocus: false,
                           controller: parola,
-                          decoration: const InputDecoration(
+                          obscureText: !isPasswordVisible,
+                          decoration: InputDecoration(
                             prefixIcon: Icon(Icons.lock_outlined),
-                            suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                            suffixIcon: InkWell(
+                              onTap: () {
+                                setState(() {
+                                  isPasswordVisible = !isPasswordVisible;
+                                });
+                              },
+                              child: Icon(
+                                isPasswordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                              ),
+                            ),
                             labelText: "Parola",
                             border: OutlineInputBorder(),
                           ),
-                          //keyboardType: TextInputType.number,
+                          // keyboardType: TextInputType.number,
                         ),
                       ),
                       Padding(
@@ -105,10 +119,10 @@ class _LoginState extends State<Login> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),
                       child: Text(
-                        "Parolamı unututum",
+                        "Parolamı unuttum",
                         style: Theme.of(context)
                             .textTheme
-                            .bodyLarge!
+                            .bodyText1!
                             .copyWith(color: Colors.blueAccent),
                       ),
                     ),
