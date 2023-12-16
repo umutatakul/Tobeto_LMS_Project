@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/login.dart';
 
 void main() {
@@ -20,21 +21,29 @@ class TobetoApp extends StatelessWidget {
           displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
         ),
       ),
-      home: const MyHomePage(),
+
+      //Named Route-Routing eklendiği yer
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Login(),
+        '/home': (context) => const HomeScreen(),
+      },
+
+      //home: const MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
+//   @override
+//   State<MyHomePage> createState() => _MyHomePageState();
+// }
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return const Login();
-  }
-}
+// class _MyHomePageState extends State<MyHomePage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return const Login();
+//   }
+// }

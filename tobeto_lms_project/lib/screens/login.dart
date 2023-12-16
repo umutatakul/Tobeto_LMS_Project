@@ -27,36 +27,38 @@ class _LoginState extends State<Login> {
             Container(
               height: 70,
               child: DrawerHeader(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  SvgPicture.asset(
-                    "assets/svgs/tobeto_named_logo.svg",
-                    height: 40.0,
-                    //width: Null,
-                    //fit: BoxFit.cover,
-                  ),
-                  // SizedBox(
-                  //   width: 16,
-                  // ),
-                  IconButton(
-                    icon: const Icon(
-                      Icons.close_sharp,
-                      color: Colors.grey,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/svgs/tobeto_named_logo.svg",
+                      height: 40.0,
+                      //width: Null,
+                      //fit: BoxFit.cover,
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    iconSize: 30,
-                  )
-                ],
-              )),
+                    // SizedBox(
+                    //   width: 16,
+                    // ),
+                    IconButton(
+                      icon: const Icon(
+                        Icons.close_sharp,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      iconSize: 30,
+                    )
+                  ],
+                ),
+              ),
             ),
             ListTile(
               title: const Text("Anasayfa"),
               onTap: () {
                 Navigator.pop(context);
+                Navigator.of(context).pushNamed("/home");
               },
             ),
             ListTile(
