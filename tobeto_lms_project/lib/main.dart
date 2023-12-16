@@ -31,6 +31,10 @@ class TobetoApp extends StatelessWidget {
       darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
 
+      //Cihazın tema modunu terrminale şunları yazarak değiştiriyoruz :
+      //adb shell "cmd uimode night yes"
+      //adb shell "cmd uimode night no"
+
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
       routes: {
