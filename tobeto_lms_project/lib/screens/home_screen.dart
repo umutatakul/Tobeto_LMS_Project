@@ -110,8 +110,15 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: Text("Anasyafa"),
+      body: Center(
+        child: Column(
+          children: [
+            const Text("Anasyafa"),
+            ElevatedButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text("Geri dön"))
+          ],
+        ),
       ),
     );
   }

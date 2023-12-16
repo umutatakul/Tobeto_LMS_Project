@@ -227,7 +227,7 @@ class _LoginState extends State<Login> {
                         "Parolamı unuttum",
                         style: Theme.of(context)
                             .textTheme
-                            .bodyText1!
+                            .bodyLarge!
                             .copyWith(color: Colors.blueAccent),
                       ),
                     ),

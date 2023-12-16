@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static const ColorScheme lightColorScheme = ColorScheme(
@@ -27,13 +28,20 @@ class CustomTheme {
     onError: Colors.white,
     brightness: Brightness.dark,
   );
+
   static final ThemeData lightTheme = ThemeData.from(
     colorScheme: lightColorScheme,
+    textTheme: GoogleFonts.comicNeueTextTheme(
+        //Theme.of(context).textTheme,
+        ),
+
     //fontFamily: 'Roboto',
-    // Diğer stiller ve özellikler
   );
   static final ThemeData darkTheme = ThemeData.from(
     colorScheme: darkColorScheme,
+    textTheme: GoogleFonts.comicNeueTextTheme(
+        //Theme.of(context).textTheme,
+        ),
     //fontFamily: 'Roboto',
     // Diğer stiller ve özellikler
   );
