@@ -16,10 +16,10 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // drawerEnableOpenDragGesture: false,
-      // endDrawerEnableOpenDragGesture: false,
+      drawerEnableOpenDragGesture: false,
+      endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
-        title: Text("Tobeto Uygulaması"),
+        title: const Text("Tobeto Uygulaması"),
       ),
       drawer: Drawer(
         child: ListView(
@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
                   //   width: 16,
                   // ),
                   IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.close_sharp,
                       color: Colors.grey,
                     ),
@@ -54,37 +54,37 @@ class _LoginState extends State<Login> {
               )),
             ),
             ListTile(
-              title: Text("Anasayfa"),
+              title: const Text("Anasayfa"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Değerlendirmeler"),
+              title: const Text("Değerlendirmeler"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Profilim"),
+              title: const Text("Profilim"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Katalog"),
+              title: const Text("Katalog"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Takvim"),
+              title: const Text("Takvim"),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text("Tobeto"),
+              title: const Text("Tobeto"),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -95,12 +95,12 @@ class _LoginState extends State<Login> {
               ),
             ),
             Container(
-              margin: EdgeInsets.all(15.0),
+              margin: const EdgeInsets.all(15.0),
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.grey,
                 ),
-                borderRadius: BorderRadius.all(
+                borderRadius: const BorderRadius.all(
                   Radius.circular(20.0),
                 ),
               ),
@@ -112,7 +112,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            ListTile(
+            const ListTile(
               //leading: Icon(Icons.copyright), //Icon olarak eklenmek isterse
               title: Text(" \u00a9  2024 Tobeto"),
             )
@@ -175,7 +175,7 @@ class _LoginState extends State<Login> {
                             controller: parola,
                             obscureText: !isPasswordVisible,
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.lock_outlined),
+                              prefixIcon: const Icon(Icons.lock_outlined),
                               suffixIcon: InkWell(
                                 onTap: () {
                                   setState(() {
@@ -189,7 +189,7 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                               labelText: "Parola",
-                              border: OutlineInputBorder(),
+                              border: const OutlineInputBorder(),
                             ),
                             // keyboardType: TextInputType.number,
                           ),
