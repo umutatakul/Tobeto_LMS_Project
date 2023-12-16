@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/login.dart';
+import 'package:tobeto_lms_project/theme/custom_theme.dart';
 
 void main() {
   runApp(const TobetoApp());
@@ -13,14 +14,22 @@ class TobetoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Tobeto App ",
-      theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-        brightness: Brightness.light,
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-        ),
-      ),
+      theme:
+          // ThemeData(
+          //   useMaterial3: true,
+          //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
+          //   brightness: Brightness.light,
+          //   textTheme: const TextTheme(
+          //     displayLarge: TextStyle(
+          //       fontSize: 72,
+          //       fontWeight: FontWeight.bold,
+          //     ),
+          //   ),
+          // ),
+          //Ana temamızı (light) dark temamızı ve otomatik emam modumuzu belirliyoruz
+          CustomTheme.lightTheme,
+      darkTheme: CustomTheme.darkTheme,
+      themeMode: ThemeMode.system,
 
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
