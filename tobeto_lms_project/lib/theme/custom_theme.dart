@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Colors.blue,
+    primary: Colors.purple,
     secondary: Colors.green,
     surface: Colors.white,
     background: Colors.white,
     error: Colors.red,
-    onPrimary: Colors.purple,
+    onPrimary: Colors.white,
     onSecondary: Colors.white,
     onSurface: Colors.black,
     onBackground: Colors.black,

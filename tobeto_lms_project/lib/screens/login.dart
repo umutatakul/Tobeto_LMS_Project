@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
                     IconButton(
                       icon: const Icon(
                         Icons.close_sharp,
-                        color: Colors.grey,
+                        //color: Colors.grey,
                       ),
                       onPressed: () {
                         Navigator.pop(context);
@@ -90,7 +90,7 @@ class _LoginState extends State<Login> {
               onTap: () {
                 Navigator.pop(context);
               },
-              iconColor: Colors.grey,
+              //iconColor: Colors.grey,
               trailing: const Padding(
                 padding: EdgeInsets.only(right: 170),
                 child: Icon(Icons.home_outlined),
@@ -100,8 +100,8 @@ class _LoginState extends State<Login> {
               margin: const EdgeInsets.all(15.0),
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Colors.grey,
-                ),
+                    //color: Colors.grey,
+                    ),
                 borderRadius: const BorderRadius.all(
                   Radius.circular(20.0),
                 ),
@@ -133,8 +133,9 @@ class _LoginState extends State<Login> {
           aspectRatio: 11 / 13,
           child: Container(
             margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-            decoration: const BoxDecoration(
-              color: Colors.white,
+            decoration: BoxDecoration(
+              //color: Colors.white,
+              color: Theme.of(context).colorScheme.background,
               borderRadius: BorderRadius.all(
                 Radius.circular(20),
               ),
@@ -201,8 +202,11 @@ class _LoginState extends State<Login> {
                             //Size(double.infinity, 20);
                           },
                           style: ElevatedButton.styleFrom(
-                            foregroundColor: (Colors.white),
-                            backgroundColor: (Colors.purple),
+                            //foregroundColor: (Colors.white),
+                            foregroundColor:
+                                (Theme.of(context).colorScheme.onPrimary),
+                            backgroundColor:
+                                (Theme.of(context).colorScheme.primary),
                             fixedSize: const Size(double.maxFinite, 12.0),
                             shape: const ContinuousRectangleBorder(
                               borderRadius: BorderRadius.all(
@@ -229,6 +233,9 @@ class _LoginState extends State<Login> {
                             .textTheme
                             .bodyLarge!
                             .copyWith(color: Colors.blueAccent),
+                        //Burada temadan gelen rengi ezdik.
+                        // Böylece her iki temadada da (light ve dark)
+                        //Aynı renk kullanılacak
                       ),
                     ),
                   ),
