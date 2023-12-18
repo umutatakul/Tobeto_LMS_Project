@@ -18,8 +18,8 @@ class CustomTheme {
   static const ColorScheme darkColorScheme = ColorScheme(
     primary: Colors.white,
     secondary: Colors.yellow,
-    surface: Colors.black,
-    background: Colors.black,
+    surface: Color.fromARGB(255, 73, 16, 139),
+    background: Color.fromARGB(255, 73, 16, 139),
     error: Colors.red,
     onPrimary: Colors.purple,
     onSecondary: Colors.black,

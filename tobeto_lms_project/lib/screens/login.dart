@@ -15,6 +15,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    var brightness = View.of(context).platformDispatcher.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       //drawerEnableOpenDragGesture: false,
       //endDrawerEnableOpenDragGesture: false,
@@ -123,9 +125,11 @@ class _LoginState extends State<Login> {
       ),
       body: Container(
         alignment: Alignment.center,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/loginBackground.png"),
+            image: isDarkMode
+                ? const AssetImage("assets/images/loginBackgroundDark.png")
+                : const AssetImage("assets/images/loginBackgroundLight.png"),
             fit: BoxFit.fill,
           ),
         ),
