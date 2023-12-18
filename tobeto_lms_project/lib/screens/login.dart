@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tobeto_lms_project/background_auto.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    var brightness = View.of(context).platformDispatcher.platformBrightness;
-    bool isDarkMode = brightness == Brightness.dark;
+    // var brightness = View.of(context).platformDispatcher.platformBrightness;
+    // bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       //drawerEnableOpenDragGesture: false,
       //endDrawerEnableOpenDragGesture: false,
@@ -127,9 +128,10 @@ class _LoginState extends State<Login> {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: isDarkMode
-                ? const AssetImage("assets/images/loginBackgroundDark.png")
-                : const AssetImage("assets/images/loginBackgroundLight.png"),
+            image: backgroundAuto(),
+            // isDarkMode
+            //     ? const AssetImage("assets/images/loginBackgroundDark.png")
+            //     : const AssetImage("assets/images/loginBackgroundLight.png"),
             fit: BoxFit.fill,
           ),
         ),
