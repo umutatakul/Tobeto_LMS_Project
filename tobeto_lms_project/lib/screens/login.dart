@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
             decoration: BoxDecoration(
               //color: Colors.white,
               color: Theme.of(context).colorScheme.background,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),
             ),
@@ -157,11 +157,17 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.all(8.0),
                         child: TextField(
                           controller: kullaniciKodu,
-                          autofocus: true,
+                          autofocus: false,
                           decoration: const InputDecoration(
                             prefixIcon: Icon(Icons.person_2_outlined),
                             labelText: "Kullanıcı Kodu",
                             border: OutlineInputBorder(),
+                            //fillColor: Colors.blue,
+                            // focusedBorder: OutlineInputBorder(
+                            //   borderSide:
+                            //       BorderSide(color: Colors.grey, width: .5),
+                            // ),
+                            // focusColor: Colors.white,
                           ),
                           keyboardType: TextInputType.number,
                         ),

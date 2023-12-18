@@ -16,7 +16,7 @@ class CustomTheme {
     brightness: Brightness.light,
   );
   static const ColorScheme darkColorScheme = ColorScheme(
-    primary: Colors.black,
+    primary: Colors.white,
     secondary: Colors.yellow,
     surface: Colors.black,
     background: Colors.black,

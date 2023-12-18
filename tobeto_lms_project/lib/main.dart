@@ -4,7 +4,9 @@ import 'package:tobeto_lms_project/screens/login.dart';
 import 'package:tobeto_lms_project/theme/custom_theme.dart';
 
 void main() {
-  runApp(const TobetoApp());
+  runApp(
+    const TobetoApp(),
+  );
 }
 
 class TobetoApp extends StatelessWidget {
@@ -26,9 +28,22 @@ class TobetoApp extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          //Ana temamızı (light) dark temamızı ve otomatik emam modumuzu belirliyoruz
-          CustomTheme.lightTheme,
-      darkTheme: CustomTheme.darkTheme,
+
+          ThemeData.from(colorScheme: CustomTheme.lightColorScheme).copyWith(
+        drawerTheme: const DrawerThemeData()
+            .copyWith(backgroundColor: Colors.blueAccent.shade100),
+
+        // listTileTheme: const ListTileThemeData(
+        //   titleTextStyle: TextStyle(color: Colors.white),
+        //   style: ListTileStyle.list
+        // ),
+        textTheme: TextTheme(),
+      ),
+      //Ana temamızı light ve dark temamızı otomatik emam modumuzu belirliyoruz
+      //CustomTheme.lightTheme,
+      darkTheme:
+          ThemeData.from(colorScheme: CustomTheme.darkColorScheme).copyWith(),
+      //darkTheme: CustomTheme.darkTheme,
       themeMode: ThemeMode.system,
 
       //Cihazın tema modunu terrminale şunları yazarak değiştiriyoruz :
