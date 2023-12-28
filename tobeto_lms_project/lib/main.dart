@@ -29,9 +29,13 @@ class TobetoApp extends StatelessWidget {
           //   ),
           // ),
 
-          ThemeData.from(colorScheme: CustomTheme.lightColorScheme).copyWith(
-        drawerTheme: const DrawerThemeData()
-            .copyWith(backgroundColor: Colors.blueAccent.shade100),
+          ThemeData.from(
+        colorScheme: CustomTheme.lightColorScheme,
+        useMaterial3: false,
+      ).copyWith(
+        drawerTheme: const DrawerThemeData().copyWith(
+          backgroundColor: Colors.blueAccent.shade100,
+        ),
 
         // listTileTheme: const ListTileThemeData(
         //   titleTextStyle: TextStyle(color: Colors.white),
@@ -41,9 +45,11 @@ class TobetoApp extends StatelessWidget {
       ),
       //Ana temamızı light ve dark temamızı otomatik emam modumuzu belirliyoruz
       //CustomTheme.lightTheme,
+
       darkTheme:
           ThemeData.from(colorScheme: CustomTheme.darkColorScheme).copyWith(),
-      //darkTheme: CustomTheme.darkTheme,
+      // darkTheme: CustomTheme.darkTheme,
+
       themeMode: ThemeMode.system,
 
       //Cihazın tema modunu terrminale şunları yazarak değiştiriyoruz :
@@ -54,7 +60,7 @@ class TobetoApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Login(),
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) => HomeScreen(),
       },
 
       //home: const MyHomePage(),

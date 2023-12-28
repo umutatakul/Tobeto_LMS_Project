@@ -118,7 +118,7 @@ class _LoginState extends State<Login> {
             ),
             const ListTile(
               //leading: Icon(Icons.copyright), //Icon olarak eklenmek isterse
-              title: Text(" \u00a9  2024 Tobeto"),
+              title: Text(" \u00a9  2022 Tobeto"),
             )
           ],
         ),

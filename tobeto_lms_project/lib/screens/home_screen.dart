@@ -1,122 +1,276 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text("Anasayfa"),
+        backgroundColor: Colors.grey,
+        title: const Text('Home Page'),
       ),
-      drawer: Drawer(
-        child: ListView(
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              height: 70,
-              child: DrawerHeader(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SvgPicture.asset(
-                      "assets/svgs/tobeto_named_logo.svg",
-                      height: 40.0,
-                      //width: Null,
-                      //fit: BoxFit.cover,
-                    ),
-                    // SizedBox(
-                    //   width: 16,
-                    // ),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.close_sharp,
-                        color: Colors.grey,
+              padding: const EdgeInsets.only(
+                top: 5,
+              ),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.grey[200]!, Colors.grey[300]!],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      text: 'TOBETO',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.purple,
                       ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      iconSize: 30,
-                    )
+                      children: [
+                        TextSpan(
+                          text: "'ya hoşgeldin \n Furkan!",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 16),
+                  Center(
+                    child: Text(
+                      "Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin yanında!",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 16),
+            Card(
+              margin: EdgeInsets.all(16),
+              elevation: 4,
+              color: Colors.grey[200],
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "İstanbul Kodluyor",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Ücretsiz eğitimlerle, geleceğin mesleklerinde sen de yerini al.",
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Aradığın \"iş\" burada!",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 16),
+                    DefaultTabController(
+                      length: 4,
+                      child: Column(
+                        children: [
+                          TabBar(
+                            tabs: [
+                              Container(
+                                width: 120,
+                                child: Tab(text: "Başvurularım"),
+                              ),
+                              Container(
+                                width: 120,
+                                child: Tab(text: "Eğitimlerim"),
+                              ),
+                              Container(
+                                width: 120,
+                                child: Tab(text: "Duyurularım"),
+                              ),
+                              Container(
+                                width: 120,
+                                child: Tab(text: "Anketlerim"),
+                              ),
+                            ],
+                            labelColor: Colors.black,
+                            unselectedLabelColor: Colors.grey,
+                            indicatorColor: Colors.purple,
+                          ),
+                          SizedBox(height: 8),
+                          Container(
+                            height: 200,
+                            child: TabBarView(
+                              children: [
+                                Center(child: Text("Başvurularım İçeriği")),
+                                Center(child: Text("Eğitimlerim İçeriği")),
+                                Center(child: Text("Duyurularım İçeriği")),
+                                Center(child: Text("Anketlerim İçeriği")),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
             ),
-            ListTile(
-              title: const Text("Anasayfa"),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("/home");
-              },
-            ),
-            ListTile(
-              title: const Text("Değerlendirmeler"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Profilim"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Katalog"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Takvim"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Tobeto"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-              iconColor: Colors.grey,
-              trailing: const Padding(
-                padding: EdgeInsets.only(right: 170),
-                child: Icon(Icons.home_outlined),
-              ),
-            ),
+            SizedBox(height: 16),
             Container(
-              margin: const EdgeInsets.all(15.0),
+              padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.grey,
+                gradient: LinearGradient(
+                  colors: [Colors.purple[800]!, Colors.purple[200]!],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                 ),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20.0),
-                ),
+                borderRadius: BorderRadius.circular(8),
               ),
-              child: const ListTile(
-                title: Text("Kullanıcı Adı Soyadı"),
-                trailing: Padding(
-                  padding: EdgeInsets.only(right: 10.0),
-                  child: Icon(Icons.person_sharp),
-                ),
+              child: Text(
+                "Sınavlarım",
+                style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
               ),
             ),
-            const ListTile(
-              //leading: Icon(Icons.copyright), //Icon olarak eklenmek isterse
-              title: Text(" \u00a9  2024 Tobeto"),
-            )
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Card(
+                    elevation: 4,
+                    color: Colors.blue[800],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Profilini oluştur",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              // "Başla" butonuna basıldığında yapılacak işlemler
+                            },
+                            child: Text("Başla"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: Card(
+                    elevation: 3,
+                    color: Colors.blue[600],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(12),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Kendini Değerlendir",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              // "Başla" butonuna basıldığında yapılacak işlemler
+                            },
+                            child: Text("Başla"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 16),
+                Expanded(
+                  child: Card(
+                    elevation: 4,
+                    color: Colors.blue[400],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Öğrenmeye Başla",
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                          SizedBox(height: 8),
+                          ElevatedButton(
+                            onPressed: () {
+                              // "Başla" butonuna basıldığında yapılacak işlemler
+                            },
+                            child: Text("Başla"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          children: [
-            const Text("Anasyafa"),
-            ElevatedButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text("Geri dön"))
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.purple,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {},
+            ),
           ],
         ),
       ),

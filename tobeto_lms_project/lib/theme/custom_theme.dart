@@ -16,7 +16,7 @@ class CustomTheme {
     brightness: Brightness.light,
   );
   static const ColorScheme darkColorScheme = ColorScheme(
-    primary: Colors.white,
+    primary: Colors.yellow,
     secondary: Colors.yellow,
     surface: Color.fromARGB(255, 73, 16, 139),
     background: Color.fromARGB(255, 73, 16, 139),
