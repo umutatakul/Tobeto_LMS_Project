@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
       drawer: Drawer(
         child: ListView(
           children: [
-            Container(
+            SizedBox(
               height: 70,
               child: DrawerHeader(
                 child: Row(
@@ -206,8 +206,8 @@ class _LoginState extends State<Login> {
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           onPressed: () {
-                            print(kullaniciKodu.text);
-                            print(parola.text);
+                            //print(kullaniciKodu.text);
+                            //print(parola.text);
 
                             //Size(double.infinity, 20);
                           },
@@ -233,7 +233,7 @@ class _LoginState extends State<Login> {
                 Center(
                   child: InkWell(
                     onTap: () {
-                      print(" \"Parolamı unuttum\" tıklandı");
+                      //print(" \"Parolamı unuttum\" tıklandı");
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),

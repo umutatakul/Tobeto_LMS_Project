@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: 'TOBETO',
                       style: TextStyle(
                         fontSize: 18,
@@ -49,8 +49,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Center(
+                  const SizedBox(height: 16),
+                  const Center(
                     child: Text(
                       "Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin yanında!",
                       style: TextStyle(
@@ -62,15 +62,15 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Card(
-              margin: EdgeInsets.all(16),
+              margin: const EdgeInsets.all(16),
               elevation: 4,
               color: Colors.grey[200],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,19 +98,19 @@ class HomeScreen extends StatelessWidget {
                         children: [
                           TabBar(
                             tabs: [
-                              Container(
+                              SizedBox(
                                 width: 120,
                                 child: Tab(text: "Başvurularım"),
                               ),
-                              Container(
+                              SizedBox(
                                 width: 120,
                                 child: Tab(text: "Eğitimlerim"),
                               ),
-                              Container(
+                              SizedBox(
                                 width: 120,
                                 child: Tab(text: "Duyurularım"),
                               ),
-                              Container(
+                              SizedBox(
                                 width: 120,
                                 child: Tab(text: "Anketlerim"),
                               ),
@@ -120,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                             indicatorColor: Colors.purple,
                           ),
                           SizedBox(height: 8),
-                          Container(
+                          SizedBox(
                             height: 200,
                             child: TabBarView(
                               children: [
@@ -138,9 +138,9 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [Colors.purple[800]!, Colors.purple[200]!],
@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Text(
+              child: const Text(
                 "Sınavlarım",
                 style: TextStyle(
                     fontSize: 16,
@@ -157,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                     color: Colors.white),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -169,29 +169,29 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "Profilini oluştur",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () {
                               // "Başla" butonuna basıldığında yapılacak işlemler
                             },
-                            child: Text("Başla"),
+                            child: const Text("Başla"),
                           ),
                         ],
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Card(
                     elevation: 3,
@@ -200,29 +200,29 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "Kendini Değerlendir",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () {
                               // "Başla" butonuna basıldığında yapılacak işlemler
                             },
-                            child: Text("Başla"),
+                            child: const Text("Başla"),
                           ),
                         ],
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 Expanded(
                   child: Card(
                     elevation: 4,
@@ -231,22 +231,22 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(16),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "Öğrenmeye Başla",
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           ElevatedButton(
                             onPressed: () {
                               // "Başla" butonuna basıldığında yapılacak işlemler
                             },
-                            child: Text("Başla"),
+                            child: const Text("Başla"),
                           ),
                         ],
                       ),
@@ -264,11 +264,11 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.home),
+              icon: const Icon(Icons.home),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.settings),
+              icon: const Icon(Icons.settings),
               onPressed: () {},
             ),
           ],
