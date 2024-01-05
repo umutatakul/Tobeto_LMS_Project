@@ -16,32 +16,13 @@ class TobetoApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Tobeto App ",
-      theme:
-          // ThemeData(
-          //   useMaterial3: true,
-          //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
-          //   brightness: Brightness.light,
-          //   textTheme: const TextTheme(
-          //     displayLarge: TextStyle(
-          //       fontSize: 72,
-          //       fontWeight: FontWeight.bold,
-          //     ),
-          //   ),
-          // ),
-
-          ThemeData.from(
+      theme: ThemeData.from(
         colorScheme: CustomTheme.lightColorScheme,
         useMaterial3: false,
       ).copyWith(
         drawerTheme: const DrawerThemeData().copyWith(
           backgroundColor: Colors.blueAccent.shade100,
         ),
-
-        // listTileTheme: const ListTileThemeData(
-        //   titleTextStyle: TextStyle(color: Colors.white),
-        //   style: ListTileStyle.list
-        // ),
-        textTheme: TextTheme(),
       ),
       //Ana temamızı light ve dark temamızı otomatik emam modumuzu belirliyoruz
       //CustomTheme.lightTheme,
@@ -60,24 +41,10 @@ class TobetoApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const Login(),
-        '/home': (context) => HomeScreen(),
+        '/home': (context) => const HomeScreen(),
       },
 
       //home: const MyHomePage(),
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   const MyHomePage({super.key});
-
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Login();
-//   }
-// }
