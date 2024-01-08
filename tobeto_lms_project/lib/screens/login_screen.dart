@@ -16,6 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController parola = TextEditingController();
   bool isPasswordVisible = false;
 
+  final LoginStrings _loginStrings = LoginStrings();
+  final LoginAssets _loginAssets = LoginAssets();
+
   @override
   Widget build(BuildContext context) {
     //dark ya da normal mooda olduğumuzu kontrol etmek için :
@@ -25,16 +28,16 @@ class _LoginScreenState extends State<LoginScreen> {
       //drawerEnableOpenDragGesture: false,
       //endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
-        title: Text(LoginStrings().appBarTitleString),
+        title: Text(_loginStrings.appBarTitle),
       ),
-      drawer: const CustomDrawer(),
+      drawer: CustomDrawer(),
       body: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: isDarkMode
-                ? const AssetImage("assets/images/loginBackgroundDark.png")
-                : const AssetImage("assets/images/loginBackgroundLight.png"),
+                ? AssetImage(_loginAssets.loginBackgroundDarkPath)
+                : AssetImage(_loginAssets.loginBackGroundLightPath),
             fit: BoxFit.fill,
           ),
         ),
@@ -56,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
-                  child: SvgPicture.asset("assets/svgs/tobeto_named_logo.svg"),
+                  child: SvgPicture.asset(LoginAssets().namedLogoPath),
                 ),
                 Container(
                   margin: const EdgeInsets.only(left: 20, right: 20),
@@ -67,10 +70,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: TextField(
                           controller: kullaniciKodu,
                           autofocus: false,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(Icons.person_2_outlined),
-                            labelText: "Kullanıcı Kodu",
-                            border: OutlineInputBorder(),
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.person_2_outlined),
+                            labelText: _loginStrings.userCode,
+                            border: const OutlineInputBorder(),
                             //fillColor: Colors.blue,
                             // focusedBorder: OutlineInputBorder(
                             //   borderSide:
@@ -101,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     : Icons.visibility_off,
                               ),
                             ),
-                            labelText: "Parola",
+                            labelText: _loginStrings.password,
                             border: const OutlineInputBorder(),
                           ),
                           // keyboardType: TextInputType.number,
@@ -129,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ),
                           ),
-                          child: const Text("GİRİŞ YAP"),
+                          child: Text(LoginStrings().loginButton),
                         ),
                       ),
                     ],
@@ -143,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),
                       child: Text(
-                        "Parolamı unuttum",
+                        _loginStrings.forgottenPassword,
                         style: Theme.of(context)
                             .textTheme
                             .bodyLarge!

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tobeto_lms_project/paths/paths_of_login.dart';
+import 'package:tobeto_lms_project/paths/paths_of_custom_drawer.dart';
+import 'package:tobeto_lms_project/strings/custom_drawer_strings.dart';
 
 class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
-
+  CustomDrawer({Key? key}) : super(key: key);
+  final CustomDrawerStrings _customDrawerStrings = CustomDrawerStrings();
+  final CustomDrawerAssets _customDrawerAssets = CustomDrawerAssets();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -18,7 +20,7 @@ class CustomDrawer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   SvgPicture.asset(
-                    LoginAssets().namedLogoPath,
+                    _customDrawerAssets.namedLogoPath,
                     height: 40.0,
                     //width: Null,
                     //fit: BoxFit.cover,
@@ -41,38 +43,38 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text("Anasayfa"),
+            title: Text(_customDrawerStrings.mainScreen),
             onTap: () {
               Navigator.pop(context);
               Navigator.of(context).pushNamed("/home");
             },
           ),
           ListTile(
-            title: const Text("Değerlendirmeler"),
+            title: Text(_customDrawerStrings.reviews),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text("Profilim"),
+            title: Text(_customDrawerStrings.myProfile),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text("Katalog"),
+            title: Text(_customDrawerStrings.catalgue),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text("Takvim"),
+            title: Text(_customDrawerStrings.calendar),
             onTap: () {
               Navigator.pop(context);
             },
           ),
           ListTile(
-            title: const Text("Tobeto"),
+            title: Text(_customDrawerStrings.tobeto),
             onTap: () {
               Navigator.pop(context);
             },
@@ -92,17 +94,17 @@ class CustomDrawer extends StatelessWidget {
                 Radius.circular(20.0),
               ),
             ),
-            child: const ListTile(
-              title: Text("Kullanıcı Adı Soyadı"),
-              trailing: Padding(
+            child: ListTile(
+              title: Text(_customDrawerStrings.userName),
+              trailing: const Padding(
                 padding: EdgeInsets.only(right: 10.0),
                 child: Icon(Icons.person_sharp),
               ),
             ),
           ),
-          const ListTile(
+          ListTile(
             //leading: Icon(Icons.copyright), //Icon olarak eklenmek isterse
-            title: Text(" \u00a9  2022 Tobeto"),
+            title: Text(_customDrawerStrings.tobetoCopyrighted),
           )
         ],
       ),
