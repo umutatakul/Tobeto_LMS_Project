@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
-import 'package:tobeto_lms_project/screens/login.dart';
+import 'package:tobeto_lms_project/screens/login_screen.dart';
 import 'package:tobeto_lms_project/theme/custom_theme.dart';
 
 void main() {
@@ -40,7 +40,7 @@ class TobetoApp extends StatelessWidget {
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
       routes: {
-        '/': (context) => const Login(),
+        '/': (context) => const LoginScreen(),
         '/home': (context) => const HomeScreen(),
       },
 

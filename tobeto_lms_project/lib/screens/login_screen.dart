@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tobeto_lms_project/paths/paths_of_login.dart';
+import 'package:tobeto_lms_project/strings/login_screen_strings.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController kullaniciKodu = TextEditingController();
   TextEditingController parola = TextEditingController();
   bool isPasswordVisible = false;
@@ -21,7 +23,7 @@ class _LoginState extends State<Login> {
       //drawerEnableOpenDragGesture: false,
       //endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
-        title: const Text("Tobeto Uygulaması"),
+        title: Text(LoginStrings().appBarTitleString),
       ),
       drawer: Drawer(
         child: ListView(
@@ -34,7 +36,7 @@ class _LoginState extends State<Login> {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     SvgPicture.asset(
-                      "assets/svgs/tobeto_named_logo.svg",
+                      LoginAssets().namedLogoPath,
                       height: 40.0,
                       //width: Null,
                       //fit: BoxFit.cover,
