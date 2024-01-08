@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tobeto_lms_project/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/strings/login_screen_strings.dart';
+import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //dark ya da normal mooda olduğumuzu kontrol etmek için :
     var brightness = View.of(context).platformDispatcher.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
@@ -25,106 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         title: Text(LoginStrings().appBarTitleString),
       ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            SizedBox(
-              height: 70,
-              child: DrawerHeader(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    SvgPicture.asset(
-                      LoginAssets().namedLogoPath,
-                      height: 40.0,
-                      //width: Null,
-                      //fit: BoxFit.cover,
-                    ),
-                    // SizedBox(
-                    //   width: 16,
-                    // ),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.close_sharp,
-                        //color: Colors.grey,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      iconSize: 30,
-                    )
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text("Anasayfa"),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.of(context).pushNamed("/home");
-              },
-            ),
-            ListTile(
-              title: const Text("Değerlendirmeler"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Profilim"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Katalog"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Takvim"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              title: const Text("Tobeto"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-              //iconColor: Colors.grey,
-              trailing: const Padding(
-                padding: EdgeInsets.only(right: 170),
-                child: Icon(Icons.home_outlined),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(15.0),
-              decoration: BoxDecoration(
-                border: Border.all(
-                    //color: Colors.grey,
-                    ),
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(20.0),
-                ),
-              ),
-              child: const ListTile(
-                title: Text("Kullanıcı Adı Soyadı"),
-                trailing: Padding(
-                  padding: EdgeInsets.only(right: 10.0),
-                  child: Icon(Icons.person_sharp),
-                ),
-              ),
-            ),
-            const ListTile(
-              //leading: Icon(Icons.copyright), //Icon olarak eklenmek isterse
-              title: Text(" \u00a9  2022 Tobeto"),
-            )
-          ],
-        ),
-      ),
+      drawer: const CustomDrawer(),
       body: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
