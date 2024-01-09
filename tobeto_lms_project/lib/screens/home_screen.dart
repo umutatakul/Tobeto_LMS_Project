@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.grey,
         title: const Text('Home Page'),
       ),
+      drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
