@@ -29,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
       //endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
         title: Text(_loginStrings.appBarTitle),
+        centerTitle: true,
       ),
       drawer: CustomDrawer(),
       body: Container(

@@ -10,7 +10,9 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: const Text('Home Page'),
+        title: const Text('Anasayfa'),
+        //automaticallyImplyLeading: false,
+        centerTitle: true,
       ),
       drawer: CustomDrawer(),
       body: SingleChildScrollView(
