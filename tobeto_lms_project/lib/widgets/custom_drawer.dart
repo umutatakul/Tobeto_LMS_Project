@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tobeto_lms_project/paths/paths_of_custom_drawer.dart';
+import 'package:tobeto_lms_project/screens/calendar_screen.dart';
+import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
+import 'package:tobeto_lms_project/screens/profile_screen.dart';
+import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/strings/custom_drawer_strings.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -53,24 +57,35 @@ class CustomDrawer extends StatelessWidget {
             title: Text(_customDrawerStrings.reviews),
             onTap: () {
               Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ReviewScreen()));
             },
           ),
           ListTile(
             title: Text(_customDrawerStrings.myProfile),
             onTap: () {
               Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ProfileScreen(),
+              ));
             },
           ),
           ListTile(
-            title: Text(_customDrawerStrings.catalgue),
+            title: Text(_customDrawerStrings.catalogue),
             onTap: () {
               Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const CatalogueScreen(),
+              ));
             },
           ),
           ListTile(
             title: Text(_customDrawerStrings.calendar),
             onTap: () {
               Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const CalendarScreen(),
+              ));
             },
           ),
           ListTile(

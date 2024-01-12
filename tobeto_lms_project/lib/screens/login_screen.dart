@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    //dark ya da normal mooda olduğumuzu kontrol etmek için :
+    //dark ya da normal modda olduğumuzu kontrol etmek için :
     var brightness = View.of(context).platformDispatcher.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
@@ -31,7 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text(_loginStrings.appBarTitle),
         centerTitle: true,
       ),
-      drawer: CustomDrawer(),
       body: Container(
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -115,6 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.all(8.0),
                         child: ElevatedButton(
                           onPressed: () {
+                            Navigator.of(context).pushNamed("/home");
                             //print(kullaniciKodu.text);
                             //print(parola.text);
 

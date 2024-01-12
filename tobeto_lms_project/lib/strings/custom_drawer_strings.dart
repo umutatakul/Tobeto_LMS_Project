@@ -2,7 +2,7 @@ class CustomDrawerStrings {
   final mainScreen = "Anasayfa";
   final reviews = "Değerlendirmeler";
   final myProfile = "Profilim";
-  final catalgue = "Katalog";
+  final catalogue = "Katalog";
   final calendar = "Takvim";
   final tobeto = "Tobeto";
   final userName = "Kullanıcı Adı Soyadı";
