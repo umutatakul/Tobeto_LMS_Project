@@ -4,6 +4,7 @@ import 'package:tobeto_lms_project/constants/paths/paths_of_custom_drawer.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
+import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/constants/strings/custom_drawer_strings.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer_widgets/drawer_container/drawer_container_one.dart';
@@ -46,6 +47,9 @@ class CustomDrawer extends StatelessWidget {
           CustomListTileOne(
               listTileName: _customDrawerStrings.reviews,
               targetScreen: const ReviewScreen()),
+          CustomListTileOne(
+              listTileName: CustomDrawerStrings().myProfile,
+              targetScreen: const ProfileScreen()),
           CustomListTileOne(
               listTileName: _customDrawerStrings.catalogue,
               targetScreen: const CatalogueScreen()),
