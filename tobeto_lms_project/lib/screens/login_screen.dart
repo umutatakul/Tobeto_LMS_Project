@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tobeto_lms_project/paths/paths_of_login.dart';
-import 'package:tobeto_lms_project/strings/login_screen_strings.dart';
-import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
+import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
+import 'package:tobeto_lms_project/constants/strings/login_screen_strings.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
