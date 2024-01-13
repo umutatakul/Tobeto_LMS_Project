@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -90,6 +91,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               ),
               BirthdateCardProfile(
                   birthdate: widget.mockDataFirstCard.birthdate),
+              MailCardProfile(mail: widget.mockDataFirstCard.mail),
             ],
           ),
         ),
