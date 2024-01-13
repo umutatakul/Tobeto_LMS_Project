@@ -2,7 +2,7 @@ import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
-import 'package:tobeto_lms_project/widgets/custom_drawer_widgets/profile_widget/name_surname.dart';
+import 'package:tobeto_lms_project/widgets/custom_drawer_widgets/profile_widget/name_surname_card_profile.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
@@ -82,14 +82,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   ),
                 ),
               ),
-              const Card(
-                child: ListTile(
-                  subtitle: Text("Ad Soyad"),
-                  title: Text("Eyüp Sabri Esenkal"),
-                ),
-              ),
               NameSurnameCardProfile(
-                  icon: Icon(Icons.person),
                   name: widget.mockDataFirstCard.name,
                   surname: widget.mockDataFirstCard.surname)
             ],

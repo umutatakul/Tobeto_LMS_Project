@@ -18,10 +18,9 @@ class NameSurnameCardProfile extends CustomizableCardMainInformation {
   const NameSurnameCardProfile(
       {super.key,
       super.litleTitle = "Ad Soyad",
-      super.bigtext = "Eyüp Sabri",
-      required super.icon,
       required this.name,
-      required this.surname});
+      required this.surname})
+      : super(bigtext: "$name $surname", icon: const Icon(Icons.person));
 
   final String name;
   final String surname;

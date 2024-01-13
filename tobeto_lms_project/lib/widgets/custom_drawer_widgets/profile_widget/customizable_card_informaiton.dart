@@ -18,19 +18,22 @@ class CustomizableCardMainInformation extends StatelessWidget {
       alignment: Alignment.centerLeft,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              litleTitle,
-              style: const TextStyle(color: Colors.blueGrey),
-            ),
-            Text(
-              bigtext,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-          ],
-        ),
+        child: Row(children: [
+          icon,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                litleTitle,
+                style: const TextStyle(color: Colors.blueGrey),
+              ),
+              Text(
+                bigtext,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ],
+          ),
+        ]),
       ),
     );
   }
