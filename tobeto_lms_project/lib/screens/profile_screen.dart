@@ -1,6 +1,7 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 
@@ -33,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen>
             baseColor: Colors.purple,
             //SvgPicture.asset(LoginAssets().namedLogoPath)
             image: Image(
-              image: NetworkImage(widget.mockDataFirstCard.profilePictureLink),
+              image: NetworkImage(ProfileAssets().animatedParticleLink),
             ),
           ),
         ),
@@ -72,7 +73,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   child: CircleAvatar(
                     backgroundColor: Colors.blue.shade400,
                     child: Image.network(
-                      "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg",
+                      widget.mockDataFirstCard.profilePictureLink,
                       width: 120,
                       height: 120,
                       fit: BoxFit.cover,

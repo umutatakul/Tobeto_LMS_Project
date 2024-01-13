@@ -3,7 +3,8 @@ import 'package:tobeto_lms_project/models/course.dart';
 //Profile information  data
 class ProfileInformationData {
   final String profilePictureLink =
-      "https://img1.pngindir.com/20180318/bew/kisspng-letter-alphabet-clip-art-letter-t-cliparts-5aae4189dbe055.9952143915213694819006.jpg";
+      "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg";
+
   final String name = "Eyüp Sabri";
   final String surname = "Esenkal";
   final birthdate = "05.05.1789";
