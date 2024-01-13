@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tobeto_lms_project/widgets/custom_drawer_widgets/profile_widget/customizable_card_informaiton.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/customizable_card_informaiton.dart';
 
 // class NameSurnameCardProfile extends StatelessWidget {
 //   const NameSurnameCardProfile(
