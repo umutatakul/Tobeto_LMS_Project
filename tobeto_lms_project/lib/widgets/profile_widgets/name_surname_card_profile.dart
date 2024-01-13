@@ -20,7 +20,10 @@ class NameSurnameCardProfile extends CustomizableCardMainInformation {
       super.litleTitle = "Ad Soyad",
       required this.name,
       required this.surname})
-      : super(bigtext: "$name $surname", icon: const Icon(Icons.person));
+      : super(
+          bigtext: "$name $surname",
+          icon: const Icon(Icons.person),
+        );
 
   final String name;
   final String surname;
