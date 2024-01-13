@@ -1,5 +1,17 @@
 import 'package:tobeto_lms_project/models/course.dart';
 
+//Profile information  data
+class ProfileInformationData {
+  final String profilePictureLink =
+      "https://img1.pngindir.com/20180318/bew/kisspng-letter-alphabet-clip-art-letter-t-cliparts-5aae4189dbe055.9952143915213694819006.jpg";
+  final String name = "Eyüp Sabri";
+  final String surname = "Esenkal";
+  final birthdate = "05.05.1789";
+  final mail = "eyupsabrie79@hotmail.com";
+  final phoneNumber = "4440375";
+}
+
+//Course information for Catalogue
 List courseList = [
   Course(
       id: "1",

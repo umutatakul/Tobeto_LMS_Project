@@ -39,12 +39,18 @@ class CourseCard extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(
-                        course.author,
-                        style: Theme.of(context).textTheme.titleLarge,
-                        textAlign: TextAlign.right,
-                      ),
                       const Icon(FontAwesomeIcons.personChalkboard),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 15.0),
+                        child: Text(
+                          course.author,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge!
+                              .copyWith(color: Colors.white),
+                          textAlign: TextAlign.right,
+                        ),
+                      ),
                     ],
                   ),
                   RatingBar.builder(
