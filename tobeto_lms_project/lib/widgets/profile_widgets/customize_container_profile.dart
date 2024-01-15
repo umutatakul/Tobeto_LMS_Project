@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-abstract class CustomizeContainer extends StatelessWidget {
-  const CustomizeContainer({
-    super.key,
-  });
+abstract class CustomizeContainerProfile extends StatelessWidget {
+  const CustomizeContainerProfile({super.key, required this.title});
+  final String title;
 
   @override
   Widget build(BuildContext context) {

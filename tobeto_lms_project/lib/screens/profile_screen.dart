@@ -12,6 +12,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/media_acount_field.da
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/phone_number_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/skills_field_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/succes_model_profile_field.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
@@ -113,7 +114,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                     title: "Yabancı Dillerim",
                     languageDataList: widget.languageList),
                 const CertificatesField(),
-                const MediaAccountField()
+                const MediaAccountField(
+                  title: "Medya Hesapları",
+                ),
+                const SuccesModelProfileField(title: "Tobeto Bşaraı Modeli")
               ],
             ),
           ),

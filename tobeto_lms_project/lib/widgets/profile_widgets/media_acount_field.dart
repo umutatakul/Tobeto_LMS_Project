@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tobeto_lms_project/widgets/profile_widgets/customize_container.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/customize_container_profile.dart';
 
-class MediaAccountField extends CustomizeContainer {
-  const MediaAccountField({super.key});
+class MediaAccountField extends CustomizeContainerProfile {
+  const MediaAccountField({super.key, required super.title});
 
-  //TODO Burada nasıl şu değeri fonksiyona vereceğimi beceremedim.
-  final double iconSize = 70;
+  final double ourIconSize = 70.0;
 
   @override
   Widget insideOfContainer() {
-    return const Column(
+    return Column(
       children: [
-        Card(
+        const Card(
           child: ListTile(
             title: Text("Medya Hesapları"),
           ),
@@ -22,15 +21,15 @@ class MediaAccountField extends CustomizeContainer {
           children: [
             Icon(
               FontAwesomeIcons.squareInstagram,
-              size: 70,
+              size: ourIconSize,
             ),
             Icon(
               FontAwesomeIcons.linkedinIn,
-              size: 70,
+              size: ourIconSize,
             ),
             Icon(
               FontAwesomeIcons.github,
-              size: 80,
+              size: ourIconSize,
             ),
           ],
         )

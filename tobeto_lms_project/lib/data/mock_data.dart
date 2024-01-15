@@ -24,6 +24,15 @@ class ProfileInformationData {
     Language(languageName: "Almanca", languageLevel: "A2"),
     Language(languageName: "Fransızca", languageLevel: "A1"),
   ];
+  final Map<String, double> dataMap = {
+    "Yeni dünyaya hazırlanıyorum": 4.2,
+    "Profesyonel duruşumu geliştiriyorum": 4.4,
+    "Kendimi tanıyor ve yönetiyorum": 4.5,
+    "Yaratıcı ve doğru çözümler geliştiriyorum": 4,
+    "Kendimi sürekli geliştiriyorumG": 4.8,
+    "Başkaları ile birlikte çalışıyorum": 4.1,
+    "Sonuç ve başarı odaklıyım": 4.2,
+  };
 }
 
 //Course information for Catalogue
