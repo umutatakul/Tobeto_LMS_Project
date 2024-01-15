@@ -5,7 +5,7 @@ class LanguageFieldProfile extends StatelessWidget {
   const LanguageFieldProfile(
       {super.key, required this.title, required this.languageDataList});
   final String title;
-  final languageDataList;
+  final List languageDataList;
 
   @override
   Widget build(BuildContext context) {

@@ -8,6 +8,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profil
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/language_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/media_acount_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/phone_number_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/skills_field_profile.dart';
@@ -111,7 +112,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                 LanguageFieldProfile(
                     title: "Yabancı Dillerim",
                     languageDataList: widget.languageList),
-                CertificatesField(),
+                const CertificatesField(),
+                const MediaAccountField()
               ],
             ),
           ),
