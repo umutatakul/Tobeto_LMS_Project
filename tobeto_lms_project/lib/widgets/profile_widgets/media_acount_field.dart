@@ -4,6 +4,8 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/customize_container.d
 
 class MediaAccountField extends CustomizeContainer {
   const MediaAccountField({super.key});
+
+  //TODO Burada nasıl şu değeri fonksiyona vereceğimi beceremedim.
   final double iconSize = 70;
 
   @override
