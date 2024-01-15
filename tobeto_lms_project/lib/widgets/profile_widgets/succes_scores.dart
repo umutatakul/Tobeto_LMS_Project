@@ -6,11 +6,15 @@ class SuccesScores extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Row(children: [
-      ListTile(
-        title: Text("SuccesScores"),
+      Expanded(
+        child: ListTile(
+          title: Text("SuccesScores"),
+        ),
       ),
-      ListTile(
-        title: Text("SuccesScores"),
+      Expanded(
+        child: ListTile(
+          title: Text("SuccesScores"),
+        ),
       ),
     ]);
   }
