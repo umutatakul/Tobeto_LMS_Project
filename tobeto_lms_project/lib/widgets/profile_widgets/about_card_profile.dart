@@ -42,8 +42,13 @@ class AboutCardProfile extends StatelessWidget {
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text(informationText,
-                    style: Theme.of(context).textTheme.bodyLarge),
+                child: Text(
+                  informationText,
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayMedium!
+                      .copyWith(fontSize: 22),
+                ),
               ),
             ),
           )),

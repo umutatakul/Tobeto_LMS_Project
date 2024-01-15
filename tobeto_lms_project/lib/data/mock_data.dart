@@ -1,4 +1,6 @@
 import 'package:tobeto_lms_project/models/course.dart';
+import 'package:tobeto_lms_project/models/language.dart';
+import 'package:tobeto_lms_project/models/skill.dart';
 
 //Profile information  data
 class ProfileInformationData {
@@ -10,6 +12,18 @@ class ProfileInformationData {
   final birthdate = "05.05.1789";
   final mail = "eyupsabrie79@hotmail.com";
   final phoneNumber = "+904440375";
+  final skills = [
+    Skill(skillName: "Kotlin"),
+    Skill(skillName: "Python"),
+    Skill(skillName: "Excel"),
+    Skill(skillName: "English"),
+  ];
+  final languages = [
+    Language(languageName: "Türkçe", languageLevel: "Main"),
+    Language(languageName: "İngilizce", languageLevel: "B1"),
+    Language(languageName: "Almanca", languageLevel: "A2"),
+    Language(languageName: "Fransızca", languageLevel: "A1"),
+  ];
 }
 
 //Course information for Catalogue

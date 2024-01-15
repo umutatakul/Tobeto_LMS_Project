@@ -5,14 +5,19 @@ import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/language_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/phone_number_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/skills_field_profile.dart';
 
 class ProfileScreen extends StatefulWidget {
   ProfileScreen({Key? key}) : super(key: key);
   //final cardMainInformation = CardMainInformation();
   final mockDataFirstCard = ProfileInformationData();
+  final List skillsList = ProfileInformationData().skills;
+  final List languageList = ProfileInformationData().languages;
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
@@ -99,6 +104,14 @@ class _ProfileScreenState extends State<ProfileScreen>
                     telephone: widget.mockDataFirstCard.phoneNumber),
                 const AboutCardProfile(
                     title: "Hakkında", informationText: "Metin bla bla bla"),
+                SkillsFieldProfile(
+                  title: "Yetkinliklerim",
+                  skillDataList: widget.skillsList,
+                ),
+                LanguageFieldProfile(
+                    title: "Yabancı Dillerim",
+                    languageDataList: widget.languageList),
+                CertificatesField(),
               ],
             ),
           ),
