@@ -39,15 +39,19 @@ class CatalogueScreen extends StatelessWidget {
             )
           ]),
           Expanded(
-              child: GridView(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 1, childAspectRatio: 1.6),
-            children: [
-              for (final shownCourse in courseList)
-                CourseCard(
-                  course: shownCourse,
-                )
-            ],
+              child: ListView.builder(
+            scrollDirection: Axis.vertical,
+            itemCount: courseList.length,
+            itemBuilder: (ctx, index) {
+              return CourseCard(course: courseList[index]);
+            },
+
+            // children: [
+            //   // for (final shownCourse in courseList)
+            //   //   CourseCard(
+            //   //     course: shownCourse,
+            //   //   )
+            // ],
           ))
         ],
       ),

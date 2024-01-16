@@ -8,7 +8,6 @@ class SuccesModelProfileField extends CustomizeContainerProfile {
 
   @override
   Widget insideOfContainer() {
-    //TODO Column u Row yapıcna hata veriyor
     return Column(
       children: [
         CustomizableRadarChart(),

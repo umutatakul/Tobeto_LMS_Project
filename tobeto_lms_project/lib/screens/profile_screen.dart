@@ -1,7 +1,5 @@
-import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 import 'package:tobeto_lms_project/constants/strings/profile_screen_strings.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/screens/custom_animated_background_body.dart';
@@ -9,6 +7,7 @@ import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/language_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/media_acount_field.dart';
@@ -47,11 +46,13 @@ class _ProfileScreenState extends State<ProfileScreen>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
+                        //TODO Buraya kaydetme ve paylaşam özelliği ekle
                         Icon(Icons.share),
                         SizedBox(
                           width: 20,
                         ),
                         Icon(FontAwesomeIcons.penToSquare),
+                        //TODO Düzenleme sayfası yarat
                       ],
                     ),
                   ),
@@ -106,7 +107,14 @@ class _ProfileScreenState extends State<ProfileScreen>
                     title: widget.profileStrings.socialMediaAccounts,
                   ),
                   SuccesModelProfileField(
-                      title: widget.profileStrings.tobetoSuccesModel)
+                      title: widget.profileStrings.tobetoSuccesModel),
+
+                  //Tobeto Sviye Testleri ekleencek
+                  //Yetkinlik Rozetlerim ekleencek
+                  //Aktivite Haritam ekelencek
+                  //Eğitim hayatım ve deneyimler
+                  //Footer yarat
+                  FooterFieldProfile(),
                 ],
               ),
             ),
