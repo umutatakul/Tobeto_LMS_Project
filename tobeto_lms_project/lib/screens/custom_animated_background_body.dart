@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 
 class CustomAnimatedBackgroundBody extends StatefulWidget {
-  const CustomAnimatedBackgroundBody({Key? key, required this.body})
+  CustomAnimatedBackgroundBody({Key? key, required this.body})
       : super(key: key);
   final Widget body;
+  final String animatedParticleLink = ProfileAssets().animatedParticleLink;
 
   @override
   _CustomAnimatedBackgroundBodyState createState() =>
@@ -26,15 +27,15 @@ class _CustomAnimatedBackgroundBodyState
             minOpacity: 0.3,
             spawnOpacity: 0.4,
             baseColor: Colors.purple,
-            //SvgPicture.asset(LoginAssets().namedLogoPath)
             image: Image(
-              image: NetworkImage(ProfileAssets().animatedParticleLink),
+              image: NetworkImage(widget.animatedParticleLink),
             ),
           ),
         ),
 
         //vsync: this,
         vsync: this,
+        //backgroudn'un sütüne alıancak body'yi burda çağırıyoruz.
         child: widget.body);
   }
 }
