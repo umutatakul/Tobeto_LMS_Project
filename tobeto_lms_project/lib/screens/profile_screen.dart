@@ -2,6 +2,7 @@ import 'package:animated_background/animated_background.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
+import 'package:tobeto_lms_project/constants/strings/profile_screen_strings.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
@@ -20,7 +21,7 @@ class ProfileScreen extends StatefulWidget {
   final mockDataFirstCard = ProfileInformationData();
   final List skillsList = ProfileInformationData().skills;
   final List languageList = ProfileInformationData().languages;
-
+  final profileStrings = ProfileScreenStrings();
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
@@ -31,7 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Profilim"),
+        title: Text(widget.profileStrings.myProfile),
       ),
       body: AnimatedBackground(
         behaviour: RandomParticleBehaviour(
@@ -104,20 +105,23 @@ class _ProfileScreenState extends State<ProfileScreen>
                 MailCardProfile(mail: widget.mockDataFirstCard.mail),
                 PhoneNumberCardProfile(
                     telephone: widget.mockDataFirstCard.phoneNumber),
-                const AboutCardProfile(
-                    title: "Hakkında", informationText: "Metin bla bla bla"),
+                AboutCardProfile(
+                    title: widget.profileStrings.about,
+                    informationText: "Metin bla bla bla"),
                 SkillsFieldProfile(
-                  title: "Yetkinliklerim",
+                  title: widget.profileStrings.mySkills,
                   skillDataList: widget.skillsList,
                 ),
                 LanguageFieldProfile(
-                    title: "Yabancı Dillerim",
-                    languageDataList: widget.languageList),
-                const CertificatesFieldProfile(),
-                const MediaAccountField(
-                  title: "Medya Hesapları",
+                  title: widget.profileStrings.languages,
+                  languageDataList: widget.languageList,
                 ),
-                const SuccesModelProfileField(title: "Tobeto Bşaraı Modeli")
+                const CertificatesFieldProfile(),
+                MediaAccountField(
+                  title: widget.profileStrings.socialMediaAccounts,
+                ),
+                SuccesModelProfileField(
+                    title: widget.profileStrings.tobetoSuccesModel)
               ],
             ),
           ),
