@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CertificatesField extends StatelessWidget {
-  const CertificatesField({Key? key}) : super(key: key);
+class CertificatesFieldProfile extends StatelessWidget {
+  const CertificatesFieldProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

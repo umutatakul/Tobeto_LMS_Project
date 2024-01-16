@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomizableCardMainInformation extends StatelessWidget {
-  const CustomizableCardMainInformation(
+class CustomizableCardMainInformationProfile extends StatelessWidget {
+  const CustomizableCardMainInformationProfile(
       {super.key,
       required this.litleTitle,
       required this.bigtext,

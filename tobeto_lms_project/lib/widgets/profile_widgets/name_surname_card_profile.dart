@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tobeto_lms_project/widgets/profile_widgets/customizable_card_informaiton.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/customizable_card_informaiton_profile.dart';
 
 // class NameSurnameCardProfile extends StatelessWidget {
 //   const NameSurnameCardProfile(
@@ -14,7 +14,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/customizable_card_inf
 //   }
 // }
 
-class NameSurnameCardProfile extends CustomizableCardMainInformation {
+class NameSurnameCardProfile extends CustomizableCardMainInformationProfile {
   const NameSurnameCardProfile(
       {super.key,
       super.litleTitle = "Ad Soyad",
