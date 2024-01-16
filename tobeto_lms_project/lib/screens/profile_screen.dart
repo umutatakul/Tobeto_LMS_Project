@@ -98,6 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     title: widget.profileStrings.mySkills,
                     skillDataList: widget.skillsList,
                   ),
+                  //-------------------Dil Profili------------------
                   LanguageFieldProfile(
                     title: widget.profileStrings.languages,
                     languageDataList: widget.languageList,

@@ -21,9 +21,9 @@ class _CustomAnimatedBackgroundBodyState
         behaviour: RandomParticleBehaviour(
           options: ParticleOptions(
             spawnMaxRadius: 50,
-            spawnMinSpeed: 10.00,
+            spawnMinSpeed: 5.00,
             particleCount: 68,
-            spawnMaxSpeed: 50,
+            spawnMaxSpeed: 10,
             minOpacity: 0.3,
             spawnOpacity: 0.4,
             baseColor: Colors.purple,

@@ -11,7 +11,6 @@ class CourseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      height: 200,
       padding: const EdgeInsets.all(18),
       margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(

@@ -39,19 +39,22 @@ class CatalogueScreen extends StatelessWidget {
             )
           ]),
           Expanded(
-              child: ListView.builder(
-            scrollDirection: Axis.vertical,
-            itemCount: courseList.length,
-            itemBuilder: (ctx, index) {
-              return CourseCard(course: courseList[index]);
-            },
+              child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+              itemCount: courseList.length,
+              itemBuilder: (ctx, index) {
+                return CourseCard(course: courseList[index]);
+              },
 
-            // children: [
-            //   // for (final shownCourse in courseList)
-            //   //   CourseCard(
-            //   //     course: shownCourse,
-            //   //   )
-            // ],
+              // children: [
+              //   // for (final shownCourse in courseList)
+              //   //   CourseCard(
+              //   //     course: shownCourse,
+              //   //   )
+              // ],
+            ),
           ))
         ],
       ),
