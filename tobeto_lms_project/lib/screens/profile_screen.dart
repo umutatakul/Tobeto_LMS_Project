@@ -5,6 +5,7 @@ import 'package:tobeto_lms_project/constants/paths/paths_of_profile.dart';
 import 'package:tobeto_lms_project/constants/strings/profile_screen_strings.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/screens/custom_animated_background_body.dart';
+import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field_profile.dart';
@@ -35,6 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen>
         appBar: AppBar(
           title: Text(widget.profileStrings.myProfile),
         ),
+        drawer: CustomDrawer(),
         body: CustomAnimatedBackgroundBody(
           body: Center(
             child: SingleChildScrollView(
