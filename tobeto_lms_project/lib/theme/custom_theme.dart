@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Colors.purple,
+    primary: Colors.purple, //appbar background
     secondary: Colors.green,
-    surface: Colors.white,
-    background: Colors.white,
+    surface: Colors.white, //Listile vs backgroun
+    background: Colors.white, //body backgorund
     error: Colors.red,
-    onPrimary: Colors.white,
+    onPrimary: Colors.white, //Appbar text
     onSecondary: Colors.white,
     onSurface: Colors.black,
     onBackground: Colors.black,
@@ -31,7 +31,7 @@ class CustomTheme {
 
   static final ThemeData lightTheme = ThemeData.from(
     colorScheme: lightColorScheme,
-    textTheme: GoogleFonts.tinosTextTheme(
+    textTheme: GoogleFonts.comicNeueTextTheme(
         //Theme.of(context).textTheme,
         ),
 
