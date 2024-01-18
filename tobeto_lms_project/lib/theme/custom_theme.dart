@@ -39,7 +39,7 @@ class CustomTheme {
   );
   static final ThemeData darkTheme = ThemeData.from(
     colorScheme: darkColorScheme,
-    textTheme: GoogleFonts.tinosTextTheme(
+    textTheme: GoogleFonts.comicNeueTextTheme(
         //Theme.of(context).textTheme,
         ),
     //fontFamily: 'Roboto',

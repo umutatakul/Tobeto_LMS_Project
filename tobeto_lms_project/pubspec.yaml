@@ -96,5 +96,14 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+  # fonts:
+  #   - family: ComicNeue
+  #     fonts:
+  #       - asset: packages/google_fonts/fonts/ComicNeue-Regular.ttf
+  #       - asset: packages/google_fonts/fonts/ComicNeue-Bold.ttf
+  #   - family: Tinos
+  #     fonts:
+  #       - asset: packages/google_fonts/fonts/Tinos-Regular.ttf
+  #       - asset: packages/google_fonts/fonts/Tinos-Bold.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
