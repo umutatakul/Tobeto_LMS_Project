@@ -33,7 +33,7 @@ class CustomizableRadarChart extends StatelessWidget {
           showChartValues: true,
           showChartValuesInPercentage: false,
           showChartValuesOutside: false,
-          decimalPlaces: 1,
+          decimalPlaces: 2,
         ),
       ),
     );

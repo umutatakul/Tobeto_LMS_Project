@@ -26,10 +26,14 @@ class _CustomAnimatedBackgroundBodyState
             spawnMaxSpeed: 10,
             minOpacity: 0.3,
             spawnOpacity: 0.4,
-            baseColor: Colors.purple,
-            image: Image(
-              image: NetworkImage(widget.animatedParticleLink),
-            ),
+            //Animasyondaki parçacıkların renigin burdan veriyoruz.
+
+            //Bunu temaya bağlı olarak dinamik olarak verdik.
+            baseColor: Theme.of(context).colorScheme.inversePrimary,
+            //Arka plandaki, animasyondaki parçacıkları resim olarak seçebilirsiniz
+            // image: Image(
+            //   image: NetworkImage(widget.animatedParticleLink),
+            // ),
           ),
         ),
 

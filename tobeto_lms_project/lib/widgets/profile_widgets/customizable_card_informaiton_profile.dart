@@ -15,7 +15,9 @@ class CustomizableCardMainInformationProfile extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        //color: Colors.white,
+
+        color: Theme.of(context).colorScheme.background,
         border: Border.all(color: Colors.grey),
         borderRadius: const BorderRadius.all(
           Radius.circular(20),
@@ -31,7 +33,7 @@ class CustomizableCardMainInformationProfile extends StatelessWidget {
             children: [
               Text(
                 litleTitle,
-                style: const TextStyle(color: Colors.blueGrey),
+                style: const TextStyle(),
               ),
               Text(
                 bigtext,

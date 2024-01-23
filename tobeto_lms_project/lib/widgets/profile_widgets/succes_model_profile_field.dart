@@ -10,6 +10,7 @@ class SuccesModelProfileField extends CustomizeContainerProfile {
   Widget insideOfContainer() {
     return Column(
       children: [
+        //TODO chart içindeki rakamlar dinamik renk ver. Darkta da siyah kalıyor.
         CustomizableRadarChart(),
         const SuccesScores(),
       ],

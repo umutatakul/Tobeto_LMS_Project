@@ -61,7 +61,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                     width: double.infinity,
                     margin: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: Colors.blue.shade400.withOpacity(0.5),
+                      //color: Colors.blue.shade400.withOpacity(0.5),
+                      color: Theme.of(context).colorScheme.surface,
                       border: Border.all(),
                       borderRadius: const BorderRadius.all(
                         Radius.circular(20),
@@ -70,7 +71,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: CircleAvatar(
-                        backgroundColor: Colors.blue.shade400,
+                        //backgroundColor: Colors.blue.shade400,
                         child: Image.network(
                           widget.mockDataFirstCard.profilePictureLink,
                           width: 120,
@@ -110,9 +111,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                   SuccesModelProfileField(
                       title: widget.profileStrings.tobetoSuccesModel),
 
-                  //Tobeto Sviye Testleri ekleencek
-                  //Yetkinlik Rozetlerim ekleencek
-                  //Aktivite Haritam ekelencek
+                  //Tobeto Seviye Testleri eklencek
+                  //Yetkinlik Rozetlerim eklencek
+                  //Aktivite Haritam eklencek
                   //Eğitim hayatım ve deneyimler
                   //Footer yarat
                   FooterFieldProfile(),
