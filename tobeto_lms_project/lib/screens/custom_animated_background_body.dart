@@ -9,7 +9,7 @@ class CustomAnimatedBackgroundBody extends StatefulWidget {
   final String animatedParticleLink = ProfileAssets().animatedParticleLink;
 
   @override
-  _CustomAnimatedBackgroundBodyState createState() =>
+  State<CustomAnimatedBackgroundBody> createState() =>
       _CustomAnimatedBackgroundBodyState();
 }
 

@@ -116,7 +116,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                   //Aktivite Haritam eklencek
                   //Eğitim hayatım ve deneyimler
                   //Footer yarat
-                  FooterFieldProfile(),
+                  const FooterFieldProfile(),
                 ],
               ),
             ),
