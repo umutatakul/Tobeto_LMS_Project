@@ -46,13 +46,18 @@ class _ProfileScreenState extends State<ProfileScreen>
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        //TODO Buraya kaydetme ve paylaşam özelliği ekle
-                        Icon(Icons.share),
-                        SizedBox(
-                          width: 20,
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            //TODO Buraya kaydetme ve paylaşam özelliği ekle
+                            Icon(Icons.share),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Icon(FontAwesomeIcons.penToSquare),
+                            //TODO Düzenleme sayfası yarat
+                          ],
                         ),
-                        Icon(FontAwesomeIcons.penToSquare),
-                        //TODO Düzenleme sayfası yarat
                       ],
                     ),
                   ),
@@ -60,27 +65,39 @@ class _ProfileScreenState extends State<ProfileScreen>
                     height: 200,
                     width: double.infinity,
                     margin: const EdgeInsets.all(20),
-                    decoration: BoxDecoration(
-                      //color: Colors.blue.shade400.withOpacity(0.5),
-                      color: Theme.of(context).colorScheme.surface,
-                      border: Border.all(),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(20),
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: CircleAvatar(
-                        //backgroundColor: Colors.blue.shade400,
-                        child: Image.network(
-                          widget.mockDataFirstCard.profilePictureLink,
-                          width: 120,
-                          height: 120,
-                          fit: BoxFit.cover,
+                    decoration: const BoxDecoration(
+                        //color: Colors.blue.shade400.withOpacity(0.5),
+                        // color: Theme.of(context)
+                        //     .colorScheme
+                        //     .surface
+                        //     .withOpacity(0.4),
+                        // border: Border.all(),
+                        // borderRadius: BorderRadius.all(
+                        //   Radius.circular(20),
+                        // ),
                         ),
-                        // foregroundImage: NetworkImage(
-                        //     "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg"),
-                      ),
+                    child: ClipOval(
+                      child: Container(
+                          width: 100,
+                          height: 100,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: NetworkImage(widget
+                                      .mockDataFirstCard.profilePictureLink),
+                                  fit: BoxFit.fitHeight))
+                          // backgroundImage: NetworkImage(
+                          //     widget.mockDataFirstCard.profilePictureLink),
+                          //backgroundColor: Colors.blue.shade400.withOpacity(1),
+                          // child: Image.network(
+                          //   widget.mockDataFirstCard.profilePictureLink,
+                          //   width: 120,
+                          //   height: 120,
+                          //   fit: BoxFit.cover,
+                          // ),
+                          // foregroundImage: NetworkImage(
+                          //     "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg"),
+                          ),
                     ),
                   ),
                   NameSurnameCardProfile(
