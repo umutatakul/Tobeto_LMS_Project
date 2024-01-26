@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/models/course.dart';
 import 'package:tobeto_lms_project/models/language.dart';
 import 'package:tobeto_lms_project/models/skill.dart';
@@ -24,7 +25,10 @@ class ProfileInformationData {
     Language(languageName: "Almanca", languageLevel: "A2"),
     Language(languageName: "Fransızca", languageLevel: "A1"),
   ];
-  final Map<String, double> dataMap = {
+  //Tobeto başarılarım modeli
+
+  //<Kurs adı, skor>
+  final Map<String, double> succesDataMap = {
     "Yeni dünyaya hazırlanıyorum": 4.2,
     "Profesyonel duruşumu geliştiriyorum": 4.4,
     "Kendimi tanıyor ve yönetiyorum": 4.5,
@@ -32,6 +36,16 @@ class ProfileInformationData {
     "Kendimi sürekli geliştiriyorumG": 4.8,
     "Başkaları ile birlikte çalışıyorum": 4.1,
     "Sonuç ve başarı odaklıyım": 4.2,
+  };
+  //<Kurs adı, renk (hexCode)>
+  final Map<String, Color> succesDataColorMap = {
+    "Yeni dünyaya hazırlanıyorum": const Color(0xFF85A0A9),
+    "Profesyonel duruşumu geliştiriyorum": const Color(0xFF217925),
+    "Kendimi tanıyor ve yönetiyorum": const Color(0xFFEEC272),
+    "Yaratıcı ve doğru çözümler geliştiriyorum": const Color(0xFF6667AB),
+    "Kendimi sürekli geliştiriyorumG": const Color(0xFFE288B6),
+    "Başkaları ile birlikte çalışıyorum": const Color(0xFFD77E6F),
+    "Sonuç ve başarı odaklıyım": const Color(0xFFD75078),
   };
 }
 
