@@ -16,27 +16,27 @@ class SuccesScoresCard extends StatelessWidget {
     //Row yapınca hata veriyordu listTileları
     //Expended ile sarınca düzeldi
     //TODO Score satıtlarını renklere ve kelimelere göre düzenle
-    return Column(
-      children: [
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Expanded(
-            child: ListTile(
-              leading: AspectRatio(
-                  aspectRatio: 2,
-                  child: Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                          color: succesColor,
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(12)),
-                      height: 1,
-                      child: Text(succesScores.toString()))),
-              title: Text(succesProporty),
-            ),
-          ),
-        ]),
-      ],
+    return Card(
+      child: ListTile(
+        leading: AspectRatio(
+            aspectRatio: 2,
+            child: Container(
+                alignment: Alignment.center,
+                margin: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    color: succesColor,
+                    border: Border.all(),
+                    borderRadius: BorderRadius.circular(12)),
+                height: 1,
+                child: Text(
+                  succesScores.toString(),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ))),
+        title: Text(
+          succesProporty,
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
