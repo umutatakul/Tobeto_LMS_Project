@@ -20,7 +20,17 @@ class CustomizeContainerProfile extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: widgetOfInside,
+      child: Column(children: [
+        Card(
+          child: Title(
+              color: Theme.of(context).colorScheme.onPrimary,
+              child: Text(
+                title,
+                style: Theme.of(context).textTheme.titleLarge,
+              )),
+        ),
+        widgetOfInside
+      ]),
     );
   }
 }
