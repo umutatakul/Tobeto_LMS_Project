@@ -4,22 +4,45 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/customizable_radar_ch
 import 'package:tobeto_lms_project/widgets/profile_widgets/customize_container_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/succes_scores_card.dart';
 
-class SuccesModelProfileField extends CustomizeContainerProfile {
-  SuccesModelProfileField({super.key, required super.title});
+class SuccesModelProfileField extends StatelessWidget {
+  SuccesModelProfileField({Key? key, required this.title}) : super(key: key);
+  final String title;
   final dataOfScores = ProfileInformationData().succesDataMap;
   final dataOfColors = ProfileInformationData().succesDataColorMap;
-
   @override
-  Widget insideOfContainer() {
-    return Column(
-      children: [
-        CustomizableRadarChart(),
-        for (var key in dataOfScores.keys)
-          SuccesScoresCard(
-              succesColor: dataOfColors[key] ?? Colors.amber,
-              succesProporty: key,
-              succesScores: dataOfScores[key]!),
-      ],
+  Widget build(BuildContext context) {
+    return CustomizeContainerProfile(
+      title: title,
+      widgetOfInside: Column(
+        children: [
+          CustomizableRadarChart(),
+          for (var key in dataOfScores.keys)
+            SuccesScoresCard(
+                succesColor: dataOfColors[key] ?? Colors.amber,
+                succesProporty: key,
+                succesScores: dataOfScores[key]!),
+        ],
+      ),
     );
   }
 }
+
+// class SuccesModelProfileField extends CustomizeContainerProfile {
+//   SuccesModelProfileField({super.key, required super.title});
+//   final dataOfScores = ProfileInformationData().succesDataMap;
+//   final dataOfColors = ProfileInformationData().succesDataColorMap;
+
+//   @override
+//   Widget insideOfContainer() {
+//     return Column(
+//       children: [
+//         CustomizableRadarChart(),
+//         for (var key in dataOfScores.keys)
+//           SuccesScoresCard(
+//               succesColor: dataOfColors[key] ?? Colors.amber,
+//               succesProporty: key,
+//               succesScores: dataOfScores[key]!),
+//       ],
+//     );
+//   }
+// }

@@ -15,7 +15,6 @@ class SuccesScoresCard extends StatelessWidget {
   Widget build(BuildContext context) {
     //Row yapınca hata veriyordu listTileları
     //Expended ile sarınca düzeldi
-    //TODO Score satıtlarını renklere ve kelimelere göre düzenle
     return Card(
       child: ListTile(
         leading: AspectRatio(

@@ -122,9 +122,8 @@ class _ProfileScreenState extends State<ProfileScreen>
                     languageDataList: widget.languageList,
                   ),
                   const CertificatesFieldProfile(),
-                  MediaAccountField(
-                    title: widget.profileStrings.socialMediaAccounts,
-                  ),
+                  MediaAcountField(
+                      title: widget.profileStrings.socialMediaAccounts),
                   SuccesModelProfileField(
                       title: widget.profileStrings.tobetoSuccesModel),
 

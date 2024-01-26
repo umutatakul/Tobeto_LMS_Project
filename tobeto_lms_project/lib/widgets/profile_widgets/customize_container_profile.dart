@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-abstract class CustomizeContainerProfile extends StatelessWidget {
-  const CustomizeContainerProfile({super.key, required this.title});
+class CustomizeContainerProfile extends StatelessWidget {
+  const CustomizeContainerProfile(
+      {super.key, required this.title, required this.widgetOfInside});
   final String title;
+  final Widget widgetOfInside;
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +20,7 @@ abstract class CustomizeContainerProfile extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: insideOfContainer(),
+      child: widgetOfInside,
     );
   }
-
-  Widget insideOfContainer();
 }
