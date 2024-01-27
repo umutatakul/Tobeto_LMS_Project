@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/models/course.dart';
+import 'package:tobeto_lms_project/models/exam_result.dart';
 import 'package:tobeto_lms_project/models/language.dart';
 import 'package:tobeto_lms_project/models/skill.dart';
 
@@ -47,6 +48,18 @@ class ProfileInformationData {
     "Başkaları ile birlikte çalışıyorum": const Color(0xFFD77E6F),
     "Sonuç ve başarı odaklıyım": const Color(0xFFD75078),
   };
+
+  //Exam Results for ExamResults
+
+  List resultsList = [
+    ExamResult(name: "Front End", date: DateTime(2023, 10, 21), score: 80.00),
+    ExamResult(name: "Full Stack", date: DateTime(2023, 10, 21), score: 48),
+    ExamResult(
+        name: "Herkes için Kodlama 1B Değerlendirme Sınavı",
+        date: DateTime(2023, 10, 21),
+        score: 80),
+    ExamResult(name: "Back End", date: DateTime(2023, 10, 21), score: 24),
+  ];
 }
 
 //Course information for Catalogue

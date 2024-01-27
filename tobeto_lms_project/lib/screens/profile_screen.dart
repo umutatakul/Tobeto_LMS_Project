@@ -9,6 +9,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profil
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/language_field_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/level_test_results_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/media_acount_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
@@ -126,7 +127,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       title: widget.profileStrings.socialMediaAccounts),
                   SuccesModelProfileField(
                       title: widget.profileStrings.tobetoSuccesModel),
-
+                  LevelTestResultsField(),
                   //Tobeto Seviye Testleri eklencek
                   //Yetkinlik Rozetlerim eklencek
                   //Aktivite Haritam eklencek
