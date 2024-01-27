@@ -5,6 +5,7 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/screens/custom_animated_background_body.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/activitiy_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/badges_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field_profile.dart';
@@ -130,6 +131,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       title: widget.profileStrings.tobetoSuccesModel),
                   LevelTestResultsField(),
                   const BadgesFieldProfile(),
+                  ActivitiyFieldProfile(),
                   //Tobeto Seviye Testleri eklencek
                   //Yetkinlik Rozetlerim eklencek
                   //Aktivite Haritam eklencek
