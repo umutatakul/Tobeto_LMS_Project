@@ -60,6 +60,12 @@ class ProfileInformationData {
         score: 80),
     ExamResult(name: "Back End", date: DateTime(2023, 10, 21), score: 24),
   ];
+  List badgesList = [
+    "https://tobeto.s3.cloud.ngn.com.tr/45_14110cb69f.jpg",
+    "https://tobeto.s3.cloud.ngn.com.tr/47_556f510dd4.jpg",
+    "https://tobeto.s3.cloud.ngn.com.tr/54_791b0b0a35.jpg",
+    "https://tobeto.s3.cloud.ngn.com.tr/53_dbd6006382.jpg"
+  ];
 }
 
 //Course information for Catalogue
