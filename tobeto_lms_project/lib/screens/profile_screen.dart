@@ -36,111 +36,112 @@ class _ProfileScreenState extends State<ProfileScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.profileStrings.myProfile),
-        ),
-        drawer: CustomDrawer(),
-        body: CustomAnimatedBackgroundBody(
-          body: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            //TODO Buraya kaydetme ve paylaşam özelliği ekle
-                            Icon(Icons.share),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Icon(FontAwesomeIcons.penToSquare),
-                            //TODO Düzenleme sayfası yarat
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 200,
-                    width: double.infinity,
-                    margin: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                        //color: Colors.blue.shade400.withOpacity(0.5),
-                        // color: Theme.of(context)
-                        //     .colorScheme
-                        //     .surface
-                        //     .withOpacity(0.4),
-                        // border: Border.all(),
-                        // borderRadius: BorderRadius.all(
-                        //   Radius.circular(20),
-                        // ),
-                        ),
-                    child: ClipOval(
-                      child: Container(
-                          width: 100,
-                          height: 100,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              image: DecorationImage(
-                                  image: NetworkImage(widget
-                                      .mockDataFirstCard.profilePictureLink),
-                                  fit: BoxFit.fitHeight))
-                          // backgroundImage: NetworkImage(
-                          //     widget.mockDataFirstCard.profilePictureLink),
-                          //backgroundColor: Colors.blue.shade400.withOpacity(1),
-                          // child: Image.network(
-                          //   widget.mockDataFirstCard.profilePictureLink,
-                          //   width: 120,
-                          //   height: 120,
-                          //   fit: BoxFit.cover,
-                          // ),
-                          // foregroundImage: NetworkImage(
-                          //     "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg"),
+      appBar: AppBar(
+        title: Text(widget.profileStrings.myProfile),
+      ),
+      drawer: CustomDrawer(),
+      body: CustomAnimatedBackgroundBody(
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          //TODO Buraya kaydetme ve paylaşam özelliği ekle
+                          Icon(Icons.share),
+                          SizedBox(
+                            width: 20,
                           ),
-                    ),
+                          Icon(FontAwesomeIcons.penToSquare),
+                          //TODO Düzenleme sayfası yarat
+                        ],
+                      ),
+                    ],
                   ),
-                  NameSurnameCardProfile(
-                    name: widget.mockDataFirstCard.name,
-                    surname: widget.mockDataFirstCard.surname,
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  margin: const EdgeInsets.all(20),
+                  decoration: const BoxDecoration(
+                      //color: Colors.blue.shade400.withOpacity(0.5),
+                      // color: Theme.of(context)
+                      //     .colorScheme
+                      //     .surface
+                      //     .withOpacity(0.4),
+                      // border: Border.all(),
+                      // borderRadius: BorderRadius.all(
+                      //   Radius.circular(20),
+                      // ),
+                      ),
+                  child: ClipOval(
+                    child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            image: DecorationImage(
+                                image: NetworkImage(widget
+                                    .mockDataFirstCard.profilePictureLink),
+                                fit: BoxFit.fitHeight))
+                        // backgroundImage: NetworkImage(
+                        //     widget.mockDataFirstCard.profilePictureLink),
+                        //backgroundColor: Colors.blue.shade400.withOpacity(1),
+                        // child: Image.network(
+                        //   widget.mockDataFirstCard.profilePictureLink,
+                        //   width: 120,
+                        //   height: 120,
+                        //   fit: BoxFit.cover,
+                        // ),
+                        // foregroundImage: NetworkImage(
+                        //     "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg"),
+                        ),
                   ),
-                  BirthdateCardProfile(
-                      birthdate: widget.mockDataFirstCard.birthdate),
-                  MailCardProfile(mail: widget.mockDataFirstCard.mail),
-                  PhoneNumberCardProfile(
-                      telephone: widget.mockDataFirstCard.phoneNumber),
-                  AboutCardProfile(
-                      title: widget.profileStrings.about,
-                      informationText: "Metin bla bla bla"),
-                  SkillsFieldProfile(
-                    title: widget.profileStrings.mySkills,
-                    skillDataList: widget.skillsList,
-                  ),
-                  //-------------------Dil Profili------------------
-                  LanguageFieldProfile(
-                    title: widget.profileStrings.languages,
-                    languageDataList: widget.languageList,
-                  ),
-                  const CertificatesFieldProfile(),
-                  MediaAcountField(
-                      title: widget.profileStrings.socialMediaAccounts),
-                  SuccesModelProfileField(
-                      title: widget.profileStrings.tobetoSuccesModel),
-                  LevelTestResultsField(),
-                  const BadgesFieldProfile(),
-                  const ActivitiyFieldProfile(),
-                  const ExperiencesField(),
+                ),
+                NameSurnameCardProfile(
+                  name: widget.mockDataFirstCard.name,
+                  surname: widget.mockDataFirstCard.surname,
+                ),
+                BirthdateCardProfile(
+                    birthdate: widget.mockDataFirstCard.birthdate),
+                MailCardProfile(mail: widget.mockDataFirstCard.mail),
+                PhoneNumberCardProfile(
+                    telephone: widget.mockDataFirstCard.phoneNumber),
+                AboutCardProfile(
+                    title: widget.profileStrings.about,
+                    informationText: "Metin bla bla bla"),
+                SkillsFieldProfile(
+                  title: widget.profileStrings.mySkills,
+                  skillDataList: widget.skillsList,
+                ),
+                //-------------------Dil Profili------------------
+                LanguageFieldProfile(
+                  title: widget.profileStrings.languages,
+                  languageDataList: widget.languageList,
+                ),
+                const CertificatesFieldProfile(),
+                MediaAcountField(
+                    title: widget.profileStrings.socialMediaAccounts),
+                SuccesModelProfileField(
+                    title: widget.profileStrings.tobetoSuccesModel),
+                LevelTestResultsField(),
+                const BadgesFieldProfile(),
+                const ActivitiyFieldProfile(),
+                const ExperiencesField(),
+                FooterFieldProfile()
 
-                  //Footer yarat
-                  const FooterFieldProfile(),
-                ],
-              ),
+                //Footer yarat
+              ],
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
