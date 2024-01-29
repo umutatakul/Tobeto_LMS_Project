@@ -25,12 +25,15 @@ class FooterFieldProfile extends StatelessWidget {
                       color: Theme.of(context).colorScheme.onInverseSurface))
             ],
           ),
-          const CircleAvatar(
-            radius: 30,
-            //TODO AnimatedICon ekle
-            child: Icon(
-              Icons.message_outlined,
-              size: 40,
+          InkWell(
+            onTap: () => print("Mesaj ikonuna tıklandı"),
+            child: const CircleAvatar(
+              radius: 30,
+              //TODO AnimatedICon ekle
+              child: Icon(
+                Icons.message_outlined,
+                size: 40,
+              ),
             ),
           ),
         ],
