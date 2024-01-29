@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/experience_card.dart';
 
@@ -33,7 +32,7 @@ class CustomizableTimelineTile extends StatelessWidget {
                 isPast ? Icons.check_outlined : Icons.radio_button_off_outlined,
             color: Theme.of(context).colorScheme.background),
       ),
-      endChild: ExperienceCard(),
+      endChild: const ExperienceCard(),
     );
   }
 }

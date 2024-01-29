@@ -134,7 +134,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 const BadgesFieldProfile(),
                 const ActivitiyFieldProfile(),
                 const ExperiencesField(),
-                FooterFieldProfile()
+                const FooterFieldProfile()
 
                 //Footer yarat
               ],

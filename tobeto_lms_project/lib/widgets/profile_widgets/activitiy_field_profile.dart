@@ -12,7 +12,7 @@ class ActivitiyFieldProfile extends StatelessWidget {
     return CustomizeContainerProfile(
       title: "Aktivite Haritam",
       widgetOfInside: Center(
-        child: Container(color: backgroudcolor, child: ActivityChart()),
+        child: Container(color: backgroudcolor, child: const ActivityChart()),
       ),
     );
   }

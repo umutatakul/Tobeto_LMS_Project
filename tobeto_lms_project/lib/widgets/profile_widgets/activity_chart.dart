@@ -17,7 +17,7 @@ class ActivityChart extends StatelessWidget {
         DateTime(2024, 1, 31): 6,
       },
       startDate: DateTime.now(),
-      endDate: DateTime.now().add(Duration(days: 30)),
+      endDate: DateTime.now().add(const Duration(days: 30)),
       size: 50,
       colorMode: ColorMode.opacity,
       showText: false,
