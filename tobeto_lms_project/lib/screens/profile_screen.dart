@@ -9,6 +9,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/activitiy_field_profi
 import 'package:tobeto_lms_project/widgets/profile_widgets/badges_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/birthdate_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/certificates_field_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/experiences_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/language_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/level_test_results_field.dart';
@@ -131,11 +132,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                       title: widget.profileStrings.tobetoSuccesModel),
                   LevelTestResultsField(),
                   const BadgesFieldProfile(),
-                  ActivitiyFieldProfile(),
-                  //Tobeto Seviye Testleri eklencek
-                  //Yetkinlik Rozetlerim eklencek
-                  //Aktivite Haritam eklencek
-                  //Eğitim hayatım ve deneyimler
+                  const ActivitiyFieldProfile(),
+                  const ExperiencesField(),
+
                   //Footer yarat
                   const FooterFieldProfile(),
                 ],
