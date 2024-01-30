@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
@@ -16,6 +17,9 @@ class TobetoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO contextli değişkeni üstte nasıl tanımlayacağız
+    final appliedTextTheme =
+        GoogleFonts.robotoCondensedTextTheme(Theme.of(context).textTheme);
     return MaterialApp(
       title: "Tobeto App ",
       theme: ThemeData.from(
@@ -25,12 +29,22 @@ class TobetoApp extends StatelessWidget {
         drawerTheme: const DrawerThemeData().copyWith(
           backgroundColor: Colors.blueAccent.shade100,
         ),
+        textTheme: appliedTextTheme,
       ),
+
       //Ana temamızı light ve dark temamızı otomatik emam modumuzu belirliyoruz
       //CustomTheme.lightTheme,
 
       darkTheme:
-          ThemeData.from(colorScheme: CustomTheme.darkColorScheme).copyWith(),
+          ThemeData.from(colorScheme: CustomTheme.darkColorScheme).copyWith(
+        textTheme: appliedTextTheme.apply(
+            //Dark theme de theme.of(context).textsyle ile aldığım texlteri rengi siyah kalıyor
+            //düz themada style almadıklarım renk değişime uyum sağlamıştı
+            //Bu aldığım renkleri set ederk içime sinmese de bu şekilde düzelttim
+
+            bodyColor: CustomTheme.darkColorScheme.onBackground,
+            displayColor: CustomTheme.darkColorScheme.onBackground),
+      ),
       // darkTheme: CustomTheme.darkTheme,
 
       themeMode: ThemeMode.system,

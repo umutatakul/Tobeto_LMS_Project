@@ -72,17 +72,17 @@ class CustomTheme {
 
   static final ThemeData lightTheme = ThemeData.from(
     colorScheme: lightColorScheme,
-    textTheme: GoogleFonts.comicNeueTextTheme(
-        //Theme.of(context).textTheme,
-        ),
+    // textTheme: GoogleFonts.comicNeueTextTheme(
+    //     Theme.of(context).textTheme,
+    //     ),
 
     //fontFamily: 'Roboto',
   );
   static final ThemeData darkTheme = ThemeData.from(
     colorScheme: darkColorScheme,
-    textTheme: GoogleFonts.comicNeueTextTheme(
-        //Theme.of(context).textTheme,
-        ),
+    // textTheme: GoogleFonts.comicNeueTextTheme(
+    //   Theme.of(context).textTheme,
+    // ),
     //fontFamily: 'Roboto',
     // Diğer stiller ve özellikler
   );
