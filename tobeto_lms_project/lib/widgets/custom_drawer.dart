@@ -46,7 +46,7 @@ class CustomDrawer extends StatelessWidget {
               targetScreen: const HomeScreen()),
           CustomListTileOne(
               listTileName: _customDrawerStrings.reviews,
-              targetScreen: const ReviewScreen()),
+              targetScreen: ReviewScreen()),
           CustomListTileOne(
               listTileName: CustomDrawerStrings().myProfile,
               targetScreen: ProfileScreen()),
