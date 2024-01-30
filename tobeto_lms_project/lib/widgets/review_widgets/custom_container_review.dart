@@ -1,26 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart';
 
 class CustomContainerReview extends StatelessWidget {
-  const CustomContainerReview(
-      {Key? key, required this.body, required this.backgroundColor})
+  CustomContainerReview(
+      {Key? key,
+      required this.body,
+      required this.gradientColorFirst,
+      required this.titleString,
+      required this.bodyString})
       : super(key: key);
   final Widget body;
   final double borderRadius = 20;
-
-  final Color backgroundColor;
+  final double marginValue = 12;
+  final Color gradientColorFirst;
+  final String titleString;
+  final String bodyString;
+  final _customColors = ColorsOfReviewScreen();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       width: double.infinity,
+      margin: EdgeInsets.all(marginValue),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [backgroundColor.withOpacity(0.2), backgroundColor],
+          colors: [gradientColorFirst, gradientColorFirst],
           begin: Alignment.bottomLeft,
           end: Alignment.topRight,
         ),
-        color: backgroundColor,
         border: Border.all(),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(borderRadius),
@@ -28,7 +36,29 @@ class CustomContainerReview extends StatelessWidget {
           topRight: Radius.circular(borderRadius),
         ),
       ),
-      child: body,
+      child: Column(
+        children: [
+          //Hepsinde başlık ve colum düzeni var diye buraya koydum
+          Text(
+            titleString,
+            style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                color: _customColors.containertextColor(context),
+                fontWeight: FontWeight.bold),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          //Text Alanını da aldım
+          Text(bodyString,
+              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                    color: _customColors.containertextColor(context),
+                  ),
+              textAlign: TextAlign.center),
+          //Burası kulalncının zorunlu olarka gireceği boddy alanı
+          body,
+        ],
+      ),
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
+import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/theme/custom_theme.dart';
 
 void main() {
@@ -56,12 +57,13 @@ class TobetoApp extends StatelessWidget {
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
       routes: {
-        '/': (context) => ProfileScreen(),
+        '/': (context) => ReviewScreen(),
         //LoginScreen(),
         '/home': (context) => const HomeScreen(),
         '/profile': (context) => ProfileScreen(),
         '/catalogue': (context) => const CatalogueScreen(),
-        '/calendar': (context) => const CalendarScreen()
+        '/calendar': (context) => const CalendarScreen(),
+        //'/review': (context) => ReviewScreen(),
       },
 
       //home: const MyHomePage(),
