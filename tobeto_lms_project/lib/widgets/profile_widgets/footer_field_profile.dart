@@ -26,10 +26,10 @@ class FooterFieldProfile extends StatelessWidget {
             ],
           ),
           InkWell(
-            onTap: () => print("Mesaj ikonuna tıklandı"),
+            onTap: () {},
             child: const CircleAvatar(
               radius: 30,
-              //TODO AnimatedICon ekle
+              //TODO AnimatedIcon ekle
               child: Icon(
                 Icons.message_outlined,
                 size: 40,
