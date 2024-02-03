@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+//TODO google maps ekle
+//Whatapp erişimi oluştur
+//https://stackoverflow.com/questions/60947937/flutter-open-whatsapp-with-text-message
+//
+
 class FooterFieldProfile extends StatelessWidget {
   const FooterFieldProfile({Key? key}) : super(key: key);
 
