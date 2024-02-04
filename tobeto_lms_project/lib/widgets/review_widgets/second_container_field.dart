@@ -9,10 +9,14 @@ class SecondContainerField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomContainerReview(
-      body: const Text("Başlık"),
+      body: Text(
+        "↓↓↓↓↓",
+        style: Theme.of(context).textTheme.displaySmall!.copyWith(
+            color: ColorsOfReviewScreen().containertextColor(context)),
+      ),
       gradientColorFirst: _colors.firstContainerBackgroundColor(context),
       titleString: 'Yazılımda Başarı Testi',
-      bodyString: "Girilecek",
+      bodyString: "Çoktan seçmeli sorular ile teknik bilgini test et.",
     );
   }
 }
