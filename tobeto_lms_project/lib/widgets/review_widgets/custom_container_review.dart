@@ -55,7 +55,7 @@ class CustomContainerReview extends StatelessWidget {
                     color: _customColors.containertextColor(context),
                   ),
               textAlign: TextAlign.center),
-          //Burası kulalncının zorunlu olarka gireceği boddy alanı
+          //Burası kullancının zorunlu olarak gireceği body alanı
           body,
         ],
       ),

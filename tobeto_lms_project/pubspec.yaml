@@ -45,7 +45,10 @@ dependencies:
   #Datetime için kullanıldı
   intl: ^0.17.0
   flutter_heatmap_calendar: ^1.0.5
+  #Eğitim hayatı ve deneyimler kısmı için olan uç uca çizgiler için kullanıldı
   timeline_tile: ^2.0.0
+  #değerlendirmeler ksımıdna test yüzdeleri için kullanıldı
+  percent_indicator: ^4.0.1
 
 dev_dependencies:
   flutter_test:

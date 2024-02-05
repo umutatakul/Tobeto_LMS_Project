@@ -51,7 +51,7 @@ class ProfileInformationData {
 
   //Exam Results for ExamResults
 
-  List resultsList = [
+  List<ExamResult> resultsList = [
     ExamResult(name: "Front End", date: DateTime(2023, 10, 21), score: 80.00),
     ExamResult(name: "Full Stack", date: DateTime(2023, 10, 21), score: 48),
     ExamResult(
@@ -69,7 +69,7 @@ class ProfileInformationData {
 }
 
 //Course information for Catalogue
-List courseList = [
+List<Course> courseList = [
   Course(
       id: "1",
       name: "Dinle, Anla, İfade Et: Etkili İletişim Gelişim Yolculuğu",
@@ -191,4 +191,14 @@ List courseList = [
       id: "30",
       name: "Tarih Analizi: Temel Yaklaşımlar ve Tarih Yazımı",
       author: "Mert Karadağ"),
+];
+
+//Review Screen
+//Listelenmiş sınav skorları için gerekli sınavların listesi
+List requiredExmamsList = [
+  "Front End",
+  "Full Stack",
+  "Back End",
+  "Microfost SQL Server",
+  "Masaüstü Programlama",
 ];

@@ -5,6 +5,7 @@ import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/first_container_field.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/header_field_review.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/second_container_field.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/test_and_result_cards_field.dart';
 
 class ReviewScreen extends StatelessWidget {
   ReviewScreen({super.key});
@@ -24,6 +25,7 @@ class ReviewScreen extends StatelessWidget {
                 const HeaderReview(),
                 FirstContainerField(),
                 SecondContainerField(),
+                TestAndResultCardsField(),
               ],
             ),
           ),
