@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/controllers/is_score_there_controlller.dart';
 import 'package:tobeto_lms_project/controllers/score_percent_controller.dart';
 import 'package:tobeto_lms_project/controllers/score_percent_visibility_controller.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
-import 'package:tobeto_lms_project/widgets/review_widgets/exam_card.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/exam_card_review.dart';
 
 class TestAndResultCardsField extends StatelessWidget {
   TestAndResultCardsField({Key? key}) : super(key: key);
@@ -15,36 +16,10 @@ class TestAndResultCardsField extends StatelessWidget {
           ExamCard(
               examName: examName,
               scorePercent: scorePercentController(resultListScores, examName),
-              //  resultListScores[resultListScores.indexWhere(
-              //                 (element) => element.name == examName) !=
-              //             -1
-              //         //eğer index yoksa -1 (eksi bir döndürüyor)
-              //         ? resultListScores
-              //             .indexWhere((element) => element.name == examName)
-              //         : 0]
-              //     .score,
               scorePercentVisibility:
                   scorePercentVisibilityController(resultListScores, examName),
-              //  resultListScores
-              //     .where((element) => element.name == examName)
-              //     .toList()
-              //     .isNotEmpty,
-              isScoreNotEmpty: isScoreThere(resultListScores, examName)
-              // resultListScores
-              //     .where((element) => element.name == examName)
-              //     .toList()
-              //     .isNotEmpty,
-              )
+              isScoreNotEmpty: isScoreThere(resultListScores, examName))
       ],
     );
   }
-}
-
-//for içindeki mevcut irdelenen examName i mock datamdaki score listemle kıyasla
-//mevcutsa listeme ekle liste boş mu diye bak
-bool isScoreThere(List listOfScores, String nameOfExam) {
-  return listOfScores
-      .where((element) => element.name == nameOfExam)
-      .toList()
-      .isNotEmpty;
 }

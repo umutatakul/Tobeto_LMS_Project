@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 //
 
 class FooterFieldProfile extends StatelessWidget {
-  const FooterFieldProfile({Key? key}) : super(key: key);
+  const FooterFieldProfile({Key? key, required this.backgroundColors})
+      : super(key: key);
+  final Color? backgroundColors;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 70,
-      color: Theme.of(context).colorScheme.inversePrimary,
+      color: backgroundColors ?? Colors.black,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

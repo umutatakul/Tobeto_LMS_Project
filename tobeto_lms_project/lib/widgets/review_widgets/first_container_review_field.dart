@@ -3,8 +3,9 @@ import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart
 import 'package:tobeto_lms_project/constants/strings/review_screen_strings.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/custom_container_review.dart';
 
-class FirstContainerField extends StatelessWidget {
-  FirstContainerField({Key? key}) : super(key: key);
+class FirstContainerReviewField extends StatelessWidget {
+  FirstContainerReviewField.FirstContainerFieldReview({Key? key})
+      : super(key: key);
 
   final _customColors = ColorsOfReviewScreen();
   final _strings = ReviewScreenStirngs();

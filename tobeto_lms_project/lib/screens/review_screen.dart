@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart';
 import 'package:tobeto_lms_project/constants/strings/review_screen_strings.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
-import 'package:tobeto_lms_project/widgets/review_widgets/first_container_field.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/first_container_review_field.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/fourth_container_field_review.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/header_field_review.dart';
-import 'package:tobeto_lms_project/widgets/review_widgets/second_container_field.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/second_container_field_review.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/test_and_result_cards_field.dart';
-import 'package:tobeto_lms_project/widgets/review_widgets/third_container.dart';
+import 'package:tobeto_lms_project/widgets/review_widgets/third_container_field_review.dart';
 
 class ReviewScreen extends StatelessWidget {
   ReviewScreen({super.key});
@@ -24,9 +26,9 @@ class ReviewScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const HeaderReview(),
-                FirstContainerField(),
-                SecondContainerField(),
+                const HeaderFieldReview(),
+                FirstContainerReviewField.FirstContainerFieldReview(),
+                SecondContainerFieldReview(),
                 TestAndResultCardsField(),
                 Container(
                   margin: const EdgeInsets.only(top: 20),
@@ -36,8 +38,11 @@ class ReviewScreen extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                ThirdContainer(),
-                const FooterFieldProfile()
+                ThirdContainerFieldReview(),
+                FourthContainerFieldReview(),
+                FooterFieldProfile(
+                  backgroundColors: Theme.of(context).primaryColor,
+                )
               ],
             ),
           ),

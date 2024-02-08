@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/custom_container_review.dart';
 
-class ThirdContainer extends StatelessWidget {
-  ThirdContainer({super.key});
+class ThirdContainerFieldReview extends StatelessWidget {
+  ThirdContainerFieldReview({super.key});
   final _customColor = ColorsOfReviewScreen();
 
   @override
