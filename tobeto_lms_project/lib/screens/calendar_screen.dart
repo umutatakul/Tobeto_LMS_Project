@@ -5,6 +5,14 @@ class CalendarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: Scaffold(
+        body: Center(
+          child: Container(
+            child: Text("Takvim ekle"),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -57,13 +57,13 @@ class TobetoApp extends StatelessWidget {
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
       routes: {
-        '/': (context) => ReviewScreen(),
+        '/': (context) => const CatalogueScreen(),
         //LoginScreen(),
         '/home': (context) => const HomeScreen(),
         '/profile': (context) => ProfileScreen(),
         '/catalogue': (context) => const CatalogueScreen(),
         '/calendar': (context) => const CalendarScreen(),
-        //'/review': (context) => ReviewScreen(),
+        '/review': (context) => ReviewScreen(),
       },
 
       //home: const MyHomePage(),
