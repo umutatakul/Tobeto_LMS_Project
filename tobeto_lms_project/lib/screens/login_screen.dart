@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/constants/strings/login_screen_strings.dart';
+import 'package:tobeto_lms_project/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -145,15 +146,33 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     child: Padding(
                       padding: const EdgeInsets.only(bottom: 20.0),
-                      child: Text(
-                        _loginStrings.forgottenPassword,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyLarge!
-                            .copyWith(color: Colors.blueAccent),
-                        //Burada temadan gelen rengi ezdik.
-                        // Böylece her iki temadada da (light ve dark)
-                        //Aynı renk kullanılacak
+                      child: Column(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => SignupScreen(),
+                              ));
+                            },
+                            child: Text(
+                              "Hesabım yok",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(color: Colors.blueAccent),
+                            ),
+                          ),
+                          Text(
+                            _loginStrings.forgottenPassword,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyLarge!
+                                .copyWith(color: Colors.blueAccent),
+                            //Burada temadan gelen rengi ezdik.
+                            // Böylece her iki temadada da (light ve dark)
+                            //Aynı renk kullanılacak
+                          ),
+                        ],
                       ),
                     ),
                   ),
