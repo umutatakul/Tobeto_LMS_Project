@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
+import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_event.dart.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
 
@@ -13,9 +16,12 @@ class SignupScreen extends StatefulWidget {
 class _SignupScreenState extends State<SignupScreen> {
   //Form alanı için
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String _email = "";
+  // String _email = "";
   String _password = "";
+  String _confirmPassword = "";
   final _emailController = TextEditingController();
+
+  //final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +46,14 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextFormField(
-                    //controller:  _emailController.,
+                    controller: _emailController,
                     decoration: InputDecoration(
                       prefix: const Icon(Icons.email_outlined),
                       label: Text(
                         "E-mail",
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
-                      border: OutlineInputBorder(),
+                      border: const OutlineInputBorder(),
                       hintText: "kullanici@example",
                     ),
                     validator: (value) {
@@ -60,9 +66,10 @@ class _SignupScreenState extends State<SignupScreen> {
                       }
                       return null;
                     },
-                    onSaved: (value) {
-                      _email = value!;
-                    },
+
+                    // onSaved: (value) {
+                    //   _email = value!;
+                    // },
                   ),
                   TextFormField(
                       decoration: InputDecoration(
@@ -72,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         hintText: "Abcd1234",
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -88,20 +95,48 @@ class _SignupScreenState extends State<SignupScreen> {
                       onSaved: (value) {
                         _password = value!;
                       }),
+                  TextFormField(
+                      decoration: InputDecoration(
+                        prefix: const Icon(Icons.password_sharp),
+                        label: Text(
+                          "Şifre Tekrar",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        hintText: "Abcd1234",
+                        border: const OutlineInputBorder(),
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Lütfen şifre tekrarını giriniz';
+                        }
+                        if (!RegExp(
+                                r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')
+                            .hasMatch(value)) {
+                          return 'Tekrar şifresi en az bir büyük harf, bir küçük harf, bir rakam içermeli ve en az 8 karakter uzunluğunda olmalıdır';
+                        }
+                        return null;
+                      },
+                      onSaved: (value) {
+                        _confirmPassword = value!;
+                      }),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 80.0),
                     child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
                             _formKey.currentState!.save();
+                            context.read<AuthBloc>().add(AuthCreateUserEvent(
+                                email: _emailController.text.trim(),
+                                password: _password,
+                                confirmPassword: _confirmPassword));
 
                             //TODO ana ekrana navige et
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
+                              builder: (context) => const HomeScreen(),
                             ));
                           }
                         },
-                        child: Text("Kayıt Ol")),
+                        child: const Text("Kayıt Ol")),
                   )
                 ],
               ),

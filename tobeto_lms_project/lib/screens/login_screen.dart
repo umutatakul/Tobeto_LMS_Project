@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
+import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_event.dart.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/constants/strings/login_screen_strings.dart';
 import 'package:tobeto_lms_project/screens/signup_screen.dart';
@@ -82,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               // ),
                               // focusColor: Colors.white,
                             ),
-                            keyboardType: TextInputType.number,
+                            keyboardType: TextInputType.emailAddress,
                           ),
                         ),
                         Padding(
@@ -115,6 +118,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
                             onPressed: () {
+                              context.read<AuthBloc>().add(
+                                    AuthLoginUserEvent(
+                                      email: kullaniciKodu.text.trim(),
+                                      password: parola.text.trim(),
+                                    ),
+                                  );
                               Navigator.of(context).pushNamed("/home");
                               //print(kullaniciKodu.text);
                               //print(parola.text);

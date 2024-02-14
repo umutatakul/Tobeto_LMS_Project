@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 
 class ProfileEditScreen extends StatelessWidget {

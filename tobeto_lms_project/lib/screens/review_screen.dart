@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart';
 import 'package:tobeto_lms_project/constants/strings/review_screen_strings.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
