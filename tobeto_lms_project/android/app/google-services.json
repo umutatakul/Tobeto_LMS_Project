@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486278251956",
+    "project_id": "tobeto-lms-project",
+    "storage_bucket": "tobeto-lms-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486278251956:android:f98b78bc33490e1cbe1ee1",
+        "android_client_info": {
+          "package_name": "com.example.tobeto_lms_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDER2MUEd8rcU7jIGGJ7BlYUC3H0VVo4HA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

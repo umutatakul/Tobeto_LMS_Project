@@ -15,6 +15,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String _email = "";
   String _password = "";
+  final _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   TextFormField(
+                    //controller:  _emailController.,
                     decoration: InputDecoration(
                       prefix: const Icon(Icons.email_outlined),
                       label: Text(

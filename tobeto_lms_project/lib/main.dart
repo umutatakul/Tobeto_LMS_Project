@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tobeto_lms_project/firebase_options.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
@@ -10,7 +13,10 @@ import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/screens/signup_screen.dart';
 import 'package:tobeto_lms_project/theme/custom_theme.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(
     const TobetoApp(),
   );
@@ -60,8 +66,8 @@ class TobetoApp extends StatelessWidget {
       //Named Route-Routing eklendiği yer
       initialRoute: '/',
       routes: {
-        '/': (context) => const ProfileEditScreen(),
-        //LoginScreen(),
+        '/': (context) => const //ProfileEditScreen(),
+            LoginScreen(),
         //'/signup': (context) => const SignupScreen(),
         '/home': (context) => const HomeScreen(),
         '/profile': (context) => ProfileScreen(),

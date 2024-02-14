@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyALZBfJDDLpK1fREiPyMUjHnuU7sGM1PHI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>486278251956</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.tobetoLmsProject</string>
+	<key>PROJECT_ID</key>
+	<string>tobeto-lms-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tobeto-lms-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:486278251956:ios:71bab70c80451e68be1ee1</string>
+</dict>
+</plist>

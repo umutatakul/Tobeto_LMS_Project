@@ -31,153 +31,155 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text(_loginStrings.appBarTitle),
         centerTitle: true,
       ),
-      body: Container(
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: isDarkMode
-                ? AssetImage(_loginAssets.loginBackgroundDarkPath)
-                : AssetImage(_loginAssets.loginBackGroundLightPath),
-            fit: BoxFit.fill,
-          ),
-        ),
-        child: AspectRatio(
-          aspectRatio: 11 / 13,
-          child: Container(
-            margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-            decoration: BoxDecoration(
-              //color: Colors.white,
-              color: Theme.of(context).colorScheme.background,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(20),
-              ),
+      body: SingleChildScrollView(
+        child: Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: isDarkMode
+                  ? AssetImage(_loginAssets.loginBackgroundDarkPath)
+                  : AssetImage(_loginAssets.loginBackGroundLightPath),
+              fit: BoxFit.fill,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
-                  child: SvgPicture.asset(LoginAssets().namedLogoPath),
+          ),
+          child: AspectRatio(
+            aspectRatio: 11 / 13,
+            child: Container(
+              margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+              decoration: BoxDecoration(
+                //color: Colors.white,
+                color: Theme.of(context).colorScheme.background,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(20),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(left: 20, right: 20),
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          controller: kullaniciKodu,
-                          autofocus: false,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.person_2_outlined),
-                            labelText: _loginStrings.userCode,
-                            border: const OutlineInputBorder(),
-                            //fillColor: Colors.blue,
-                            // focusedBorder: OutlineInputBorder(
-                            //   borderSide:
-                            //       BorderSide(color: Colors.grey, width: .5),
-                            // ),
-                            // focusColor: Colors.white,
-                          ),
-                          keyboardType: TextInputType.number,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: TextField(
-                          autofocus: false,
-                          controller: parola,
-                          obscureText: !isPasswordVisible,
-                          decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.lock_outlined),
-                            suffixIcon: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  isPasswordVisible = !isPasswordVisible;
-                                });
-                              },
-                              child: Icon(
-                                isPasswordVisible
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                              ),
-                            ),
-                            labelText: _loginStrings.password,
-                            border: const OutlineInputBorder(),
-                          ),
-                          // keyboardType: TextInputType.number,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.of(context).pushNamed("/home");
-                            //print(kullaniciKodu.text);
-                            //print(parola.text);
-
-                            //Size(double.infinity, 20);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            //foregroundColor: (Colors.white),
-                            foregroundColor:
-                                (Theme.of(context).colorScheme.onPrimary),
-                            backgroundColor:
-                                (Theme.of(context).colorScheme.primary),
-                            fixedSize: const Size(double.maxFinite, 12.0),
-                            shape: const ContinuousRectangleBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
-                          ),
-                          child: Text(LoginStrings().loginButton),
-                        ),
-                      ),
-                    ],
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 0, horizontal: 80),
+                    child: SvgPicture.asset(LoginAssets().namedLogoPath),
                   ),
-                ),
-                Center(
-                  child: InkWell(
-                    onTap: () {
-                      //print(" \"Parolamı unuttum\" tıklandı");
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 20.0),
-                      child: Column(
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => SignupScreen(),
-                              ));
+                  Container(
+                    margin: const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextField(
+                            controller: kullaniciKodu,
+                            autofocus: false,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.person_2_outlined),
+                              labelText: _loginStrings.userCode,
+                              border: const OutlineInputBorder(),
+                              //fillColor: Colors.blue,
+                              // focusedBorder: OutlineInputBorder(
+                              //   borderSide:
+                              //       BorderSide(color: Colors.grey, width: .5),
+                              // ),
+                              // focusColor: Colors.white,
+                            ),
+                            keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: TextField(
+                            autofocus: false,
+                            controller: parola,
+                            obscureText: !isPasswordVisible,
+                            decoration: InputDecoration(
+                              prefixIcon: const Icon(Icons.lock_outlined),
+                              suffixIcon: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    isPasswordVisible = !isPasswordVisible;
+                                  });
+                                },
+                                child: Icon(
+                                  isPasswordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                              ),
+                              labelText: _loginStrings.password,
+                              border: const OutlineInputBorder(),
+                            ),
+                            // keyboardType: TextInputType.number,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).pushNamed("/home");
+                              //print(kullaniciKodu.text);
+                              //print(parola.text);
+
+                              //Size(double.infinity, 20);
                             },
-                            child: Text(
-                              "Hesabım yok",
+                            style: ElevatedButton.styleFrom(
+                              //foregroundColor: (Colors.white),
+                              foregroundColor:
+                                  (Theme.of(context).colorScheme.onPrimary),
+                              backgroundColor:
+                                  (Theme.of(context).colorScheme.primary),
+                              fixedSize: const Size(double.maxFinite, 12.0),
+                              shape: const ContinuousRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(20),
+                                ),
+                              ),
+                            ),
+                            child: Text(LoginStrings().loginButton),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Center(
+                    child: InkWell(
+                      onTap: () {
+                        //print(" \"Parolamı unuttum\" tıklandı");
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 20.0),
+                        child: Column(
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => SignupScreen(),
+                                ));
+                              },
+                              child: Text(
+                                "Hesabım yok",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge!
+                                    .copyWith(color: Colors.blueAccent),
+                              ),
+                            ),
+                            Text(
+                              _loginStrings.forgottenPassword,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge!
                                   .copyWith(color: Colors.blueAccent),
+                              //Burada temadan gelen rengi ezdik.
+                              // Böylece her iki temadada da (light ve dark)
+                              //Aynı renk kullanılacak
                             ),
-                          ),
-                          Text(
-                            _loginStrings.forgottenPassword,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(color: Colors.blueAccent),
-                            //Burada temadan gelen rengi ezdik.
-                            // Böylece her iki temadada da (light ve dark)
-                            //Aynı renk kullanılacak
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
