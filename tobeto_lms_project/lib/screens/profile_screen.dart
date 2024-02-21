@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/constants/strings/profile_screen_strings.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/screens/custom_animated_background_body.dart';
+import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/activitiy_field_profile.dart';
@@ -17,6 +18,7 @@ import 'package:tobeto_lms_project/widgets/profile_widgets/mail_card_profile.dar
 import 'package:tobeto_lms_project/widgets/profile_widgets/media_acount_field.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/name_surname_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/phone_number_card_profile.dart';
+import 'package:tobeto_lms_project/widgets/profile_widgets/picture_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/skills_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/succes_model_profile_field.dart';
 
@@ -45,65 +47,37 @@ class _ProfileScreenState extends State<ProfileScreen>
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          //TODO Buraya kaydetme ve paylaşam özelliği ekle
-                          Icon(Icons.share),
+                          //TODO Buraya kaydetme ve paylaşma özelliği ekle
+                          //Paylaşmak için uygun kütüphane bulamadım
+                          //screenshot ve share_plus denedim share plus paketi ile crash oldu
+                          /*Icon(Icons.share),
                           SizedBox(
                             width: 20,
                           ),
-                          Icon(FontAwesomeIcons.penToSquare),
-                          //TODO Düzenleme sayfası yarat
+                          */
+                          //FontAwesomeIcons.penToSquare
+                          IconButton(
+                              onPressed: () {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => ProfileEditScreen(),
+                                ));
+                              },
+                              icon: const Icon(FontAwesomeIcons.penToSquare)),
                         ],
                       ),
                     ],
                   ),
                 ),
-                Container(
-                  height: 200,
-                  width: double.infinity,
-                  margin: const EdgeInsets.all(20),
-                  decoration: const BoxDecoration(
-                      //color: Colors.blue.shade400.withOpacity(0.5),
-                      // color: Theme.of(context)
-                      //     .colorScheme
-                      //     .surface
-                      //     .withOpacity(0.4),
-                      // border: Border.all(),
-                      // borderRadius: BorderRadius.all(
-                      //   Radius.circular(20),
-                      // ),
-                      ),
-                  child: ClipOval(
-                    child: Container(
-                        width: 100,
-                        height: 100,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                                image: NetworkImage(widget
-                                    .mockDataFirstCard.profilePictureLink),
-                                fit: BoxFit.fitHeight))
-                        // backgroundImage: NetworkImage(
-                        //     widget.mockDataFirstCard.profilePictureLink),
-                        //backgroundColor: Colors.blue.shade400.withOpacity(1),
-                        // child: Image.network(
-                        //   widget.mockDataFirstCard.profilePictureLink,
-                        //   width: 120,
-                        //   height: 120,
-                        //   fit: BoxFit.cover,
-                        // ),
-                        // foregroundImage: NetworkImage(
-                        //     "https://pbs.twimg.com/profile_images/1681954178195652609/H44jVFCp_400x400.jpg"),
-                        ),
-                  ),
-                ),
+                //----------------------PICTURE FIELD---------------------------
+                PictureFieldProfile(),
                 NameSurnameCardProfile(
                   name: widget.mockDataFirstCard.name,
                   surname: widget.mockDataFirstCard.surname,
@@ -131,7 +105,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                 SuccesModelProfileField(
                     title: widget.profileStrings.tobetoSuccesModel),
                 LevelTestResultsField(),
-                const BadgesFieldProfile(),
+                BadgesFieldProfile(),
                 const ActivitiyFieldProfile(),
                 const ExperiencesField(),
                 FooterFieldProfile(

@@ -1,17 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserModel {
-  final String? userId; // doc.set => id'yi alır.
-  final String? name;
-  final String? surname;
-  final String? about;
-  final String? github;
-  final String? instagram;
-  final String? linkedin;
-  final String? email;
-  final String? phone;
-  final String? profilePhoto; // imgURL(String)
-  DateTime? dateOfBirth; //  dd-mm-yy formatta olmalıdır. => Datetime.now()
+  String? userId; // doc.set => id'yi alır.
+  String? name;
+  String? surname;
+  String? about;
+  String? github;
+  String? instagram;
+  String? linkedin;
+  String? email;
+  String? phone;
+  String? profilePhoto; // imgURL(String)
+  DateTime? dateOfBirth;
+  //  dd-mm-yy formatta olmalıdır. => Datetime.now()
   // dd-mm-yy + 20.25 34s 33sls.
   // dd-mm-yy formatter
 

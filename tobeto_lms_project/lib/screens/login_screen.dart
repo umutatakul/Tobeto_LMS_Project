@@ -5,6 +5,7 @@ import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_event.dart.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/constants/strings/login_screen_strings.dart';
+import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -34,17 +35,18 @@ class _LoginScreenState extends State<LoginScreen> {
         title: Text(_loginStrings.appBarTitle),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: isDarkMode
-                  ? AssetImage(_loginAssets.loginBackgroundDarkPath)
-                  : AssetImage(_loginAssets.loginBackGroundLightPath),
-              fit: BoxFit.fill,
-            ),
+      body: Container(
+        height: double.infinity,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: isDarkMode
+                ? AssetImage(_loginAssets.loginBackgroundDarkPath)
+                : AssetImage(_loginAssets.loginBackGroundLightPath),
+            fit: BoxFit.fill,
           ),
+        ),
+        child: SingleChildScrollView(
           child: AspectRatio(
             aspectRatio: 11 / 13,
             child: Container(
@@ -124,7 +126,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                       password: parola.text.trim(),
                                     ),
                                   );
-                              Navigator.of(context).pushNamed("/home");
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const HomeScreen(),
+                              ));
                               //print(kullaniciKodu.text);
                               //print(parola.text);
 
@@ -161,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             InkWell(
                               onTap: () {
                                 Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => SignupScreen(),
+                                  builder: (context) => const SignupScreen(),
                                 ));
                               },
                               child: Text(

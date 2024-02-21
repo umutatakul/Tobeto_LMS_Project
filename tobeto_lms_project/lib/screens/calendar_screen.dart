@@ -8,7 +8,7 @@ class CalendarScreen extends StatelessWidget {
     return const Center(
       child: Scaffold(
         body: Center(
-          child: const Text("Takvim ekle"),
+          child: Text("Takvim ekle"),
         ),
       ),
     );

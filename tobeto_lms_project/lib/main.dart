@@ -8,8 +8,10 @@ import 'package:tobeto_lms_project/api/repositories/auth_repository.dart';
 import 'package:tobeto_lms_project/firebase_options.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
+import 'package:tobeto_lms_project/screens/deneme_search.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/login_screen.dart';
+import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/theme/custom_theme.dart';
@@ -74,8 +76,9 @@ class TobetoApp extends StatelessWidget {
         //Named Route-Routing eklendiği yer
         initialRoute: '/',
         routes: {
-          '/': (context) => const //ProfileEditScreen(),
-              LoginScreen(),
+          '/': (context) => ProfileEditScreen(),
+          //DenemeSearch(),
+          //const LoginScreen(),
           //'/signup': (context) => const SignupScreen(),
           '/home': (context) => const HomeScreen(),
           '/profile': (context) => ProfileScreen(),

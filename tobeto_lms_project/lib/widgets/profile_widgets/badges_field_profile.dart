@@ -3,20 +3,32 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/customize_container_profile.dart';
 
 class BadgesFieldProfile extends StatelessWidget {
-  const BadgesFieldProfile({Key? key}) : super(key: key);
+  BadgesFieldProfile({Key? key}) : super(key: key);
+  final badgeList = ProfileInformationData().badgesList;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return CustomizeContainerProfile(
       title: "Yetkinlik rozetlerim",
-
-      //TODO Buna card ve/veya model oluştur
-      //Grid ile 2 2 yap
       widgetOfInside: Center(
         child: Column(
           children: [
-            for (var selectedBagde in ProfileInformationData().badgesList)
-              Image.network(selectedBagde)
+            //Sized box eklemeden girdview çalışmıyor
+            SizedBox(
+              height: size.height / 2,
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemCount: ProfileInformationData().badgesList.length,
+                itemBuilder: (context, index) {
+                  return Image.network(badgeList[index]);
+                },
+              ),
+            )
+            // for (var selectedBagde in ProfileInformationData().badgesList)
+            //   Image.network(selectedBagde)
           ],
         ),
       ),

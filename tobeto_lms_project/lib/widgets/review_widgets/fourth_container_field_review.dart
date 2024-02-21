@@ -11,7 +11,7 @@ class FourthContainerFieldReview extends StatelessWidget {
       titleString: "Huawei Talent Interview Teknik Bilgi Sınavı*",
       bodyString:
           "Sertifika alabilmen için, eğitim yolculuğunun sonunda teknik yetkinliklerin ve kod bilgin ölçülür. 4400+ soru | 30+ programlama dili 4 zorluk seviyesi",
-      body: Text("*Türkiye Ar-Ge Merkezi tarafından tasarlanmıştır"),
+      body: const Text("*Türkiye Ar-Ge Merkezi tarafından tasarlanmıştır"),
       gradientColorFirst:
           ColorsOfReviewScreen().firstContainerBackgroundColor(context),
     );

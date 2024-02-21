@@ -14,6 +14,8 @@ class ProfileInformationData {
   final birthdate = "05.05.1789";
   final mail = "eyupsabrie79@hotmail.com";
   final phoneNumber = "+904440375";
+  final about =
+      "Malulen Emekli Cami İmamı • İlim Yayma Cemiyeti Eşbaşkanı • Ateizm Derneği Bşk. Yardımcısı • Yıpranmış Saçlar Uzmanı • Kısa Muska Yazarı";
   final skills = [
     Skill(skillName: "Kotlin"),
     Skill(skillName: "Python"),

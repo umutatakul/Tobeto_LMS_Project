@@ -26,7 +26,7 @@ class ReviewScreen extends StatelessWidget {
             child: Column(
               children: [
                 const HeaderFieldReview(),
-                FirstContainerReviewField.FirstContainerFieldReview(),
+                FirstContainerReviewField(),
                 SecondContainerFieldReview(),
                 TestAndResultCardsField(),
                 Container(
@@ -38,7 +38,7 @@ class ReviewScreen extends StatelessWidget {
                   ),
                 ),
                 ThirdContainerFieldReview(),
-                FourthContainerFieldReview(),
+                const FourthContainerFieldReview(),
                 FooterFieldProfile(
                   backgroundColors: Theme.of(context).primaryColor,
                 )
