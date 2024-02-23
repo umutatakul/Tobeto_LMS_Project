@@ -3,12 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc_state.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_event.dart.dart';
 import 'package:tobeto_lms_project/api/repositories/auth_repository.dart';
+import 'package:tobeto_lms_project/api/repositories/user_repository.dart';
+import 'package:tobeto_lms_project/models/user_model.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthRepository _authRepository;
   final FirebaseAuth _firebaseAuth;
+  final UserRepository _userRepository;
 
-  AuthBloc(this._authRepository, this._firebaseAuth)
+  AuthBloc(this._authRepository, this._firebaseAuth, this._userRepository)
       : super(AuthInitialState()) {
     on<AuthLoginUserEvent>(_onLoginUser);
     on<AuthCreateUserEvent>(_onCreateUser);
@@ -18,18 +21,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     _firebaseAuth.authStateChanges().listen((firebaseUser) {
       if (firebaseUser != null) {
         //emit() ile yayınlardık ama içinde state varlığı olan bir bloc yapısı olamdığı için uyarı veriyor
-        (AuthenticatedState(user: firebaseUser));
+        //emit(AuthenticatedState(user: firebaseUser));
+        emit(AuthenticatedState(user: firebaseUser));
       } else {
-        (NotAuthenticatedState());
+        emit(NotAuthenticatedState());
       }
     });
   }
 
   Future<void> _onLoginUser(
       AuthLoginUserEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
     try {
       await _authRepository.loginUser(event.email, event.password);
-      emit(AuthenticatedState());
+      emit(AuthenticatedState(user: _firebaseAuth.currentUser));
     } catch (e) {
       emit(AuthErrorState(message: e.toString()));
     }
@@ -37,10 +42,13 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onCreateUser(
       AuthCreateUserEvent event, Emitter<AuthState> emit) async {
+    emit(AuthLoading());
+
     try {
       await _authRepository.createUser(
           event.email, event.password, event.confirmPassword);
-      emit(AuthenticatedState());
+      await _userRepository.addUserToFirestore(UserModel(email: event.email));
+      emit(AuthenticatedState(user: _firebaseAuth.currentUser));
     } catch (e) {
       emit(AuthErrorState(message: e.toString()));
     }

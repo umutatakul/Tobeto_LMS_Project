@@ -1,4 +1,4 @@
-// Repository => Bu klasör veri kaynaklarına erişien ve veri işlemlerini gerçekleştiren depoları içerir.
+// Repository => Bu klasör veri kaynaklarına erişen ve veri işlemlerini gerçekleştiren depoları içerir.
 // aslında biz repositories içerisende firestore istek atıp firestore dan gelen verileri
 // de bloc içerisinde yönetiyoruz.
 // auth işlemlerini tutar. =>fireaseauth

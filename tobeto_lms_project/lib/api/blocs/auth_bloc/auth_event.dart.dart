@@ -1,5 +1,7 @@
 abstract class AuthEvent {}
 
+class AuthInititalEvent extends AuthEvent {}
+
 class AuthCreateUserEvent extends AuthEvent {
   AuthCreateUserEvent(
       {required this.email,

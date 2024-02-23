@@ -4,6 +4,8 @@ abstract class AuthState {}
 
 class AuthInitialState extends AuthState {}
 
+class AuthLoading extends AuthState {}
+
 class AuthenticatedState extends AuthState {
   AuthenticatedState({this.user});
   //User firebase e delege ettiğimiz anlık [o an giriş yapmış olan]  olan kullancının
