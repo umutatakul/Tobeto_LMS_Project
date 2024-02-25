@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tobeto_lms_project/models/course.dart';
+import 'package:tobeto_lms_project/models/catalogue_course_model.dart';
 
-class CourseCard extends StatelessWidget {
-  const CourseCard({super.key, required this.course});
-  final Course course;
+class CatalogueCourseCard extends StatelessWidget {
+  const CatalogueCourseCard({super.key, required this.course});
+  final CatalogueCourseModel course;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.all(18),
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
         gradient: LinearGradient(colors: [
           const Color.fromARGB(255, 89, 141, 176).withOpacity(0.5),
           const Color.fromARGB(255, 89, 141, 176).withOpacity(0.9),
@@ -29,7 +31,10 @@ class CourseCard extends StatelessWidget {
           Row(children: [
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
-              child: Image.network(course.imgUrl, height: 100),
+              child: ClipRRect(
+                  borderRadius:
+                      const BorderRadius.only(bottomLeft: Radius.circular(15)),
+                  child: Image.network(course.imgUrl, height: 100)),
             ),
             Padding(
               padding: const EdgeInsets.all(0.0),

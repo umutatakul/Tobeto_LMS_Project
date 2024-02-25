@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_catalogue.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
-import 'package:tobeto_lms_project/widgets/catalogue_widgets/course_card.dart';
+import 'package:tobeto_lms_project/widgets/catalogue_widgets/catalogue_course_card.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 
 class CatalogueScreen extends StatelessWidget {
@@ -45,7 +45,7 @@ class CatalogueScreen extends StatelessWidget {
               scrollDirection: Axis.vertical,
               itemCount: courseList.length,
               itemBuilder: (ctx, index) {
-                return CourseCard(course: courseList[index]);
+                return CatalogueCourseCard(course: courseList[index]);
               },
 
               // children: [

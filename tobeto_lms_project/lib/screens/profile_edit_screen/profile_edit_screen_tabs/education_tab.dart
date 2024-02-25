@@ -104,8 +104,8 @@ class _EducationTabState extends State<EducationTab> {
           },
         ),
       ]),
-      ElevatedButton(onPressed: () {}, child: Text("Kaydet")),
-      Text("Okul bilkerini buda card ile oluştur"),
+      ElevatedButton(onPressed: () {}, child: const Text("Kaydet")),
+      const Text("Okul bilkerini buda card ile oluştur"),
       FooterFieldProfile(backgroundColors: footerBackgroundColor)
     ]));
   }

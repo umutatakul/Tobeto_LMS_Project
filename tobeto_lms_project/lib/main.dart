@@ -6,14 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
 import 'package:tobeto_lms_project/api/repositories/auth_repository.dart';
+import 'package:tobeto_lms_project/api/repositories/storage_repository.dart';
 import 'package:tobeto_lms_project/api/repositories/user_repository.dart';
 import 'package:tobeto_lms_project/firebase_options.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
-import 'package:tobeto_lms_project/screens/deneme_search.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
-import 'package:tobeto_lms_project/screens/login_screen.dart';
-import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
 import 'package:tobeto_lms_project/screens/start.dart';
@@ -43,7 +41,8 @@ class TobetoApp extends StatelessWidget {
               AuthRepository(), FirebaseAuth.instance, UserRepository()),
         ),
         BlocProvider<ProfileBloc>(
-          create: (context) => ProfileBloc(UserRepository()),
+          create: (context) =>
+              ProfileBloc(UserRepository(), StorageRepository()),
         )
       ],
       child: MaterialApp(

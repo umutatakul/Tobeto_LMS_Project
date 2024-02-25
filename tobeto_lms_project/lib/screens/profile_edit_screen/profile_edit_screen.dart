@@ -7,7 +7,6 @@ import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_scre
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/social_media_accounts_tab.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/individual_information_tab.dart';
-import 'package:tobeto_lms_project/widgets/profile_widgets/experience_card.dart';
 
 class ProfileEditScreen extends StatelessWidget {
   ProfileEditScreen({Key? key}) : super(key: key);
@@ -28,26 +27,28 @@ class ProfileEditScreen extends StatelessWidget {
               appBar: AppBar(
                 centerTitle: true,
                 title: Text(_strings.appBarTitle),
-                bottom: const TabBar(tabs: [
-                  Tab(
-                    icon: Icon(Icons.person),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.work_outline),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.import_contacts_outlined),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.verified_outlined),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.card_membership),
-                  ),
-                  Tab(
-                    icon: Icon(Icons.language),
-                  ),
-                ]),
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(
+                      icon: Icon(Icons.person),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.work_outline),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.import_contacts_outlined),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.verified_outlined),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.card_membership),
+                    ),
+                    Tab(
+                      icon: Icon(Icons.language),
+                    ),
+                  ],
+                ),
               ),
               //appBar: CustomAppBarWidget(appBarTitle: "Profil Düzenleme"),
               drawer: CustomDrawer(),

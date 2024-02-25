@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarWidget extends StatelessWidget
-    //AppBar retun edeceğimiz için bunu istedi
+    //AppBar return edeceğimiz için bunu istedi
     implements
         PreferredSizeWidget {
   const CustomAppBarWidget({Key? key, required this.appBarTitle})
@@ -11,7 +11,12 @@ class CustomAppBarWidget extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Center(child: Text(appBarTitle)),
+      title: Text(appBarTitle),
+      // titleTextStyle: Theme.of(context)
+      //     .textTheme
+      //     .headlineMedium!
+      //     .copyWith(color: Theme.of(context).colorScheme.onTertiary),
+      centerTitle: true,
     );
   }
 
