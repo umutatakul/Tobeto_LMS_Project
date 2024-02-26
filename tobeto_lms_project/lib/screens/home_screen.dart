@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
@@ -17,6 +19,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
+
+    final courseCollection = _firebaseFirestore.collection("course");
+
     return Scaffold(
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
         drawer: CustomDrawer(),
@@ -53,6 +59,21 @@ class _HomeScreenState extends State<HomeScreen> {
               const CustomizableContainerFieldHome(
                   title: "Kendini Değerlendir"),
               const CustomizableContainerFieldHome(title: "Öğrenmeye Başla"),
+              //ElevatedButton(onPressed: onPressed, child: child),
+              ElevatedButton.icon(
+                onPressed: () async {
+                  bool dataAdded = false;
+                  if (!dataAdded) {
+                    for (var course in educationCourseList) {
+                      await courseCollection.add(course.toMap());
+                    }
+                    dataAdded = true;
+                  }
+                },
+                icon: const Icon(Icons.upload),
+                label: const Text("firestore veri yükle..."),
+              ),
+
               FooterFieldProfile(
                   backgroundColors:
                       Theme.of(context).colorScheme.inverseSurface)

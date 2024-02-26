@@ -41,7 +41,7 @@ class EducationCourseModel {
       'filterNumber': filterNumber,
       'description': description,
       'instructor': instructor,
-      'video': videoLink,
+      'videoLink': videoLink,
     };
   }
 
@@ -58,7 +58,7 @@ class EducationCourseModel {
       filterNumber: map['filterNumber'] ?? '',
       description: map['description'] ?? '',
       instructor: map['instructor'] ?? '',
-      videoLink: map["video"] ?? '',
+      videoLink: map["videoLink"] ?? '',
     );
   }
 }

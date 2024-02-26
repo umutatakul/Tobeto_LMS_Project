@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
+import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
 import 'package:tobeto_lms_project/api/repositories/auth_repository.dart';
+import 'package:tobeto_lms_project/api/repositories/education_course_repository.dart';
 import 'package:tobeto_lms_project/api/repositories/storage_repository.dart';
 import 'package:tobeto_lms_project/api/repositories/user_repository.dart';
 import 'package:tobeto_lms_project/firebase_options.dart';
@@ -43,6 +45,10 @@ class TobetoApp extends StatelessWidget {
         BlocProvider<ProfileBloc>(
           create: (context) =>
               ProfileBloc(UserRepository(), StorageRepository()),
+        ),
+        BlocProvider<EducationCourseBloc>(
+          create: (context) =>
+              EducationCourseBloc(courseRepository: CourseRepository()),
         )
       ],
       child: MaterialApp(
