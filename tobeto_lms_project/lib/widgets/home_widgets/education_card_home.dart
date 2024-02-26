@@ -5,7 +5,7 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 
 class EducationCardHome extends StatelessWidget {
   EducationCardHome({Key? key}) : super(key: key);
-  final firstElementOfMockData = EducationCourseList[0];
+  final firstElementOfMockData = educationCourseList[0];
 
   @override
   Widget build(BuildContext context) {

@@ -49,7 +49,8 @@ dependencies:
   #Eğitim hayatı ve deneyimler kısmı için olan uç uca çizgiler için kullanıldı
   timeline_tile: ^2.0.0
   #değerlendirmeler ksımıdna test yüzdeleri için kullanıldı
-  percent_indicator: ^4.0.1
+  # ayrıca my education carddaki prgress bar için
+  percent_indicator: ^4.2.3
   cloud_firestore: ^4.15.4
   firebase_core: ^2.24.2
   firebase_auth: ^4.16.0
@@ -63,6 +64,7 @@ dependencies:
   #gradient_icon: ^2.0.9
   #SVG dosyalarını istnereneten çekemk için kullanıyoruz
   flutter_svg_provider: ^1.0.7
+  #home screendeki tabbarın dinamik olarak boyutlandırılması için kullnadık
   autoscale_tabbarview: ^1.0.2
 
 dev_dependencies:

@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
-import 'package:tobeto_lms_project/widgets/home_widgets/customizable_home_card.dart';
-import 'package:tobeto_lms_project/widgets/home_widgets/education_field_deneme.dart';
+import 'package:tobeto_lms_project/widgets/home_widgets/customizable_container_field_home.dart';
 import 'package:tobeto_lms_project/widgets/home_widgets/header_field_home.dart';
 import 'package:tobeto_lms_project/widgets/home_widgets/tabbar_field_home.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
@@ -19,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBarWidget(appBarTitle: "Anasayfa"),
+        appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
         drawer: CustomDrawer(),
         body: SingleChildScrollView(
           child: Column(
@@ -50,9 +49,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const CustomizableHomeCard(title: "Profilini Oluştur"),
-              const CustomizableHomeCard(title: "Kendini Değerlendir"),
-              const CustomizableHomeCard(title: "Öğrenmeye Başla"),
+              const CustomizableContainerFieldHome(title: "Profilini Oluştur"),
+              const CustomizableContainerFieldHome(
+                  title: "Kendini Değerlendir"),
+              const CustomizableContainerFieldHome(title: "Öğrenmeye Başla"),
               FooterFieldProfile(
                   backgroundColors:
                       Theme.of(context).colorScheme.inverseSurface)

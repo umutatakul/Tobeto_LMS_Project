@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tobeto_lms_project/screens/my_educations_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/certificates_tab.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/education_tab.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/experiences_tab.dart';
@@ -468,8 +469,14 @@ class TabbarFieldHome extends StatelessWidget {
                                   Padding(
                                     padding: const EdgeInsets.all(4.0),
                                     child: OutlinedButton(
-                                        onPressed: () {},
-                                        child: Container(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .push(MaterialPageRoute(
+                                            builder: (context) =>
+                                                const MyEducationsScreen(),
+                                          ));
+                                        },
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Text(
                                             "Tüm Eğitimlerinizi Görmek İçin Tıklayın",

@@ -209,7 +209,7 @@ List requiredExmamsList = [
 
 // ------------------ ANASAYFA -> EĞİTİMLERİM  KISMI İÇİN OLAN EĞİTİMLER--------------------
 
-List<EducationCourseModel> EducationCourseList = <EducationCourseModel>[
+List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
   EducationCourseModel(
     title: "Dr. Ecmel Ayral'dan Hoşgeldin Mesajı",
     lessonCount: "3 dk",

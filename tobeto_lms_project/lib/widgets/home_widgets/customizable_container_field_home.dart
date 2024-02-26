@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 
-class CustomizableHomeCard extends StatelessWidget {
-  const CustomizableHomeCard({Key? key, required this.title}) : super(key: key);
+class CustomizableContainerFieldHome extends StatelessWidget {
+  const CustomizableContainerFieldHome({Key? key, required this.title})
+      : super(key: key);
   final title;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       width: double.infinity,
       margin: const EdgeInsets.all(12),
       height: MediaQuery.of(context).size.height * 0.2,
