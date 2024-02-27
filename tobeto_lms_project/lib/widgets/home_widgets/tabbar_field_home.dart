@@ -26,8 +26,8 @@ class TabbarFieldHome extends StatelessWidget {
         //------------İSTANBUL KODLUYOR RESMİ-------------------
 
         Container(
-          margin: const EdgeInsets.all(30),
-          padding: const EdgeInsets.all(20),
+          margin: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(

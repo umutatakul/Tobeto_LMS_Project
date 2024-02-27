@@ -14,25 +14,25 @@ class HeaderFieldHome extends StatelessWidget {
               text: 'TOBETO',
               style: Theme.of(context)
                   .textTheme
-                  .displayMedium!
+                  .titleLarge!
                   .copyWith(color: Colors.purple),
               children: [
                 TextSpan(
                   text: "'ya hoşgeldin ",
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
           ),
           Text(
             "Alınan İsim!",
-            style: Theme.of(context).textTheme.displayMedium,
-          ),
-          Text(
-            "Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin yanında!",
             style: Theme.of(context).textTheme.titleLarge,
-            textAlign: TextAlign.center,
-          )
+          ),
+          // Text(
+          //   "Yeni nesil öğrenme deneyimi ile Tobeto kariyer yolculuğunda senin yanında!",
+          //   style: Theme.of(context).textTheme.titleLarge,
+          //   textAlign: TextAlign.center,
+          // )
         ],
       ),
     );

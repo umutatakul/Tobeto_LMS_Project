@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/data/apllications_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
@@ -21,7 +22,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
-    final courseCollection = _firebaseFirestore.collection("course");
+    //final courseCollection = _firebaseFirestore.collection("course");
+    final applicationCollection = _firebaseFirestore.collection("application");
 
     return Scaffold(
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
@@ -31,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              //TODO Hedardaki text size ı düşür
               const HeaderFieldHome(),
               const TabbarFieldHome(),
               const SizedBox(height: 16),
@@ -55,17 +58,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 16),
-              const CustomizableContainerFieldHome(title: "Profilini Oluştur"),
               const CustomizableContainerFieldHome(
-                  title: "Kendini Değerlendir"),
-              const CustomizableContainerFieldHome(title: "Öğrenmeye Başla"),
+                  title: "Profilini \nOluştur"),
+              const CustomizableContainerFieldHome(
+                  title: "Kendini \nDeğerlendir"),
+              const CustomizableContainerFieldHome(title: "Öğrenmeye \nBaşla"),
               //ElevatedButton(onPressed: onPressed, child: child),
               ElevatedButton.icon(
                 onPressed: () async {
                   bool dataAdded = false;
                   if (!dataAdded) {
-                    for (var course in educationCourseList) {
-                      await courseCollection.add(course.toMap());
+                    for (var course in applicationsDataList) {
+                      await applicationCollection.add(course.toMap());
                     }
                     dataAdded = true;
                   }
