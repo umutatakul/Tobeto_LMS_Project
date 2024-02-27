@@ -25,8 +25,8 @@ class TabbarFieldHome extends StatelessWidget {
         //------------İSTANBUL KODLUYOR RESMİ-------------------
 
         Container(
-          margin: EdgeInsets.all(30),
-          padding: EdgeInsets.all(20),
+          margin: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.primary,
               borderRadius: BorderRadius.circular(
@@ -46,11 +46,11 @@ class TabbarFieldHome extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
           ),
           child: Padding(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
 
                 // ---------------TAB BAR ÜSTÜ (IKINCI) TEXT---------
                 Text(
@@ -179,7 +179,7 @@ class TabbarFieldHome extends StatelessWidget {
                                     //------Başvurularım Kartlarıı---------
                                     //Başvurum onaylandı
                                     Container(
-                                      padding: EdgeInsets.all(12),
+                                      padding: const EdgeInsets.all(12),
                                       //height: 200,
                                       decoration: BoxDecoration(
                                           color: Theme.of(context)

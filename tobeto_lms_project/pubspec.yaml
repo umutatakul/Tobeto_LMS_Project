@@ -66,6 +66,10 @@ dependencies:
   flutter_svg_provider: ^1.0.7
   #home screendeki tabbarın dinamik olarak boyutlandırılması için kullnadık
   autoscale_tabbarview: ^1.0.2
+  #video işlemleri için kullandığım kütüphaneler
+  video_player: ^2.8.2
+  visibility_detector: ^0.4.0+2
+  flick_video_player: ^0.7.0
 
 dev_dependencies:
   flutter_test:

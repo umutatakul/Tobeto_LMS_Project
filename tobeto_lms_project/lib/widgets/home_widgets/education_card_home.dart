@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
+import 'package:tobeto_lms_project/widgets/home_widgets/home_tabbar_education_video.dart';
 
 class EducationCardHome extends StatelessWidget {
   EducationCardHome({Key? key}) : super(key: key);
@@ -40,9 +41,16 @@ class EducationCardHome extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Container(
-                margin: EdgeInsets.all(12),
+                margin: const EdgeInsets.all(12),
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Navigator.of(context).push(MaterialPageRoute(
+                      //   builder: (context) => const HomeTabbarEducationVideo(
+                      //     videoLink:
+                      //         "https://cdn.cms.medianova.com/p/132/sp/13200/serveFlavor/entryId/0_402pg2wr/v/2/ev/10/flavorId/0_jpibng14/forceproxy/true/name/a.mp4",
+                      //   ),
+                      // ));
+                    },
                     child: Container(
                         width: double.infinity,
                         child: Text(
