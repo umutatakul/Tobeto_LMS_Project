@@ -1,43 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/models/application__screen_model.dart';
 
-class TabbarApplicationCardHomeScreen extends StatelessWidget {
-  const TabbarApplicationCardHomeScreen(
-      {Key? key, required this.status, required this.organizationName})
-      : super(key: key);
+class ApplicationCardApplicationScreen extends StatelessWidget {
+  const ApplicationCardApplicationScreen({
+    Key? key,
+    required this.application,
+  }) : super(key: key);
   //Renk ve ikonları alnacak status değerine verilen değere göre irdelenecek
   //Bunlar
   // { Approved, InProgress, Rejected }
-
-  final String status;
-
   // Başvurulan organizasyonun adı
+  final ApplicationScreenModel application;
 
-  final String organizationName;
   @override
   Widget build(BuildContext context) {
     //Kontrolörler
     //Renk kontrolü
-    final Color currentColor = (status == "Approved")
+    final Color currentColor = (application.status == "Approved")
         ? Colors.green
-        : (status == "InProgress")
+        : (application.status == "InProgress")
             ? Colors.yellow.shade900
             : Colors.red;
     //İkon kontrolü
-    final IconData currentIcon = (status == "Approved")
+    final IconData currentIcon = (application.status == "Approved")
         ? Icons.check
-        : (status == "InProgress")
+        : (application.status == "InProgress")
             ? Icons.av_timer_outlined
             : Icons.sentiment_dissatisfied;
     // Durum Metni
-    final String statusString = (status == "Approved")
+    final String statusString = (application.status == "Approved")
         ? "Kabul Edildi"
-        : (status == "InProgress")
+        : (application.status == "InProgress")
             ? "Değerlendirmede"
             : "Reddedildi";
     // İç satır metni Metni
-    final String spanString = (status == "Approved")
+    final String spanString = (application.status == "Approved")
         ? "Onaylandı"
-        : (status == "InProgress")
+        : (application == "InProgress")
             ? "Değerlendiriliyor"
             : "Reddedildi";
     return Container(
@@ -54,7 +53,7 @@ class TabbarApplicationCardHomeScreen extends StatelessWidget {
             //
             children: [
               Text(
-                "$organizationName \nBilgilendirme",
+                "${application.organizationName} \nBilgilendirme",
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               Container(
@@ -83,7 +82,7 @@ class TabbarApplicationCardHomeScreen extends StatelessWidget {
                     color: currentColor,
                   ),
                   Text(
-                    "$organizationName Başvuru Formu $spanString.",
+                    "${application.organizationName} Başvuru Formu $spanString.",
                     style: Theme.of(context).textTheme.bodyMedium,
                   )
                 ],
@@ -95,7 +94,7 @@ class TabbarApplicationCardHomeScreen extends StatelessWidget {
                     color: currentColor,
                   ),
                   Text(
-                    "$organizationName için Belge Yükleme \nFormu $spanString.",
+                    "${application.organizationName} için Belge Yükleme \nFormu $spanString.",
                     style: Theme.of(context).textTheme.bodyMedium,
                   )
                 ],

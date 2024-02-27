@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/screens/applications_screen.dart';
 import 'package:tobeto_lms_project/widgets/home_widgets/tabbar_application_card_home_screen.dart';
 
 class TabbarApplicationsView extends StatelessWidget {
@@ -6,28 +7,33 @@ class TabbarApplicationsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         // { Approved, InProgress, Rejected }
 
         //------Başvurularım Kartlarıı---------
         //Başvurum onaylandı
-        TabbarApplicationCardHomeScreen(
+        const TabbarApplicationCardHomeScreen(
           status: "Approved",
           organizationName: "İstanbul Kodluyor",
         ),
 
         //------------Başvuru Değerlendirmede-----------
-        TabbarApplicationCardHomeScreen(
+        const TabbarApplicationCardHomeScreen(
           status: "InProgress",
           organizationName: "Flutter Eğitimi",
         ),
 
         //------------Başvuru Reddedildi-----------
-        TabbarApplicationCardHomeScreen(
+        const TabbarApplicationCardHomeScreen(
           status: "Rejcted",
           organizationName: ".NET Eğitimi",
         ),
+        //-----------Tüm Başvuruları Görüntüle
+        ElevatedButton(
+            onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => ApplicationsScreen())),
+            child: const Text("Tüm Başvurularımı Gör"))
       ],
     );
   }
