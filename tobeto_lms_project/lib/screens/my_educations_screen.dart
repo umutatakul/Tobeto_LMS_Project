@@ -18,9 +18,9 @@ class MyEducationsScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBarWidget(appBarTitle: "Eğitimlerim"),
       drawer: CustomDrawer(),
-      body: Column(
+      body: const Column(
         children: [
-          const NameFieldMyEducation(),
+          NameFieldMyEducation(),
           SearchFieldMyEducation(),
           HeaderFieldMyEducation(),
           //TODO Header ı da girdview ile hareket edicek şekilde değiştir

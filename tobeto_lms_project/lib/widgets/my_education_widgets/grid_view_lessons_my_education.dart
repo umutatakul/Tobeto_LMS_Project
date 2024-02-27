@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_event.dart';
 import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_state.dart';
-import 'package:tobeto_lms_project/data/mock_data.dart';
-import 'package:tobeto_lms_project/models/education_course_model.dart';
 import 'package:tobeto_lms_project/widgets/my_education_widgets/education_course_card_my_edcuation.dart';
 
 class GridViewLessonsMyEducation extends StatelessWidget {
