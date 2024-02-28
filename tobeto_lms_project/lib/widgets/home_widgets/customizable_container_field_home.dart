@@ -8,34 +8,61 @@ class CustomizableContainerFieldHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
-        padding: const EdgeInsets.only(right: 60, left: 12, bottom: 20),
-        margin: const EdgeInsets.all(12),
-        height: MediaQuery.of(context).size.height * 0.2,
-        decoration: BoxDecoration(
-            color: Theme.of(context).primaryColorDark,
-            borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(30),
-              bottomLeft: Radius.circular(30),
-              bottomRight: Radius.circular(30),
-            )),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.displaySmall,
-            ),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_circle_right_rounded,
-                  size: 100,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                ))
-          ],
-        )
+      margin: const EdgeInsets.all(12),
+      child: ElevatedButton(
+          onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const Icon(
+                Icons.arrow_circle_right,
+                size: 35,
+              )
+            ],
+          )),
+    );
+  }
+}
+
+
+
+
+
+    //-------------İKİNCİ TASARIM-------------------
+    // Container(
+    //     width: double.infinity,
+    //     padding: const EdgeInsets.only(right: 60, left: 12, bottom: 20),
+    //     margin: const EdgeInsets.all(12),
+    //     height: MediaQuery.of(context).size.height * 0.2,
+    //     decoration: BoxDecoration(
+    //         color: Theme.of(context).primaryColorDark,
+    //         borderRadius: const BorderRadius.only(
+    //           topRight: Radius.circular(30),
+    //           bottomLeft: Radius.circular(30),
+    //           bottomRight: Radius.circular(30),
+    //         )),
+    //     child: Row(
+    //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //       crossAxisAlignment: CrossAxisAlignment.center,
+    //       children: [
+    //         Text(
+    //           title,
+    //           style: Theme.of(context).textTheme.displaySmall,
+    //         ),
+    //         IconButton(
+    //             onPressed: () {},
+    //             icon: Icon(
+    //               Icons.arrow_circle_right_rounded,
+    //               size: 100,
+    //               color: Theme.of(context).colorScheme.onSecondary,
+    //             ))
+    //       ],
+    //     )
+    //--------İLK TASARIM---------------------------
         //  Column(
         //   mainAxisAlignment: MainAxisAlignment.spaceAround,
         //   children: [
@@ -58,6 +85,3 @@ class CustomizableContainerFieldHome extends StatelessWidget {
         //     ),
         //   ],
         // ),
-        );
-  }
-}

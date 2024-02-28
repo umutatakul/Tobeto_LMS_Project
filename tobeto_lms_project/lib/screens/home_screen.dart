@@ -60,11 +60,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               const SizedBox(height: 16),
+              const CustomizableContainerFieldHome(title: "Profilini Oluştur"),
               const CustomizableContainerFieldHome(
-                  title: "Profilini \nOluştur"),
-              const CustomizableContainerFieldHome(
-                  title: "Kendini \nDeğerlendir"),
-              const CustomizableContainerFieldHome(title: "Öğrenmeye \nBaşla"),
+                  title: "Kendini Değerlendir"),
+              const CustomizableContainerFieldHome(title: "Öğrenmeye Başla"),
               // Verileri Firestore aktarmak için oluşturuduğumuz fonksiyon ve buton
               ElevatedButton.icon(
                 onPressed: () async {
