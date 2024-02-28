@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/data/announces_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/apllications_mock_data_list.dart';
+import 'package:tobeto_lms_project/data/exam_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
@@ -26,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     //final courseCollection = _firebaseFirestore.collection("course");
     // final applicationCollection = _firebaseFirestore.collection("application");
-    final announceCollection = _firebaseFirestore.collection("announce");
+    // final announceCollection = _firebaseFirestore.collection("announce");
+    final examCollection = _firebaseFirestore.collection("exam");
 
     return Scaffold(
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
@@ -50,8 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () async {
                   bool dataAdded = false;
                   if (!dataAdded) {
-                    for (var announce in announceMockDataList) {
-                      await announceCollection.add(announce.toMap());
+                    for (var exam in examMockDataList) {
+                      await examCollection.add(exam.toMap());
                     }
                     dataAdded = true;
                   }
