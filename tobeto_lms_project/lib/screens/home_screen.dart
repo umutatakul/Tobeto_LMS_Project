@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:tobeto_lms_project/data/announces_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/apllications_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
@@ -23,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
     //final courseCollection = _firebaseFirestore.collection("course");
-    final applicationCollection = _firebaseFirestore.collection("application");
+    // final applicationCollection = _firebaseFirestore.collection("application");
+    final announceCollection = _firebaseFirestore.collection("announce");
 
     return Scaffold(
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
@@ -63,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
               const CustomizableContainerFieldHome(
                   title: "Kendini \nDeğerlendir"),
               const CustomizableContainerFieldHome(title: "Öğrenmeye \nBaşla"),
-              //ElevatedButton(onPressed: onPressed, child: child),
+              // Verileri Firestore aktarmak için oluşturuduğumuz fonksiyon ve buton
               ElevatedButton.icon(
                 onPressed: () async {
                   bool dataAdded = false;
                   if (!dataAdded) {
-                    for (var course in applicationsDataList) {
-                      await applicationCollection.add(course.toMap());
+                    for (var announce in announceMockDataList) {
+                      await announceCollection.add(announce.toMap());
                     }
                     dataAdded = true;
                   }

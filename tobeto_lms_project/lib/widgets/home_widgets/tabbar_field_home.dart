@@ -218,6 +218,7 @@ class TabbarFieldHome extends StatelessWidget {
                                   )
                                 ],
                               ),
+                              //----Duyurularım Görünüm Bölümü
                               Column(
                                 children: [
                                   Center(

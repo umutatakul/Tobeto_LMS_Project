@@ -4,7 +4,6 @@ import 'package:tobeto_lms_project/api/blocs/application_bloc/application_bloc.d
 import 'package:tobeto_lms_project/api/blocs/application_bloc/application_event.dart';
 import 'package:tobeto_lms_project/api/blocs/application_bloc/application_state.dart';
 import 'package:tobeto_lms_project/data/apllications_mock_data_list.dart';
-import 'package:tobeto_lms_project/models/application__screen_model.dart';
 import 'package:tobeto_lms_project/widgets/applications_widgets/application_card_application_screen.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
@@ -24,7 +23,7 @@ class ApplicationsScreen extends StatelessWidget {
           context.read<ApplicationBloc>().add(GetApplicationEvent());
         }
         if (state is ApplicationLoadingState) {
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         }
@@ -40,10 +39,10 @@ class ApplicationsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: applicationList.length,
+                  itemCount: application.length,
                   itemBuilder: (ctx, index) {
                     return ApplicationCardApplicationScreen(
-                        application: applicationList[index]);
+                        application: application[index]);
                   },
                 ),
               )),

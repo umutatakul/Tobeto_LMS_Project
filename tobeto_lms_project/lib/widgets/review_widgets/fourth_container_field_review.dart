@@ -3,7 +3,7 @@ import 'package:tobeto_lms_project/constants/colors/colors_of_review_screen.dart
 import 'package:tobeto_lms_project/widgets/review_widgets/custom_container_review.dart';
 
 class FourthContainerFieldReview extends StatelessWidget {
-  const FourthContainerFieldReview({Key? key}) : super(key: key);
+  const FourthContainerFieldReview({super.key});
 
   @override
   Widget build(BuildContext context) {

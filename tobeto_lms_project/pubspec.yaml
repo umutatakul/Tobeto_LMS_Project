@@ -44,7 +44,7 @@ dependencies:
   #
   pie_chart: ^5.4.0
   #Datetime için kullanıldı
-  intl: ^0.17.0
+  intl: ^0.19.0
   flutter_heatmap_calendar: ^1.0.5
   #Eğitim hayatı ve deneyimler kısmı için olan uç uca çizgiler için kullanıldı
   timeline_tile: ^2.0.0
@@ -81,6 +81,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  #3.0.1 versiyonu var ama super tanımalamlarıma yüz tane hata verdi geri aldım
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

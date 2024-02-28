@@ -6,7 +6,7 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/exam_card_review.dart';
 
 class TestAndResultCardsField extends StatelessWidget {
-  TestAndResultCardsField({Key? key}) : super(key: key);
+  TestAndResultCardsField({super.key});
   final resultListScores = ProfileInformationData().resultsList;
   @override
   Widget build(BuildContext context) {

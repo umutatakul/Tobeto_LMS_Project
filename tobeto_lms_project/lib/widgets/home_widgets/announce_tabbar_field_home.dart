@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/data/announces_mock_data_list.dart';
+import 'package:tobeto_lms_project/screens/announces_screen.dart';
 import 'package:tobeto_lms_project/widgets/home_widgets/announce_card_home.dart';
 
 class AnnounceTabbarFieldHome extends StatelessWidget {
-  const AnnounceTabbarFieldHome({Key? key}) : super(key: key);
+  const AnnounceTabbarFieldHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +30,15 @@ class AnnounceTabbarFieldHome extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const AnnouncesScreen(),
+                ));
+              },
               child: Container(
                 width: double.infinity,
                 child: Text(
-                  "Tüm Eğitimlerinizi Görmek İçin Tıklayın",
+                  "Tüm Duyuruları Görmek İçin Tıklayın",
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
