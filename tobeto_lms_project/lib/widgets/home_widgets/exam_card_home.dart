@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tobeto_lms_project/models/exam_model.dart';
-import 'package:tobeto_lms_project/screens/exams_dialog_screen.dart';
+import 'package:tobeto_lms_project/screens/exam_webview_screen.dart';
+// import 'package:tobeto_lms_project/screens/exams_dialog_screen.dart';
 
 class ExamCardHome extends StatelessWidget {
   const ExamCardHome({Key? key, required this.examModel}) : super(key: key);
@@ -24,7 +25,9 @@ class ExamCardHome extends StatelessWidget {
           title: Text(examModel.title),
           //TODO examModel içindeki dataların kaçık karakterleri ile alt satıra geçişleri kontrol et
           content: examModel.isExamCompleted == false
-              ? Column(
+              ? const Text(
+                  "Sınavı tamamlamış görünüyorsunuz. Problem olduğunu düşünüyorsanız sistem yönetici ile iletişime geçiniz")
+              : Column(
                   //Bunu kaldırma. dilog sayfası ferman gibi uzuyor
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -33,14 +36,14 @@ class ExamCardHome extends StatelessWidget {
                     Text("Soru sayısı ${examModel.questionPcs}"),
                     Text("Soru Tipi : ${examModel.examType}")
                   ],
-                )
-              : const Text(
-                  "Sınavı tamamlamış görünüyorsunuz. Problem olduğunu düşünüyorsanız sistem yönetici ile iletişime geçiniz"),
+                ),
           actions: [
             Visibility(
               visible: examModel.isExamCompleted,
               child: TextButton(
-                onPressed: () => Navigator.of(context).pop(),
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ExamWebviewScreen(),
+                )),
                 child: const Text("Sınava git"),
               ),
             ),
