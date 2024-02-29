@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tobeto_lms_project/screens/calendar_screen.dart';
+import 'package:tobeto_lms_project/screens/home_screen.dart';
+import 'package:tobeto_lms_project/screens/profile_screen.dart';
+import 'package:tobeto_lms_project/screens/review_screen.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
   const CustomBottomNavigationBar({Key? key}) : super(key: key);
@@ -14,13 +19,17 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
     Size size = MediaQuery.of(context).size;
     double height = 56;
 
-    final primaryColor = Colors.orange;
-    final secondaryColor = Colors.black54;
+    //TODO Seçili ikon rengini hangdle et
+
+    int _selectedIndex = 0;
+
+    final primaryColor = Theme.of(context).primaryColor;
+    final secondaryColor = Theme.of(context).colorScheme.onBackground;
     final accentColor = const Color(0xffffffff);
-    final backgroundColor = Colors.white;
+    final backgroundColor = Theme.of(context).colorScheme.inverseSurface;
 
     return BottomAppBar(
-      color: Colors.transparent,
+      color: Colors.transparent.withOpacity(0),
       elevation: 0,
       child: Stack(
         children: [
@@ -31,10 +40,15 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           Center(
             heightFactor: 0.6,
             child: FloatingActionButton(
+                // Home butonu
                 backgroundColor: primaryColor,
-                child: Icon(Icons.shopping_basket),
                 elevation: 0.1,
-                onPressed: () {}),
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const HomeScreen(),
+                  ));
+                },
+                child: Icon(Icons.home_outlined)),
           ),
           Container(
             height: height,
@@ -42,36 +56,66 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 NavBarIcon(
-                  text: "Home",
-                  icon: Icons.home_outlined,
-                  selected: true,
-                  onPressed: () {},
-                  defaultColor: secondaryColor,
-                  selectedColor: primaryColor,
+                  text: "Review Screen",
+                  icon: Icons.view_list,
+                  selected: false,
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ReviewScreen()));
+                  },
+                  defaultColor: primaryColor,
+                  selectedColor: secondaryColor,
                 ),
                 NavBarIcon(
-                  text: "Search",
-                  icon: Icons.search_outlined,
+                  text: "Profile",
+                  icon: Icons.person,
                   selected: false,
-                  onPressed: () {},
-                  defaultColor: secondaryColor,
-                  selectedColor: primaryColor,
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ProfileScreen()));
+                  },
+                  defaultColor: primaryColor,
+                  selectedColor: secondaryColor,
                 ),
                 SizedBox(width: 56),
                 NavBarIcon(
-                    text: "Cart",
-                    icon: Icons.local_grocery_store_outlined,
+                    text: "Adress",
+                    icon: FontAwesomeIcons.locationArrow,
                     selected: false,
-                    onPressed: () {},
-                    defaultColor: secondaryColor,
-                    selectedColor: primaryColor),
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: const Text("ENOCTA OFİS"),
+                          content: const Text(
+                              "Adres: Kavacık, Rüzgarlıbahçe Mah. Çampınarı Sok. No:4 Smart Plaza B Blok Kat:3 34805, Beykoz/İstanbul"),
+                          actions: [
+                            // IconButton(
+                            //     onPressed: () => Navigator.of(context).pop(),
+                            //     icon: Icon(Icons.close)),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  FontAwesomeIcons.locationDot,
+                                  color: Colors.deepOrangeAccent.shade200,
+                                  size: 40,
+                                )),
+                          ],
+                        ),
+                      );
+                    },
+                    defaultColor: primaryColor,
+                    selectedColor: secondaryColor),
                 NavBarIcon(
                   text: "Calendar",
-                  icon: Icons.date_range_outlined,
+                  icon: Icons.date_range,
                   selected: false,
-                  onPressed: () {},
-                  selectedColor: primaryColor,
-                  defaultColor: secondaryColor,
+                  onPressed: () {
+                    return Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const CalendarScreen()));
+                  },
+                  selectedColor: secondaryColor,
+                  defaultColor: primaryColor,
                 )
               ],
             ),

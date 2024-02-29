@@ -9,6 +9,7 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/models/user_model.dart';
 import 'package:tobeto_lms_project/screens/custom_animated_background_body.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen.dart';
+import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/about_card_profile.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/activitiy_field_profile.dart';
@@ -146,6 +147,7 @@ class _ProfileScreenState extends State<ProfileScreen>
           },
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

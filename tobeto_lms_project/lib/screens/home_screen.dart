@@ -31,6 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final examCollection = _firebaseFirestore.collection("exam");
 
     return Scaffold(
+        //Bunu her  eklersen bottomBar izi yok oluyor
+        extendBody: true,
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
         drawer: CustomDrawer(),
         body: SingleChildScrollView(

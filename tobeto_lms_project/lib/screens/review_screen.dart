@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_lms_project/constants/strings/review_screen_strings.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
+import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 import 'package:tobeto_lms_project/widgets/review_widgets/first_container_review_field.dart';
@@ -41,12 +42,13 @@ class ReviewScreen extends StatelessWidget {
                 const FourthContainerFieldReview(),
                 FooterFieldProfile(
                   backgroundColors: Theme.of(context).primaryColor,
-                )
+                ),
               ],
             ),
           ),
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavigationBar(),
     );
   }
 }

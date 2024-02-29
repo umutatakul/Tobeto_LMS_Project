@@ -54,7 +54,7 @@ class ExamCardHome extends StatelessWidget {
           ],
         ),
       ),
-      //----------ASIL C
+      //----------ASIL CONTAİNER
       child: Container(
         margin: EdgeInsets.all(fullScreenWidth * .05 / 2),
         width: fullScreenWidth * 0.45,
