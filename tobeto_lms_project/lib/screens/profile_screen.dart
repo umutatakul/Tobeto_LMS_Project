@@ -98,7 +98,7 @@ class _ProfileScreenState extends State<ProfileScreen>
                       //----------------------PICTURE FIELD---------------------------
                       PictureFieldProfile(),
                       NameSurnameCardProfile(
-                        name: widget.mockDataFirstCard.name,
+                        name: user.name ?? "",
                         surname: widget.mockDataFirstCard.surname,
                       ),
                       BirthdateCardProfile(

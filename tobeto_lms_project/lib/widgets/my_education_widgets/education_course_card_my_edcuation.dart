@@ -12,60 +12,67 @@ class EducationCourseCardMyEdcuation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-          border: Border.all(), borderRadius: BorderRadius.circular(18)),
-      padding: const EdgeInsets.all(4),
-      child: Column(
-        children: [
-          ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              child: AspectRatio(
-                  aspectRatio: 2,
-                  child: Image.asset(
-                    course.imagePath,
-                    fit: BoxFit.fitWidth,
-                  ))),
-          Text(
-            course.title,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          Row(children: [
-            Icon(Icons.watch_later_outlined),
-            Text(course.lessonCount)
-          ]),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              RatingBar.builder(
-                allowHalfRating: true,
-                itemSize: 25,
-                itemBuilder: (context, index) => const Icon(
-                  Icons.star,
-                  color: Colors.amber,
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, "/educationVideoScreen",
+            arguments: course.title);
+      },
+      child: Container(
+        margin: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+            border: Border.all(), borderRadius: BorderRadius.circular(18)),
+        padding: const EdgeInsets.all(4),
+        child: Column(
+          children: [
+            ClipRRect(
+                borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    topRight: Radius.circular(15)),
+                child: AspectRatio(
+                    aspectRatio: 2,
+                    child: Image.asset(
+                      course.imagePath,
+                      fit: BoxFit.fitWidth,
+                    ))),
+            Text(
+              course.title,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Row(children: [
+              Icon(Icons.watch_later_outlined),
+              Text(course.lessonCount)
+            ]),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                RatingBar.builder(
+                  allowHalfRating: true,
+                  itemSize: 25,
+                  itemBuilder: (context, index) => const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  initialRating: course.rating.toDouble(),
+                  onRatingUpdate: (rating) => print(rating),
                 ),
-                initialRating: course.rating.toDouble(),
-                onRatingUpdate: (rating) => print(rating),
-              ),
-              Text(course.rating.toString()),
-            ],
-          ),
-          Row(
-            children: [
-              LinearPercentIndicator(
-                width: 140.0,
-                lineHeight: 14.0,
-                barRadius: Radius.circular(10),
-                percent: course.progress / 100,
-                backgroundColor: Colors.grey,
-                progressColor: Colors.blue,
-              ),
-              Text(course.progress.toString()),
-            ],
-          ),
-        ],
+                Text(course.rating.toString()),
+              ],
+            ),
+            Row(
+              children: [
+                LinearPercentIndicator(
+                  width: 140.0,
+                  lineHeight: 14.0,
+                  barRadius: Radius.circular(10),
+                  percent: course.progress / 100,
+                  backgroundColor: Colors.grey,
+                  progressColor: Colors.blue,
+                ),
+                Text(course.progress.toString()),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
