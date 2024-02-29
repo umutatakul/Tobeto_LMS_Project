@@ -146,13 +146,9 @@ class EducationVideoScreen extends StatelessWidget {
                                     child: ElevatedButton(
                                         // TODO: uncomment to go to Graduation Screen
                                         onPressed: () {
-                                          // Navigator.push(
-                                          //   context,
-                                          //   MaterialPageRoute(
-                                          //       builder: (context) => GraduationScreen(
-                                          //             courseName: courseName,
-                                          //           )),
-                                          // );
+                                          Navigator.pushNamed(
+                                              context, '/customVideoScreen',
+                                              arguments: education?.videoLink);
                                         },
                                         child: const Text(
                                           "Graduate",

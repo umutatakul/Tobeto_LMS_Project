@@ -248,6 +248,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/hosgeldin.png",
     progress: 100,
     filterNumber: 3,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "İstanbul Kodluyor Proje Aşamaları",
@@ -257,6 +258,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/proje_asamalari.png",
     progress: 50,
     filterNumber: 3,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Mentör Buluşmaları",
@@ -266,6 +268,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/mentor.png",
     progress: 70,
     filterNumber: 3,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Mobil Geliştirici (Flutter) - 1B",
@@ -275,6 +278,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/mobil_1B.png",
     progress: 80,
     filterNumber: 1,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Mobil Geliştirme | Öğrenme Yolculuğu",
@@ -284,6 +288,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/mobil_ogrenme.png",
     progress: 90,
     filterNumber: 1,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: İletişim Becerileri",
@@ -293,6 +298,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 90,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: İngilizce Beceriler",
@@ -302,6 +308,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 80,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: İş Becerileri",
@@ -311,6 +318,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 80,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: İş Yönetimi Becerileri 1",
@@ -320,6 +328,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 90,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: İş Yönetimi Becerileri 2",
@@ -329,6 +338,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 40,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: Kişisel Gelişim",
@@ -338,6 +348,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 90,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
   EducationCourseModel(
     title: "Softskill: Planlama Becerileri",
@@ -347,6 +358,7 @@ List<EducationCourseModel> educationCourseList = <EducationCourseModel>[
     imagePath: "assets/images/course_images/softskill.png",
     progress: 45,
     filterNumber: 2,
+    videoLink: videoLinks[0],
   ),
 ];
 

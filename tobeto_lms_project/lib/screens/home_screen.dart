@@ -25,10 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
 
-    //final courseCollection = _firebaseFirestore.collection("course");
+    final courseCollection = _firebaseFirestore.collection("course");
     // final applicationCollection = _firebaseFirestore.collection("application");
     // final announceCollection = _firebaseFirestore.collection("announce");
-    final examCollection = _firebaseFirestore.collection("exam");
+    //final examCollection = _firebaseFirestore.collection("exam");
 
     return Scaffold(
         //Bunu her  eklersen bottomBar izi yok oluyor
@@ -54,8 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () async {
                   bool dataAdded = false;
                   if (!dataAdded) {
-                    for (var exam in examMockDataList) {
-                      await examCollection.add(exam.toMap());
+                    for (var course in educationCourseList) {
+                      await courseCollection.add(course.toMap());
                     }
                     dataAdded = true;
                   }
