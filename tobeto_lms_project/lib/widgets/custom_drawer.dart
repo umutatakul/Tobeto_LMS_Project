@@ -60,7 +60,10 @@ class CustomDrawer extends StatelessWidget {
           CustomListTileTwo(
               listTileName: _customDrawerStrings.tobeto,
               icon: const Icon(Icons.home_outlined)),
-          DrawerContainerOne(containerName: _customDrawerStrings.userName),
+
+          //TODO Bloc state ile firebaseden veri almayı denedim. Hata verdi.
+          //Sunumdan sonra tekrar bak. Maindeki Provider acaba burayı da kapsıyor mu?
+          /*DrawerContainerOne(containerName: _customDrawerStrings.userName),*/
           CustomListTileThree(
               listTileName: CustomDrawerStrings().tobetoCopyrighted),
           const QuitButton()
