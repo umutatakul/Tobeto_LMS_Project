@@ -104,11 +104,10 @@ class _ProfileScreenState extends State<ProfileScreen>
                       BirthdateCardProfile(
                           birthdate: widget.mockDataFirstCard.birthdate),
                       MailCardProfile(mail: user.email!),
-                      PhoneNumberCardProfile(
-                          telephone: widget.mockDataFirstCard.phoneNumber),
+                      PhoneNumberCardProfile(telephone: user.phone ?? ""),
                       AboutCardProfile(
                           title: widget.profileStrings.about,
-                          informationText: "Metin bla bla bla"),
+                          informationText: user.about ?? ""),
                       SkillsFieldProfile(
                         title: widget.profileStrings.mySkills,
                         skillDataList: widget.skillsList,
