@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HeaderFieldHome extends StatelessWidget {
-  const HeaderFieldHome({Key? key}) : super(key: key);
+  const HeaderFieldHome({Key? key, required this.nameSurname})
+      : super(key: key);
+  final String nameSurname;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class HeaderFieldHome extends StatelessWidget {
             ),
           ),
           Text(
-            "Alınan İsim!",
+            nameSurname,
             style: Theme.of(context).textTheme.titleLarge,
           ),
           // Text(
