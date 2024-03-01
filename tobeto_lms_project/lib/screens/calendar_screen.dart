@@ -11,10 +11,10 @@ class CalendarScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Scaffold(
-        appBar: CustomAppBarWidget(appBarTitle: "Takvim"),
+        appBar: const CustomAppBarWidget(appBarTitle: "Takvim"),
         drawer: CustomDrawer(),
-        body: CalendarBody(),
-        bottomNavigationBar: CustomBottomNavigationBar(),
+        body: const CalendarBody(),
+        bottomNavigationBar: const CustomBottomNavigationBar(),
       ),
     );
   }

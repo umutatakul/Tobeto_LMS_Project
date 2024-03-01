@@ -51,6 +51,7 @@ dependencies:
   #değerlendirmeler ksımıdna test yüzdeleri için kullanıldı
   # ayrıca my education carddaki prgress bar için
   percent_indicator: ^4.2.3
+  #Firebase Database için
   cloud_firestore: ^4.15.4
   firebase_core: ^2.25.5
   firebase_auth: ^4.16.0

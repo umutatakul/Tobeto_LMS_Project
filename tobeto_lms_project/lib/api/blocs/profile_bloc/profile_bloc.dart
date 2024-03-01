@@ -33,9 +33,11 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   Future<void> _updateProfile(
       UpdateProfileEvent event, Emitter<ProfileState> emit) async {
     emit(ProfileLoading());
+    final String url;
     try {
       if (event.photo != null) {
-        await _storageRepository.uploadPhoto(event.photo!);
+        url = await _storageRepository.uploadPhoto(event.photo!);
+        event.userModel.profilePhoto = url;
       }
       await _userRepository.updateUserFromFirestore(event.userModel);
       emit(ProfileUpdated());

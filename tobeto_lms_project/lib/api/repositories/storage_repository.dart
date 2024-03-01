@@ -9,7 +9,7 @@ class StorageRepository {
   final FirebaseFirestore _firebaseFirestore = FirebaseFirestore.instance;
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  Future uploadPhoto(File imageUrl) async {
+  Future<String> uploadPhoto(File imageUrl) async {
     //// Kullanıcının anlık bilgisini aldım ()
     //
     User? _currentUserInformation = _firebaseAuth.currentUser!;
@@ -28,15 +28,16 @@ class StorageRepository {
 
     // Users colection içine ekleme işlemini gerçekleştiriyor.
 
-    await _firebaseFirestore
-        .collection("users")
-        .doc(_currentUserInformation.uid)
-        //set deseydik üstüne durmadan ekleeycekti
-        .update({
-      "profilePhoto": downloadUrl,
-      "userId": _currentUserInformation.uid
-    });
+    // await _firebaseFirestore
+    //     .collection("users")
+    //     .doc(_currentUserInformation.uid)
+    //     //set deseydik üstüne durmadan ekleeycekti
+    //     .update({
+    //   "profilePhoto": downloadUrl,
+    //   "userId": _currentUserInformation.uid
+    // });
 
     //
+    return downloadUrl;
   }
 }

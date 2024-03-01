@@ -7,7 +7,8 @@ class BirthdateCardProfile extends CustomizableCardMainInformationProfile {
     required this.birthdate,
   }) : super(
             litleTitle: "Doğum Tarihi",
-            bigtext: birthdate,
+            bigtext: "GG.AA.YYYY",
+            // birthdate,
             icon: const Icon(Icons.date_range_sharp));
   final String birthdate;
 }
