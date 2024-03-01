@@ -5,6 +5,7 @@ import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_scre
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/experiences_tab.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/skills_tab.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/social_media_accounts_tab.dart';
+import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
 import 'package:tobeto_lms_project/screens/profile_edit_screen/profile_edit_screen_tabs/individual_information_tab.dart';
 
@@ -63,6 +64,7 @@ class ProfileEditScreen extends StatelessWidget {
                 //Center(child: Text("Sertifika bilgileri düzenlem sayfası")),
                 const SocialMediaAccountsTab(),
               ]),
+              bottomNavigationBar: const CustomBottomNavigationBar(),
             ));
   }
 }
