@@ -4,7 +4,7 @@ import 'package:tobeto_lms_project/data/mock_data.dart';
 class PictureFieldProfile extends StatelessWidget {
   PictureFieldProfile({required this.profileUrl, Key? key}) : super(key: key);
   final mockDataFirstCard = ProfileInformationData();
-  final String profileUrl;
+  final String? profileUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +24,11 @@ class PictureFieldProfile extends StatelessWidget {
         child: Container(
             width: 100,
             height: 100,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
-                    image: NetworkImage(
+                    image: NetworkImage(profileUrl ??
+                        //TODO default profile picture olarak görmüyor
                         "https://static.vecteezy.com/system/resources/previews/009/749/643/original/woman-profile-mascot-illustration-female-avatar-character-icon-cartoon-girl-head-face-business-user-logo-free-vector.jpg"),
                     //NetworkImage(mockDataFirstCard.profilePictureLink),
                     fit: BoxFit.fitHeight))

@@ -97,7 +97,9 @@ class _ProfileScreenState extends State<ProfileScreen>
                       ),
                       //----------------------PICTURE FIELD---------------------------
                       PictureFieldProfile(
-                        profileUrl: state.user.profilePhoto ?? "",
+                        profileUrl: state.user.profilePhoto ??
+                            //TODO defaoult profile picture olarak görmüyor
+                            "https://static.vecteezy.com/system/resources/previews/009/749/643/original/woman-profile-mascot-illustration-female-avatar-character-icon-cartoon-girl-head-face-business-user-logo-free-vector.jpg",
                       ),
                       NameSurnameCardProfile(
                           name: user.name ?? "",
