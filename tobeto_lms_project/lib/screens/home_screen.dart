@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               );
             }
-            return Center(
+            return const Center(
               child: Text("Beklenmedik Hata"),
             );
           },

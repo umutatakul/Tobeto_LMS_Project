@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
+import 'package:tobeto_lms_project/screens/map_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
 
@@ -78,6 +79,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   selectedColor: secondaryColor,
                 ),
                 SizedBox(width: 56),
+                //Haritalar Kısmı
                 NavBarIcon(
                     text: "Adress",
                     icon: FontAwesomeIcons.locationArrow,
@@ -94,7 +96,12 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                             //     onPressed: () => Navigator.of(context).pop(),
                             //     icon: Icon(Icons.close)),
                             IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  //TODO Key ekleyip harita yapımına devam et
+                                  // Navigator.of(context).push(MaterialPageRoute(
+                                  //   builder: (context) => const MapScreen(),
+                                  // ));
+                                },
                                 icon: Icon(
                                   FontAwesomeIcons.locationDot,
                                   color: Colors.deepOrangeAccent.shade200,
