@@ -74,6 +74,9 @@ dependencies:
   webview_flutter: ^4.7.0
   # Google maps denemesi
   google_maps_flutter: ^2.5.3
+  # Takvim için kütüphane
+
+  flutter_neat_and_clean_calendar: ^0.3.0+12
 dev_dependencies:
   flutter_test:
     sdk: flutter
