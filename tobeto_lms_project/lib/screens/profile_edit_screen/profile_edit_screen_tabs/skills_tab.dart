@@ -38,7 +38,7 @@ class _SkillsTabState extends State<SkillsTab> {
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.5,
         ),
-        ElevatedButton(onPressed: () {}, child: Text("Kaydet")),
+        ElevatedButton(onPressed: () {}, child: const Text("Kaydet")),
         FooterFieldProfile(backgroundColors: footerBackgroundColor)
       ]),
     );

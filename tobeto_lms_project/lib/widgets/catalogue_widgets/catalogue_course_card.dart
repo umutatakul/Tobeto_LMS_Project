@@ -15,7 +15,7 @@ class CatalogueCourseCard extends StatelessWidget {
       padding: const EdgeInsets.all(18),
       margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(20)),
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
         gradient: LinearGradient(colors: [
           const Color.fromARGB(255, 89, 141, 176).withOpacity(0.5),
           const Color.fromARGB(255, 89, 141, 176).withOpacity(0.9),

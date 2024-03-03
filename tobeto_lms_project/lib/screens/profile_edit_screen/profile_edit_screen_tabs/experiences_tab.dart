@@ -121,7 +121,7 @@ class _ExperiencesTabState extends State<ExperiencesTab> {
         Container(
           margin: const EdgeInsets.all(12),
           child: TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 labelText: "İş açıklaması giriniz",
                 // label: Text(
                 //   "İş Açıklaması*",
@@ -133,9 +133,9 @@ class _ExperiencesTabState extends State<ExperiencesTab> {
             maxLines: 6,
           ),
         ),
-        ElevatedButton(onPressed: () {}, child: Text("Kaydet")),
+        ElevatedButton(onPressed: () {}, child: const Text("Kaydet")),
 
-        Text("Tecrübeleri buraya kart oluşturup sırala"),
+        const Text("Tecrübeleri buraya kart oluşturup sırala"),
         FooterFieldProfile(
             backgroundColors: Theme.of(context).colorScheme.inversePrimary)
       ]),

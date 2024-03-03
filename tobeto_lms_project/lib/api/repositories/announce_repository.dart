@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:tobeto_lms_project/models/announce_model.dart';
-import 'package:tobeto_lms_project/models/application__screen_model.dart';
 
 class AnnounceRepository {
   Future<List<AnnounceModel>> getAnnounce() async {

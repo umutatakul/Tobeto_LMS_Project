@@ -146,7 +146,7 @@ class _ProfileScreenState extends State<ProfileScreen>
               );
             }
             return Container(
-              child: Text("Allaha emanet"),
+              child: const Text("Allaha emanet"),
             );
           },
         ),

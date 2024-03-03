@@ -21,7 +21,7 @@ class EducationDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBarWidget(appBarTitle: "Eğitim Detayları"),
+        appBar: const CustomAppBarWidget(appBarTitle: "Eğitim Detayları"),
         body: BlocBuilder<EducationCourseBloc, EducationCourseState>(
           builder: (context, state) {
             if (state is EducationCourseInitialState) {
@@ -93,7 +93,7 @@ class EducationDetailScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold)),
                               //TODO Breakpoint ile bakıldı. Description datan boş geliyor. Düzelt
                               Text(currentCourseItem.description!,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 16,
                                   )),
                               MyTheme.largeVerticalPadding,
@@ -136,7 +136,7 @@ class EducationDetailScreen extends StatelessWidget {
                               Text(
                                 // Açıklama kısmı Almıyor
                                 currentCourseItem.description!,
-                                style: TextStyle(fontSize: 16),
+                                style: const TextStyle(fontSize: 16),
                               ),
                               MyTheme.mediumVerticalPadding,
                               Row(
@@ -274,7 +274,6 @@ class EducationDetailScreen extends StatelessWidget {
 //                           Expanded(
 //                             flex: 4,
 //                             child: ElevatedButton(
-//                                 // TODO: uncomment to go to Graduation Screen
 //                                 onPressed: () {
 //                                   // Navigator.push(
 //                                   //   context,

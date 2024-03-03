@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
-import 'package:tobeto_lms_project/screens/map_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
 
@@ -49,7 +48,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                     builder: (context) => const HomeScreen(),
                   ));
                 },
-                child: Icon(Icons.home_outlined)),
+                child: const Icon(Icons.home_outlined)),
           ),
           Container(
             height: height,
@@ -78,7 +77,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                   defaultColor: primaryColor,
                   selectedColor: secondaryColor,
                 ),
-                SizedBox(width: 56),
+                const SizedBox(width: 56),
                 //Haritalar Kısmı
                 NavBarIcon(
                     text: "Adress",

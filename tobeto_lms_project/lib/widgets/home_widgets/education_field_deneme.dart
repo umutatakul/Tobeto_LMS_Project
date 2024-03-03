@@ -107,8 +107,8 @@ class _EducationCatalogScreenState extends State<EducationCatalogScreen> {
             ]),
           ),
           MyTheme.largeVerticalPadding,
-          Row(
-            children: const [
+          const Row(
+            children: [
               Text("Trending courses",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               Spacer(),

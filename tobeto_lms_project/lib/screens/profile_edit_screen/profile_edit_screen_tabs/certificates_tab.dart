@@ -33,7 +33,7 @@ class _CertificatesTabState extends State<CertificatesTab> {
               color: Theme.of(context).colorScheme.primary,
             ),
             borderRadius: BorderRadius.circular(12),
-            boxShadow: [],
+            boxShadow: const [],
           ),
           child: InkWell(
             onTap: () {},

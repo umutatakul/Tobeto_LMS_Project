@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:tobeto_lms_project/models/education_course_model.dart';
@@ -39,7 +37,7 @@ class EducationCourseCardMyEdcuation extends StatelessWidget {
               style: Theme.of(context).textTheme.titleMedium,
             ),
             Row(children: [
-              Icon(Icons.watch_later_outlined),
+              const Icon(Icons.watch_later_outlined),
               Text(course.lessonCount)
             ]),
             Row(
@@ -63,7 +61,7 @@ class EducationCourseCardMyEdcuation extends StatelessWidget {
                 LinearPercentIndicator(
                   width: 140.0,
                   lineHeight: 14.0,
-                  barRadius: Radius.circular(10),
+                  barRadius: const Radius.circular(10),
                   percent: course.progress / 100,
                   backgroundColor: Colors.grey,
                   progressColor: Colors.blue,
