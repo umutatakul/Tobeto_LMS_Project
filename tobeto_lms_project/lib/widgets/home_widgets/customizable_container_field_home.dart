@@ -16,8 +16,10 @@ class CustomizableContainerFieldHome extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Theme.of(context).textTheme.headlineSmall!.copyWith!(
-                    color: Colors.white),
+                style: Theme.of(context)
+                    .textTheme
+                    .headlineSmall!
+                    .copyWith(color: Colors.white),
               ),
               const Icon(
                 Icons.arrow_circle_right,

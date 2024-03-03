@@ -32,6 +32,7 @@ class ExperiencesField extends StatelessWidget {
               isFirst: false,
               isLast: false,
               isPast: true,
+              // TODO bu bilgielri dinamik al
               companyOrSchoolName: "IKEA",
               sectionOrDepartmant: "İmalat",
               years: "2018",
@@ -41,7 +42,8 @@ class ExperiencesField extends StatelessWidget {
               isFirst: false,
               isLast: true,
               isPast: false,
-              companyOrSchoolName: "Gemze Teknik Üniveristesi",
+              //TODO Bu bilgileri dinamik al
+              companyOrSchoolName: "Gebze Teknik Üniveristesi",
               sectionOrDepartmant: "Makina Müh",
               years: "2018-",
             )

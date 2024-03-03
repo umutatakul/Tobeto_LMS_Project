@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_event.dart';
@@ -71,19 +72,23 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: "Kendini Değerlendir"),
                     const CustomizableContainerFieldHome(
                         title: "Öğrenmeye Başla"),
+                    // TODO Bunu user a is admin diye bir değişken atayarak bu butonun görünürlüğüne dair bir şart oluştur
                     // Verileri Firestore aktarmak için oluşturuduğumuz fonksiyon ve buton
-                    ElevatedButton.icon(
-                      onPressed: () async {
-                        bool dataAdded = false;
-                        if (!dataAdded) {
-                          for (var course in educationCourseList) {
-                            await courseCollection.add(course.toMap());
+                    Visibility(
+                      visible: false,
+                      child: ElevatedButton.icon(
+                        onPressed: () async {
+                          bool dataAdded = false;
+                          if (!dataAdded) {
+                            for (var course in educationCourseList) {
+                              await courseCollection.add(course.toMap());
+                            }
+                            dataAdded = true;
                           }
-                          dataAdded = true;
-                        }
-                      },
-                      icon: const Icon(Icons.upload),
-                      label: const Text("firestore veri yükle..."),
+                        },
+                        icon: const Icon(Icons.upload),
+                        label: const Text("firestore veri yükle..."),
+                      ),
                     ),
 
                     FooterFieldProfile(
@@ -94,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
               );
             }
             return const Center(
-              child: Text("Beklenmedik Hata"),
+              child: Text("Tüm öngörülen state durumlarını aştınız tebrikler"),
             );
           },
         ),

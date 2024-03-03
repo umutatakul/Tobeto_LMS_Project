@@ -8,7 +8,7 @@ class AnnounceCardHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primaryContainer,

@@ -8,7 +8,7 @@ class HeaderFieldMyEducation extends StatelessWidget {
     final fullWeight = MediaQuery.of(context).size.width;
 
     return Container(
-      margin: EdgeInsets.all(12),
+      margin: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Theme.of(context).secondaryHeaderColor,
         border: Border.all(),
@@ -22,7 +22,7 @@ class HeaderFieldMyEducation extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 12),
+                    margin: const EdgeInsets.only(left: 12),
                     child: Text(
                       "Eğitimlerle şimdi \nkendini geliştir",
                       style: Theme.of(context).textTheme.titleLarge,

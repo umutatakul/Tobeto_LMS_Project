@@ -63,7 +63,7 @@ class CustomDrawer extends StatelessWidget {
 
           //TODO Bloc state ile firebaseden veri almayı denedim. Hata verdi.
           //Sunumdan sonra tekrar bak. Maindeki Provider acaba burayı da kapsıyor mu?
-          /*DrawerContainerOne(containerName: _customDrawerStrings.userName),*/
+          DrawerContainerOne(containerName: "Umut Atakul"),
           CustomListTileThree(
               listTileName: CustomDrawerStrings().tobetoCopyrighted),
           const QuitButton()

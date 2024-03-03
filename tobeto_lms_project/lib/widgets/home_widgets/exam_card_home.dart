@@ -24,6 +24,7 @@ class ExamCardHome extends StatelessWidget {
             AlertDialog(
           title: Text(examModel.title),
           //TODO examModel içindeki dataların kaçık karakterleri ile alt satıra geçişleri kontrol et
+          //Sınav varsa sınavı göster yoksa sınavı tamamlamış bildirimi ver
           content: examModel.isExamCompleted == true
               ? const Text(
                   "Sınavı tamamlamış görünüyorsunuz. Problem olduğunu düşünüyorsanız sistem yönetici ile iletişime geçiniz")
@@ -39,7 +40,7 @@ class ExamCardHome extends StatelessWidget {
                 ),
           actions: [
             Visibility(
-              //Sınav görünümünü burdan düzenlttim. Ama daha okunabilir yap
+              //Sınav tamamlanmadıysa sınava git butonunu görünür kıl
               visible: !examModel.isExamCompleted,
               child: TextButton(
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(
