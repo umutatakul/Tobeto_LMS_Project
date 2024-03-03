@@ -8,10 +8,16 @@ class CustomizableTimelineTile extends StatelessWidget {
     required this.isFirst,
     required this.isLast,
     required this.isPast,
+    required this.years,
+    required this.companyOrSchoolName,
+    required this.sectionOrDepartmant,
   });
   final bool isFirst;
   final bool isLast;
   final bool isPast;
+  final String years;
+  final String companyOrSchoolName;
+  final String sectionOrDepartmant;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,11 @@ class CustomizableTimelineTile extends StatelessWidget {
                 isPast ? Icons.check_outlined : Icons.radio_button_off_outlined,
             color: Theme.of(context).colorScheme.background),
       ),
-      endChild: const ExperienceCard(),
+      endChild: ExperienceCard(
+        companyOrSchoolName: companyOrSchoolName,
+        sectionOrDepartmant: sectionOrDepartmant,
+        years: years,
+      ),
     );
   }
 }

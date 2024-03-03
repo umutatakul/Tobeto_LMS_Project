@@ -6,7 +6,9 @@ class ExperienceCard extends StatelessWidget {
       this.years,
       this.companyOrSchoolName,
       this.sectionOrDepartmant})
-      : super(key: key);
+      : super(
+          key: key,
+        );
   final String? years;
   final String? companyOrSchoolName;
   final String? sectionOrDepartmant;

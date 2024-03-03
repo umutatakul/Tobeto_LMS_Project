@@ -20,13 +20,31 @@ class ExperiencesField extends StatelessWidget {
             //TODO timelimnlera okul iş ve snee için mockdata oluştur
             //Timeline başlangıcı
             CustomizableTimelineTile(
-                isFirst: true, isLast: false, isPast: true),
+              isFirst: true,
+              isLast: false,
+              isPast: true,
+              companyOrSchoolName: "Namık Kemal Üniversitesi",
+              sectionOrDepartmant: " Makine Müh",
+              years: "2009- 20016",
+            ),
             //Timeline ın ortası
             CustomizableTimelineTile(
-                isFirst: false, isLast: false, isPast: true),
+              isFirst: false,
+              isLast: false,
+              isPast: true,
+              companyOrSchoolName: "IKEA",
+              sectionOrDepartmant: "İmalat",
+              years: "2018",
+            ),
             //Timeline'ın sonu
             CustomizableTimelineTile(
-                isFirst: false, isLast: true, isPast: false)
+              isFirst: false,
+              isLast: true,
+              isPast: false,
+              companyOrSchoolName: "Gemze Teknik Üniveristesi",
+              sectionOrDepartmant: "Makina Müh",
+              years: "2018-",
+            )
           ],
         ),
       ),
