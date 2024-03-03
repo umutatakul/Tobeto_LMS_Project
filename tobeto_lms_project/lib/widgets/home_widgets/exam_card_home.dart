@@ -24,7 +24,7 @@ class ExamCardHome extends StatelessWidget {
             AlertDialog(
           title: Text(examModel.title),
           //TODO examModel içindeki dataların kaçık karakterleri ile alt satıra geçişleri kontrol et
-          content: examModel.isExamCompleted == false
+          content: examModel.isExamCompleted == true
               ? const Text(
                   "Sınavı tamamlamış görünüyorsunuz. Problem olduğunu düşünüyorsanız sistem yönetici ile iletişime geçiniz")
               : Column(
@@ -39,10 +39,11 @@ class ExamCardHome extends StatelessWidget {
                 ),
           actions: [
             Visibility(
-              visible: examModel.isExamCompleted,
+              //Sınav görünümünü burdan düzenlttim. Ama daha okunabilir yap
+              visible: !examModel.isExamCompleted,
               child: TextButton(
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => ExamWebviewScreen(),
+                  builder: (context) => const ExamWebviewScreen(),
                 )),
                 child: const Text("Sınava git"),
               ),
@@ -58,7 +59,7 @@ class ExamCardHome extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(fullScreenWidth * .05 / 2),
         width: fullScreenWidth * 0.45,
-        padding: EdgeInsets.all(2),
+        padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
             border: Border.all(), borderRadius: BorderRadius.circular(12)),
         child: Column(
