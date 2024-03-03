@@ -4,14 +4,15 @@ import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_cou
 import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_event.dart';
 import 'package:tobeto_lms_project/api/blocs/education_course_bloc/education_course_state.dart';
 import 'package:tobeto_lms_project/models/education_course_model.dart';
+import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 
-class EducationVideoScreen extends StatelessWidget {
+class EducationDetailScreen extends StatelessWidget {
   // final String? courseName;
   // final String? courseImage;
   // final String? courseInfo;
   // final String? coursePrice;
 
-  const EducationVideoScreen({
+  const EducationDetailScreen({
     Key? key,
     this.education,
   }) : super(key: key);
@@ -20,12 +21,7 @@ class EducationVideoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MyTheme.courseCardColor,
-        appBar: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          leading: BackButton(color: MyTheme.catalogueButtonColor),
-        ),
+        appBar: CustomAppBarWidget(appBarTitle: "Eğitim Detayları"),
         body: BlocBuilder<EducationCourseBloc, EducationCourseState>(
           builder: (context, state) {
             if (state is EducationCourseInitialState) {
@@ -34,7 +30,7 @@ class EducationVideoScreen extends StatelessWidget {
                   .add(GetEducationCourseEvent());
             }
             if (state is EducationCourseLoadingState) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             }
@@ -82,10 +78,10 @@ class EducationVideoScreen extends StatelessWidget {
                             children: [
                               Center(
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      color: MyTheme.grey.withOpacity(0.5),
-                                      borderRadius: const BorderRadius.vertical(
-                                          top: Radius.circular(1.0))),
+                                  decoration: const BoxDecoration(
+                                      //color: MyTheme.grey.withOpacity(0.5),
+                                      borderRadius: BorderRadius.vertical(
+                                          top: Radius.circular(25.0))),
                                   height: 4,
                                   width: 48,
                                 ),
@@ -95,9 +91,11 @@ class EducationVideoScreen extends StatelessWidget {
                                   style: const TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold)),
+                              //TODO Breakpoint ile bakıldı. Description datan boş geliyor. Düzelt
                               Text(currentCourseItem.description!,
                                   style: TextStyle(
-                                      fontSize: 16, color: MyTheme.grey)),
+                                    fontSize: 16,
+                                  )),
                               MyTheme.largeVerticalPadding,
                               Row(
                                 children: [
@@ -108,7 +106,9 @@ class EducationVideoScreen extends StatelessWidget {
                                   Expanded(
                                     child: Column(
                                       children: [
-                                        const Text("Progress: 100%"),
+                                        Text(
+                                            //Progress metni
+                                            "İlerleme ${currentCourseItem.progress}"),
                                         Container(
                                           margin: const EdgeInsets.fromLTRB(
                                               32.0, 4.0, 32.0, 8.0),
@@ -118,7 +118,9 @@ class EducationVideoScreen extends StatelessWidget {
                                                 const BorderRadius.all(
                                                     Radius.circular(10)),
                                             child: LinearProgressIndicator(
-                                              value: 1,
+                                              value:
+                                                  currentCourseItem.progress /
+                                                      100,
                                               valueColor:
                                                   AlwaysStoppedAnimation<Color>(
                                                       MyTheme.progressColor),
@@ -131,8 +133,9 @@ class EducationVideoScreen extends StatelessWidget {
                                 ],
                               ),
                               MyTheme.mediumVerticalPadding,
-                              const Text(
-                                "Learn the basics of lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                              Text(
+                                // Açıklama kısmı Almıyor
+                                currentCourseItem.description!,
                                 style: TextStyle(fontSize: 16),
                               ),
                               MyTheme.mediumVerticalPadding,
@@ -144,14 +147,15 @@ class EducationVideoScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 4,
                                     child: ElevatedButton(
-                                        // TODO: uncomment to go to Graduation Screen
+                                        //Video Ekranına gidiş
+
                                         onPressed: () {
                                           Navigator.pushNamed(
                                               context, '/customVideoScreen',
                                               arguments: education?.videoLink);
                                         },
                                         child: const Text(
-                                          "Graduate",
+                                          "Eğitime Git",
                                           style: TextStyle(
                                               fontWeight: FontWeight.w500),
                                         )),

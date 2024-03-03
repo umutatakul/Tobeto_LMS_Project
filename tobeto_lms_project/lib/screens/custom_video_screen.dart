@@ -8,11 +8,9 @@ import 'package:tobeto_lms_project/models/education_course_model.dart';
 import 'package:video_player/video_player.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
+//TODO Burası Ekranı
 class CustomVideoScreen extends StatelessWidget {
   CustomVideoScreen({Key? key}) : super(key: key);
-  final Color _playedColor = Colors.red.shade900;
-  final Color _backgroudColor = Colors.grey.shade700;
-  final _handleDotColor = Colors.white;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +31,14 @@ class CustomVideoScreen extends StatelessWidget {
   }
 }
 
+// TODO Burası Widgetı Başka sayfaya ayır
 class CustomVideoPlayer extends StatefulWidget {
-  const CustomVideoPlayer({Key? key, required this.videoLink})
-      : super(key: key);
+  CustomVideoPlayer({Key? key, required this.videoLink}) : super(key: key);
 
   final String videoLink;
+  final Color _playedColor = Colors.red.shade900;
+  final Color _backgroudColor = Colors.grey.shade700;
+  final _handleDotColor = Colors.white;
 
   @override
   State<CustomVideoPlayer> createState() => _CustomVideoPlayerState();
@@ -106,9 +107,9 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
             controls: FlickPortraitControls(
                 iconSize: 30,
                 progressBarSettings: FlickProgressBarSettings(
-                  playedColor: Colors.amber,
-                  handleColor: Colors.black,
-                  backgroundColor: Colors.green,
+                  playedColor: widget._playedColor,
+                  handleColor: widget._handleDotColor,
+                  backgroundColor: widget._backgroudColor,
                   handleRadius: 10,
                   height: 10,
                   bufferedColor: Colors.transparent,
@@ -119,9 +120,9 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
             controls: FlickPortraitControls(
                 iconSize: 30,
                 progressBarSettings: FlickProgressBarSettings(
-                  playedColor: Colors.amber,
-                  handleColor: Colors.black,
-                  backgroundColor: Colors.green,
+                  playedColor: widget._playedColor,
+                  handleColor: widget._handleDotColor,
+                  backgroundColor: widget._backgroudColor,
                   handleRadius: 10,
                   height: 10,
                   bufferedColor: Colors.transparent,

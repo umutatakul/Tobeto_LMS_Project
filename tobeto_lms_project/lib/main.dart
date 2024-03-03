@@ -19,7 +19,7 @@ import 'package:tobeto_lms_project/models/education_course_model.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/custom_video_screen.dart';
-import 'package:tobeto_lms_project/screens/education_video_screen.dart';
+import 'package:tobeto_lms_project/screens/education_detail_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
 import 'package:tobeto_lms_project/screens/profile_screen.dart';
 import 'package:tobeto_lms_project/screens/review_screen.dart';
@@ -113,7 +113,7 @@ class TobetoApp extends StatelessWidget {
           '/catalogue': (context) => const CatalogueScreen(),
           '/calendar': (context) => const CalendarScreen(),
           '/review': (context) => ReviewScreen(),
-          '/educationVideoScreen': (context) => const EducationVideoScreen(),
+          '/educationVideoScreen': (context) => const EducationDetailScreen(),
           '/customVideoScreen': (context) => CustomVideoScreen(),
         },
 
