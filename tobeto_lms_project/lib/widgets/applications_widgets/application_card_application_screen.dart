@@ -36,7 +36,7 @@ class ApplicationCardApplicationScreen extends StatelessWidget {
     // İç satır metni Metni
     final String spanString = (application.status == "Approved")
         ? "Onaylandı"
-        : (application == "InProgress")
+        : (application.status == "InProgress")
             ? "Değerlendiriliyor"
             : "Reddedildi";
     return Container(
