@@ -114,7 +114,7 @@ class TobetoApp extends StatelessWidget {
           '/calendar': (context) => const CalendarScreen(),
           '/review': (context) => ReviewScreen(),
           '/educationVideoScreen': (context) => const EducationDetailScreen(),
-          '/customVideoScreen': (context) => CustomVideoScreen(),
+          '/customVideoScreen': (context) => const CustomVideoScreen(),
         },
 
         //home: const MyHomePage(),

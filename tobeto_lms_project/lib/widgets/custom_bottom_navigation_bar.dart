@@ -25,7 +25,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
 
     final primaryColor = Theme.of(context).primaryColor;
     final secondaryColor = Theme.of(context).colorScheme.onBackground;
-    final accentColor = const Color(0xffffffff);
+    const accentColor = Color(0xffffffff);
     final backgroundColor = Theme.of(context).colorScheme.inverseSurface;
 
     return BottomAppBar(

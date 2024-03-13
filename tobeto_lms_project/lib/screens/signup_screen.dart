@@ -14,6 +14,10 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  // Burada iki tip yaklaşım yaptık
+  // 1 controller ile (Form widget ı içinde) _emailController ile almak
+  // 2 boş string içine (_password ve _  _confirm password gibi)
+  // onSaved built in fonksiyonu ile değer set etme
   //Form alanı için
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   // String _email = "";
@@ -130,7 +134,6 @@ class _SignupScreenState extends State<SignupScreen> {
                                 password: _password,
                                 confirmPassword: _confirmPassword));
 
-                            //TODO ana ekrana navige et
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => const HomeScreen(),
                             ));
