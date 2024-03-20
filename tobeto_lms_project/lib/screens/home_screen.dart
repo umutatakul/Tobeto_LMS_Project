@@ -1,13 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_event.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_state.dart';
-import 'package:tobeto_lms_project/data/announces_mock_data_list.dart';
-import 'package:tobeto_lms_project/data/apllications_mock_data_list.dart';
-import 'package:tobeto_lms_project/data/exam_mock_data_list.dart';
 import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/models/user_model.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
@@ -37,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     //final examCollection = _firebaseFirestore.collection("exam");
 
     return Scaffold(
-        //Bunu her  eklersen bottomBar izi yok oluyor
+        //Bunu eğer  eklersen bottomBar izi yok oluyor
         extendBody: true,
         appBar: const CustomAppBarWidget(appBarTitle: "Anasayfa"),
         drawer: CustomDrawer(),
@@ -103,23 +99,6 @@ class _HomeScreenState extends State<HomeScreen> {
             );
           },
         ),
-        bottomNavigationBar: const CustomBottomNavigationBar()
-        // BottomAppBar(
-        //   color: Colors.purple,
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: <Widget>[
-        //       IconButton(
-        //         icon: const Icon(Icons.home),
-        //         onPressed: () {},
-        //       ),
-        //       IconButton(
-        //         icon: const Icon(Icons.settings),
-        //         onPressed: () {},
-        //       ),
-        //     ],
-        //   ),
-        // ),
-        );
+        bottomNavigationBar: const CustomBottomNavigationBar());
   }
 }

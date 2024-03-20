@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:tobeto_lms_project/models/education_course_model.dart';
 import 'package:tobeto_lms_project/widgets/custom_app_bar_widget.dart';
 import 'package:tobeto_lms_project/widgets/custom_bottom_navigation_bar.dart';
 import 'package:tobeto_lms_project/widgets/custom_drawer.dart';
