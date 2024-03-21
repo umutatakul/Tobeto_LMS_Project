@@ -15,7 +15,6 @@ import 'package:tobeto_lms_project/api/repositories/education_course_repository.
 import 'package:tobeto_lms_project/api/repositories/storage_repository.dart';
 import 'package:tobeto_lms_project/api/repositories/user_repository.dart';
 import 'package:tobeto_lms_project/firebase_options.dart';
-import 'package:tobeto_lms_project/models/education_course_model.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/custom_video_screen.dart';

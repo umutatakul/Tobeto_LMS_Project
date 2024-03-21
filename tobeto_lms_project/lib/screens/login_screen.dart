@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc.dart';
+import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_bloc_state.dart';
 import 'package:tobeto_lms_project/api/blocs/auth_bloc/auth_event.dart.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_login.dart';
 import 'package:tobeto_lms_project/constants/strings/login_screen_strings.dart';
@@ -23,14 +26,14 @@ class _LoginScreenState extends State<LoginScreen> {
   final LoginStrings _loginStrings = LoginStrings();
   final LoginAssets _loginAssets = LoginAssets();
 
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
-    //dark ya da normal modda olduğumuzu kontrol etmek için :
+    //dark ya da normal modda olduğumuzu kontrol etmek için (backgroudn asset'i kontrol ediyoruz):
     var brightness = View.of(context).platformDispatcher.platformBrightness;
-    bool isDarkMode = brightness == Brightness.dark;
+    bool isDarkMode = brightness == Brightness.dark; //dark modda ise true
     return Scaffold(
-      //drawerEnableOpenDragGesture: false,
-      //endDrawerEnableOpenDragGesture: false,
       appBar: AppBar(
         title: Text(_loginStrings.appBarTitle),
         centerTitle: true,
@@ -71,6 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: const EdgeInsets.only(left: 20, right: 20),
                     child: Column(
                       children: [
+                        //---------KULLANICI MAİLİ--------------
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextField(
@@ -80,16 +84,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               prefixIcon: const Icon(Icons.person_2_outlined),
                               labelText: _loginStrings.userCode,
                               border: const OutlineInputBorder(),
-                              //fillColor: Colors.blue,
-                              // focusedBorder: OutlineInputBorder(
-                              //   borderSide:
-                              //       BorderSide(color: Colors.grey, width: .5),
-                              // ),
-                              // focusColor: Colors.white,
                             ),
                             keyboardType: TextInputType.emailAddress,
                           ),
                         ),
+                        // -------PAROLA TEXT FİELD KISMI----------
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TextField(
@@ -113,26 +112,56 @@ class _LoginScreenState extends State<LoginScreen> {
                               labelText: _loginStrings.password,
                               border: const OutlineInputBorder(),
                             ),
-                            // keyboardType: TextInputType.number,
+                            //keyboardType: TextInputType.none,
                           ),
                         ),
+                        //-----------LOGİN BUTTON---------------
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ElevatedButton(
                             onPressed: () {
+                              print("Başlangıç");
+
+                              //print(_firebaseAuth.currentUser!.uid);
+
                               context.read<AuthBloc>().add(
                                     AuthLoginUserEvent(
                                       email: kullaniciKodu.text.trim(),
                                       password: parola.text.trim(),
                                     ),
                                   );
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
-                              ));
-                              //print(kullaniciKodu.text);
-                              //print(parola.text);
 
-                              //Size(double.infinity, 20);
+                              print(context.read<AuthBloc>().state.toString());
+
+                              // Navigator.of(context).push(MaterialPageRoute(
+                              //     builder: (context) => const HomeScreen()));
+
+                              ///*
+                              if (_firebaseAuth.currentUser != null) {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomeScreen(),
+                                  ),
+                                );
+                              } else if (_firebaseAuth.currentUser == null) {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content: Text(
+                                            "Böyle bir kullanıcı bulunmamaktadır")));
+                              }
+                              print("BAŞI");
+
+                              print(FirebaseAuth.instance.currentUser);
+
+                              print("SONU");
+                              //*/
+
+                              //context.read()<AuthBloc>().add(AuthenticatedState());
+                              // Navigator.of(context).push(
+                              //   MaterialPageRoute(
+                              //     builder: (context) => const HomeScreen(),
+                              //   ),
+                              // );
                             },
                             style: ElevatedButton.styleFrom(
                               //foregroundColor: (Colors.white),
