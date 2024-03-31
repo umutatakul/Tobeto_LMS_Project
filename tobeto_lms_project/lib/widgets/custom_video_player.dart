@@ -1,4 +1,5 @@
 // TODO Video Player ı baştan tasarla çok kontrolsüz
+// Video iyi kötü gerçek cihazda çalışıyor. Problem emülatörde
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
@@ -62,11 +63,11 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
-          boxShadow: const [BoxShadow(blurRadius: 10, color: Colors.black)],
-          image: DecorationImage(
-              image: AssetImage(widget.videoLink), fit: BoxFit.cover),
-          borderRadius: const BorderRadius.only(
+        decoration: const BoxDecoration(
+          boxShadow: [BoxShadow(blurRadius: 10, color: Colors.black)],
+          // image: DecorationImage(
+          //     image: AssetImage(widget.videoLink), fit: BoxFit.cover),
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(50),
             bottomRight: Radius.circular(50),
           ),
