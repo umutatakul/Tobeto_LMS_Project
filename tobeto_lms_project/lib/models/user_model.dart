@@ -12,6 +12,7 @@ class UserModel {
   String? phone;
   String? profilePhoto; // imgURL(String)
   DateTime? dateOfBirth;
+  bool isAdmin;
   //  dd-mm-yy formatta olmalıdır. => Datetime.now()
   // dd-mm-yy + 20.25 34s 33sls.
   // dd-mm-yy formatter
@@ -28,6 +29,7 @@ class UserModel {
     this.email,
     this.phone,
     this.dateOfBirth,
+    this.isAdmin = false,
   });
 // -------------------------------------------------
 
@@ -45,6 +47,7 @@ class UserModel {
       linkedin: map['linkedin'] ?? "",
       profilePhoto: map['profilePhoto'] ?? "",
       dateOfBirth: (map['dateOfBirth'] as Timestamp?)?.toDate(),
+      isAdmin: map['isAdmin'] ?? false,
     );
   }
 // ------------------------- (firestore bilgi gönderme:) -------------------------
@@ -82,6 +85,7 @@ class UserModel {
       'linkedin': linkedin,
       'profilePhoto': profilePhoto,
       'dateOfBirth': dateOfBirth,
+      'isAdmin': isAdmin,
     };
   }
 }

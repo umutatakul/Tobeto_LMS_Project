@@ -68,10 +68,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         title: "Kendini Değerlendir"),
                     const CustomizableContainerFieldHome(
                         title: "Öğrenmeye Başla"),
-                    // TODO Bunu user a is admin diye bir değişken atayarak bu butonun görünürlüğüne dair bir şart oluştur
+
                     // Verileri Firestore aktarmak için oluşturuduğumuz fonksiyon ve buton
                     Visibility(
-                      visible: false,
+                      //kullanıcı admin yetkilendirmesine sahipse bu paneli görünür kıl
+                      //bunu firebase user colletction içinde default flase olarak değeri el ile true olarak yapıp ayarlıyoruz.
+                      visible: user.isAdmin,
                       child: ElevatedButton.icon(
                         onPressed: () async {
                           bool dataAdded = false;
