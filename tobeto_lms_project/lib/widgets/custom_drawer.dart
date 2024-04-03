@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
+import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_event.dart';
+import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_state.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_custom_drawer.dart';
+import 'package:tobeto_lms_project/models/user_model.dart';
 import 'package:tobeto_lms_project/screens/calendar_screen.dart';
 import 'package:tobeto_lms_project/screens/catalogue_screen.dart';
 import 'package:tobeto_lms_project/screens/home_screen.dart';
@@ -63,7 +68,27 @@ class CustomDrawer extends StatelessWidget {
 
           //TODO Bloc state ile firebaseden veri almayı denedim. Hata verdi.
           //Sunumdan sonra tekrar bak. Maindeki Provider acaba burayı da kapsıyor mu?
-          const DrawerContainerOne(containerName: "Umut Atakul"),
+          BlocBuilder<ProfileBloc, ProfileState>(
+            builder: (context, state) {
+              if (state is ProfileInitial) {
+                context.read<ProfileBloc>().add(GetProfileEvent());
+              }
+              if (state is ProfileLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (state is ProfileLoaded) {
+                final UserModel user = state.user;
+                return DrawerContainerOne(
+                    containerName: "${user.name} ${user.surname}");
+              }
+              return const Center(
+                child: Text("Beklenmedik hata"),
+              );
+            },
+          ),
+          //const DrawerContainerOne(containerName: "Umut Atakul"),
           CustomListTileThree(
               listTileName: CustomDrawerStrings().tobetoCopyrighted),
           const QuitButton()

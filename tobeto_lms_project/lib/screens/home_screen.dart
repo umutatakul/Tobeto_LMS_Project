@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
             if (state is ProfileInitial) {
               context.read<ProfileBloc>().add(GetProfileEvent());
             }
-            ;
+
             if (state is ProfileLoading) {
               return const Center(
                 child: CircularProgressIndicator(),
