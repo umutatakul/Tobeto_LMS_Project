@@ -33,7 +33,7 @@ class ExamFieldHome extends StatelessWidget {
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
-          Container(
+          SizedBox(
             height: fullHeightOfScreen / 4,
             child: Padding(
               //Sakın paddin verme ortalanmış görünüm bozulur

@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     HeaderFieldHome(
-                      nameSurname: "${user.name} ${user.surname}" ?? "",
+                      nameSurname: "${user.name} ${user.surname}",
                     ),
                     const TabbarFieldHome(),
                     const SizedBox(height: 16),

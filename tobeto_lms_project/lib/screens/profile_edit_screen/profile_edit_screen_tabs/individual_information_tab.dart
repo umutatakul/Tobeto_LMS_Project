@@ -7,13 +7,11 @@ import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_event.dart';
 import 'package:tobeto_lms_project/api/blocs/profile_bloc/profile_bloc_state.dart';
 import 'package:tobeto_lms_project/constants/paths/paths_of_profile_edit.dart';
-import 'package:tobeto_lms_project/data/mock_data.dart';
 import 'package:tobeto_lms_project/models/user_model.dart';
-import 'package:tobeto_lms_project/widgets/profile_edit_widgets/individual_widgets/profile_picture_profile_edit.dart';
 import 'package:tobeto_lms_project/widgets/profile_widgets/footer_field_profile.dart';
 
 class IndividualInformationTab extends StatefulWidget {
-  IndividualInformationTab({Key? key}) : super(key: key);
+  const IndividualInformationTab({Key? key}) : super(key: key);
 
   @override
   State<IndividualInformationTab> createState() =>
