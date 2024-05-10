@@ -66,8 +66,6 @@ class CustomDrawer extends StatelessWidget {
               listTileName: _customDrawerStrings.tobeto,
               icon: const Icon(Icons.home_outlined)),
 
-          //TODO Bloc state ile firebaseden veri almayı denedim. Hata verdi.
-          //Sunumdan sonra tekrar bak. Maindeki Provider acaba burayı da kapsıyor mu?
           BlocBuilder<ProfileBloc, ProfileState>(
             builder: (context, state) {
               if (state is ProfileInitial) {

@@ -30,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final courseCollection = _firebaseFirestore.collection("course");
     // final applicationCollection = _firebaseFirestore.collection("application");
     // final announceCollection = _firebaseFirestore.collection("announce");
-    //final examCollection = _firebaseFirestore.collection("exam");
+    // final examCollection = _firebaseFirestore.collection("exam");
 
     return Scaffold(
         //Bunu eğer  eklersen bottomBar izi yok oluyor
